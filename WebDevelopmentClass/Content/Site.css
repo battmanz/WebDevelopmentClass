@@ -1,17 +1,29 @@
 ﻿body {
+    background-image: url(/Images/tanNoise.jpg);
 }
 
-nav {
-    overflow: hidden;
+header {
+    text-align: center;
 }
 
-nav li {
-    display: inline;
+header h1 {
+    font: 800%/1 Impact, Helvetica, sans-serif;
+    margin: 0;
+    color: #324B4B;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5), 0 -1px 0 rgba(0,0,0,.8);
 }
 
-nav a {
+header h1 strong {
+    font-weight: normal;
+    font-style: normal;
+    color: #F0D200;
+    text-shadow: 0 1px 0 rgba(0, 50, 40, 0.5), 0 -1px 0 rgba(255, 255, 0, 0.8);
+}
+
+header h2 {
+    margin: 0;
     color: white;
-    text-decoration: none;
+    text-shadow: 0 1px 0 #4C7C7B;
 }
 
 ul {
@@ -19,15 +31,36 @@ ul {
     padding: 0;
 }
 
-header, footer {
-    background-color: #333;
+header {
+    background: url(/Images/header2.png) repeat-x left bottom;
+    padding: 50px 0;
+}
+
+footer {
+    background-image: none; /*url(/Images/darkBlueNoise.jpg);*/
+    background-color: #2b4141;
     color: white;
+    min-height: 250px;
 }
 
 .content {
     padding: 20px;
-    width: 980px;
+    width: 960px;
     margin: 0 auto;
+}
+
+/* Styles for Index */
+#lessonList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#lessonList li {
+    float: left;
+    margin-right: 1.5em;
+    width: 200px;
 }
 
 /* styles for validation helpers */

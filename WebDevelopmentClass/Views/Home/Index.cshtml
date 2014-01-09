@@ -2,6 +2,79 @@
     ViewBag.Title = "Home";
 }
 
-<h1>Home</h1>
+<div id="scrollLeft" class="scroll">&lsaquo;</div>
 
-<p>Choose a lesson to get started</p>
+<ul id="lessonList">
+    <li style="left: 0;">
+        <section>
+            <h1>Lesson 1</h1>
+            <h2>HTML</h2>
+            <p>Hypertext Markup Language, a standardized system for tagging text files to achieve font, color, graphic, and hyperlink effects on World Wide Web pages.</p>
+        </section>
+    </li>
+    <li style ="left: 245px;">
+        <section>
+            <h1>Lesson 2</h1>
+            <h2>CSS</h2>
+            <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the look and formatting of a document written in a markup language.</p>
+        </section>
+    </li>
+    <li style="left: 490px;">
+        <section>
+            <h1>Lesson 3</h1>
+            <p>TBD</p>
+        </section>
+    </li>
+    <li style="left: 735px;">
+        <section>
+            <h1>Lesson 4</h1>
+            <p>TBD</p>
+        </section>
+    </li>
+    <li style="left: 980px;">
+        <section>
+            <h1>Lesson 5</h1>
+            <p>TBD</p>
+        </section>
+    </li>
+    <li style="left: 1225px;">
+        <section>
+            <h1>Lesson 6</h1>
+            <p>TBD</p>
+        </section>
+    </li>
+    <li style="left: 1470px;">
+        <section>
+            <h1>Lesson 7</h1>
+            <p>TBD</p>
+        </section>
+    </li>
+    <li style="left: 1715px;">
+        <section>
+            <h1>Lesson 8</h1>
+            <p>TBD</p>
+        </section>
+    </li>
+</ul>
+
+<div id="scrollRight" class="scroll">&rsaquo;</div>
+
+@section scripts {
+<script>
+    $(function () {
+        var lessons = $("#lessonList > li");
+
+        $("#scrollLeft").click(function (e) {
+            lessons.animate({ left: "+=245px" });
+            e.preventDefault();
+            return false;
+        });
+
+        $("#scrollRight").click(function (e) {
+            lessons.animate({ left: "-=245px" });
+            e.preventDefault();
+            return false;
+        });
+    });
+</script>
+}

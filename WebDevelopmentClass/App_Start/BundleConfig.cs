@@ -22,7 +22,7 @@ namespace WebDevelopmentClass
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/normalize.css",
-                      "~/Content/site.css"));
+                      "~/Content/stripes.css"));
         }
     }
 }

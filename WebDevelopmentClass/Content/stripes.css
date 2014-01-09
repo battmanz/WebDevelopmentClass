@@ -1,0 +1,131 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background: url(/Images/brownStripe.png) repeat top left;
+}
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    font: 750%/1 Impact, Helvetica, sans-serif;
+    margin: 0;
+    color: #5c2d27;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5), 0 -1px 0 rgba(0,0,0,.8);
+}
+
+header h2 {
+    margin: 5px 0 0 0;
+    /*text-shadow: 0 1px 0 #4C7C7B;*/
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header {
+    background: url(/Images/lightStripe.png) repeat top left;
+    padding: 40px 0;
+    border-bottom: 5px solid #e2842c;
+}
+
+#main {
+    background-image: none;
+    background-color: white;
+}
+
+footer {
+    color: white;
+}
+
+.content {
+    padding: 20px;
+    width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#main div.content {
+    width: 1080px;
+    padding: 50px 0;
+}
+
+/* Styles for Index */
+#lessonList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    height: 260px;
+    float: left;
+    width: 960px;
+}
+
+#lessonList li {
+    position: absolute;
+    top: 0;
+    width: 203px;
+    border: solid 1px #e6e6e6;
+    padding: 10px;
+}
+
+#lessonList h1 {
+    font-weight: normal;
+    margin-top: 0;
+}
+
+#lessonList h2 {
+    font-weight: normal;
+}
+
+.scroll {
+    font-size: 100pt;
+    width: 40px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    cursor: pointer;
+    float: left;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#scrollLeft {
+    padding-right: 20px;
+}
+
+#scrollRight {
+    padding-left: 20px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
