@@ -2,78 +2,124 @@
     ViewBag.Title = "Home";
 }
 
-<div id="scrollLeft" class="scroll">&lsaquo;</div>
+<div id="slider">
+    <img src="@Href("~/Images/arrowLeftThin.png")" id="controlRight" class="control" width="35" height="80" />
 
-<ul id="lessonList">
-    <li style="left: 0;">
-        <section>
-            <h1>Lesson 1</h1>
-            <h2>HTML</h2>
-            <p>Hypertext Markup Language, a standardized system for tagging text files to achieve font, color, graphic, and hyperlink effects on World Wide Web pages.</p>
-        </section>
-    </li>
-    <li style ="left: 245px;">
-        <section>
-            <h1>Lesson 2</h1>
-            <h2>CSS</h2>
-            <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the look and formatting of a document written in a markup language.</p>
-        </section>
-    </li>
-    <li style="left: 490px;">
-        <section>
-            <h1>Lesson 3</h1>
-            <p>TBD</p>
-        </section>
-    </li>
-    <li style="left: 735px;">
-        <section>
-            <h1>Lesson 4</h1>
-            <p>TBD</p>
-        </section>
-    </li>
-    <li style="left: 980px;">
-        <section>
-            <h1>Lesson 5</h1>
-            <p>TBD</p>
-        </section>
-    </li>
-    <li style="left: 1225px;">
-        <section>
-            <h1>Lesson 6</h1>
-            <p>TBD</p>
-        </section>
-    </li>
-    <li style="left: 1470px;">
-        <section>
-            <h1>Lesson 7</h1>
-            <p>TBD</p>
-        </section>
-    </li>
-    <li style="left: 1715px;">
-        <section>
-            <h1>Lesson 8</h1>
-            <p>TBD</p>
-        </section>
-    </li>
-</ul>
+    <ul id="lessonList">
+        <li style="left: 0;">
+            <section>
+                <h1>@Html.ActionLink("Lesson 1", "Index", "Lesson", new { id = 1 }, null)</h1>
+                <h2>HTML</h2>
+                <p>Hypertext Markup Language, a standardized system for tagging text files to achieve font, color, graphic, and hyperlink effects on World Wide Web pages.</p>
+            </section>
+        </li>
+        <li style="left: 246px;">
+            <section>
+                <h1>@Html.ActionLink("Lesson 2", "Index", "Lesson", new { id = 2 }, null)</h1>
+                <h2>CSS</h2>
+                <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the look and formatting of a document written in a markup language.</p>
+            </section>
+        </li>
+        <li style="left: 492px;">
+            <section>
+                <h1>Lesson 3</h1>
+                <p>TBD</p>
+            </section>
+        </li>
+        <li style="left: 738px;">
+            <section>
+                <h1>Lesson 4</h1>
+                <p>TBD</p>
+            </section>
+        </li>
+        <li style="left: 984px;">
+            <section>
+                <h1>Lesson 5</h1>
+                <p>TBD</p>
+            </section>
+        </li>
+        <li style="left: 1230px;">
+            <section>
+                <h1>Lesson 6</h1>
+                <p>TBD</p>
+            </section>
+        </li>
+        <li style="left: 1476px;">
+            <section>
+                <h1>Lesson 7</h1>
+                <p>TBD</p>
+            </section>
+        </li>
+        <li style="left: 1722px;">
+            <section>
+                <h1>Lesson 8</h1>
+                <p>TBD</p>
+            </section>
+        </li>
+    </ul>
 
-<div id="scrollRight" class="scroll">&rsaquo;</div>
+    <img src="@Href("~/Images/arrowRightThin.png")" id="controlLeft" class="control" width="35" height="80" />
+</div>
 
 @section scripts {
 <script>
     $(function () {
         var lessons = $("#lessonList > li");
+        var NUM_DISPLAYED = 3;
+        var animationOptions = {
+            duration: 350,
+            easing: "linear"
+        }
+        var index = 0;
+        var stop = true;
 
-        $("#scrollLeft").click(function (e) {
-            lessons.animate({ left: "+=245px" });
-            e.preventDefault();
-            return false;
-        });
+        function startSlideRight() {
+            stop = false;
+            slideRight();
+        }
 
-        $("#scrollRight").click(function (e) {
-            lessons.animate({ left: "-=245px" });
-            e.preventDefault();
-            return false;
+        function startSlideLeft() {
+            stop = false;
+            slideLeft();
+        }
+
+        function slideRight() {
+            if (stop || index < 1) {
+                stop = true;
+                return;
+            }
+
+            lessons.animate({ left: "+=246px" }, animationOptions).promise().done(function () {
+                --index;
+                slideRight();
+            });
+        }
+
+        function slideLeft() {
+            if (stop || (index + NUM_DISPLAYED) >= lessons.length) {
+                stop = true;
+                return;
+            }
+
+            lessons.animate({ left: "-=246px" }, animationOptions).promise().done(function () {
+                ++index;
+                slideLeft();
+            });
+        }
+
+        function stopSlide() {
+            stop = true;
+        }
+
+        $("#controlLeft").hover(startSlideLeft, stopSlide);
+        $("#controlRight").hover(startSlideRight, stopSlide);
+        $("#main").hover(function () {
+            $("#controlLeft").animate({ opacity: 0.9 }, 300);
+            $("#controlRight").animate({ opacity: 0.9 }, 300);
+        },
+        function () {
+            $("#controlLeft").animate({ opacity: 0 }, 300);
+            $("#controlRight").animate({ opacity: 0 }, 300);
         });
     });
 </script>

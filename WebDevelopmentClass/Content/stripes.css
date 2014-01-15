@@ -47,9 +47,9 @@ footer {
     overflow: hidden;
 }
 
-#main div.content {
-    width: 1080px;
-    padding: 50px 0;
+#slider {
+    padding: 20px 0;
+    overflow: hidden;
 }
 
 /* Styles for Index */
@@ -61,15 +61,29 @@ footer {
     position: relative;
     height: 260px;
     float: left;
-    width: 960px;
+    width: 718px;
 }
 
 #lessonList li {
     position: absolute;
     top: 0;
-    width: 203px;
+    width: 204px;
+    height: 238px;
     border: solid 1px #e6e6e6;
     padding: 10px;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+    background: #fefefe;
+    background: -moz-linear-gradient(top,  #fefefe 1%, #f3f3f3 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#fefefe), color-stop(100%,#f3f3f3));
+    background: -webkit-linear-gradient(top,  #fefefe 1%,#f3f3f3 100%);
+    background: -o-linear-gradient(top,  #fefefe 1%,#f3f3f3 100%);
+    background: -ms-linear-gradient(top,  #fefefe 1%,#f3f3f3 100%);
+    background: linear-gradient(to bottom,  #fefefe 1%,#f3f3f3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#f3f3f3',GradientType=0 );
 }
 
 #lessonList h1 {
@@ -77,18 +91,23 @@ footer {
     margin-top: 0;
 }
 
+#lessonList h1 a {
+    text-decoration: none;
+}
+
 #lessonList h2 {
     font-weight: normal;
 }
 
-.scroll {
-    font-size: 100pt;
-    width: 40px;
-    margin: 0;
+.control {
+    text-align: center;
     padding: 0;
-    position: relative;
+    margin-top: 80px;
     cursor: pointer;
     float: left;
+    -moz-opacity: 0.00;
+    opacity: 0.00;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=0);
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -97,12 +116,14 @@ footer {
     user-select: none;
 }
 
-#scrollLeft {
-    padding-right: 20px;
+#controlRight {
+    margin-left: 35px;
+    margin-right: 51px;
 }
 
-#scrollRight {
-    padding-left: 20px;
+#controlLeft {
+    margin-left: 51px;
+    margin-right: 35px;
 }
 
 /* styles for validation helpers */
