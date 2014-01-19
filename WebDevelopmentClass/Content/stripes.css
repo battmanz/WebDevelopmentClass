@@ -52,6 +52,11 @@ footer {
     overflow: hidden;
 }
 
+/*div.syntaxhighlighter {
+    overflow-y: hidden !important;
+    overflow-x: auto !important;
+}*/
+
 /* Styles for Index */
 #lessonList {
     list-style-type: none;

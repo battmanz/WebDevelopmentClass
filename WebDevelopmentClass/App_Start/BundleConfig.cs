@@ -20,9 +20,15 @@ namespace WebDevelopmentClass
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/syntaxHighlighter").Include(
+                "~/Scripts/shCore.js",
+                "~/Scripts/shBrushXml.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/normalize.css",
-                      "~/Content/stripes.css"));
+                      "~/Content/stripes.css",
+                      "~/Content/shCore.css",
+                      "~/Content/shThemeDefault.css"));
         }
     }
 }

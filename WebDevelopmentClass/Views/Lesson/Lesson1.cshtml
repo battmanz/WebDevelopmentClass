@@ -5,3 +5,27 @@
 
 <h2>Lesson 1</h2>
 
+<p>The <em>starting</em> HTML of every web page:</p>
+
+<pre><code class="brush: html;">@(@"
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=""utf-8"" />
+    <title>Your title here</title>
+</head>
+<body>
+    <!-- Put content here -->
+</body>
+</html>
+")</code></pre>
+
+
+
+@section scripts {
+<script>
+    SyntaxHighlighter.config.tagName = "code";
+    SyntaxHighlighter.defaults["toolbar"] = false;
+    SyntaxHighlighter.all();
+</script>
+}

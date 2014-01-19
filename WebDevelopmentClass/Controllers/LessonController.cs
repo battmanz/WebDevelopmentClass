@@ -9,7 +9,7 @@ namespace WebDevelopmentClass.Controllers
     public class LessonController : Controller
     {
         //
-        // GET: /Lesson/
+        // GET: /Lesson/1
         public ActionResult Index(int id)
         {
             return View("Lesson" + id);
