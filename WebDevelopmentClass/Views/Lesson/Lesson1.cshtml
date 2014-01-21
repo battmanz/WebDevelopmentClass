@@ -5,133 +5,239 @@
 
 <article>
     <h2>Lesson 1</h2>
-    <details>
-        <summary>How does the web work?</summary>
-        <p>
-            Every web page that you view was sent to your browser from a web server. That web server could be located anywhere in the world.
-            So how does your computer find the web server?
-        </p>
-        <img src="~/Images/468px-Client-server-model.svg.png" />
-        <p>
-            Each computer connected to the internet is identified by an address called an IP Address.
-            When you type in an address like http://www.google.com, your computer first connects to your Internet service provider (<abbr>ISP</abbr>) (e.g, Comcast, Century Link, etc)
-            who in turn talks to a Domain Name System (<abbr>DNS</abbr>). The purpose of a DNS is to find the IP Address for the web site you are trying to visit.
-        </p>
-        <p>
-            You could, if you so desired, go to a website by directly entering its IP Address.
-            For example, where does this IP Address go to: <a href="http://171.20.34.151" target="_blank">http://171.20.34.151</a>?
-        </p>
-    </details>
+    <section>
+        <h3>How does the web work?</h3>
+        <div>
+            <p>
+                Every web page that you view was sent to your browser from a web server. That web server could be located anywhere in the world.
+                So how does your computer find the web server?
+            </p>
+            <img src="~/Images/468px-Client-server-model.svg.png" />
+            <p>
+                Each computer connected to the internet is identified by an address called an IP Address.
+                When you type in an address like http://www.google.com, your computer first connects to your <dfn>Internet service provider</dfn> (<abbr>ISP</abbr>) (e.g, Comcast, Century Link, etc)
+                who in turn talks to a <dfn>Domain Name System</dfn> (<abbr>DNS</abbr>). The purpose of a DNS is to find the IP Address for the web site you are trying to visit.
+            </p>
+            <p>
+                You could, if you so desired, go to a website by directly entering its IP Address.
+                For example, where does this IP Address go to: <a href="http://171.20.34.151" target="_blank">http://171.20.34.151</a>?
+            </p>
+        </div>
+    </section>
 
-    <details>
-        <summary>Websites are written in HTML</summary>
-        <p>
-            <dfn>HTML</dfn> stands for HyperText Markup Language. It is the language of the web. Can you think of why the name has HyperText in it? (<a href="http://en.wikipedia.org/wiki/Hyperlink">hint</a>)
-        </p>
-        <p>
-            HTML is a markup language, because you must "mark up" everything on the page, that is, you must add some special marks in your document to tell the brower how it should be displayed.
-            For example, you "mark up" a paragraph like so:
+    <section>
+        <h3>Websites are written in HTML</h3>
+        <div>
+            <p>
+                <dfn>HTML</dfn> stands for HyperText Markup Language. It is the language of the web. Can you think of why the name says "HyperText"? (<a href="http://en.wikipedia.org/wiki/Hyperlink" target="_blank">hint</a>)
+            </p>
+            <p>
+                HTML is a markup language, because you must "mark up" everything on the page, that is, you must add some special marks in your document to tell the brower how it should be displayed.
+                For example, you "mark up" a paragraph like so:
 
-            <pre><code class="brush: html;">@(@"
+                <pre><code class="brush: html;">@(@"
             <p>This is a paragraph</p>
             ")</code></pre>
-        </p>
-        <p>
-            The &lt;p&gt; is the opening <dfn>tag</dfn> and the &lt;/p&gt; is the closing tag (notice the slash). The two tags together with the text between them is called an <dfn>element</dfn>.
-        </p>
-    </details>
+            </p>
+            <p>
+                The &lt;p&gt; is the opening <dfn>tag</dfn> and the &lt;/p&gt; is the closing tag (notice the slash). The two tags plus the text between them is called an <dfn>element</dfn>.
+            </p>
+        </div>
+    </section>
 
-    <details>
-        <summary>How to view the HTML of Existing Sites</summary>
-        <p>
-            You can view the HTML of any website by first browsing to it, e.g. the website you're on right now, and then pressing Ctrl + u (Ctrl and u at the same time).
-            This shows the HTML exactly as it was sent by the web server.
-        </p>
-        <p>
-            Another way to view the HTML is to right click and choose "Inspect Element", this opens up the developer tools. Here you can not only view the HTML
-            but you can modify it as well! Try it out! There is no need to worry about messing up the page. You are only editing a copy of the web page that exists
-            on your computer. If you want to see the original web page again, just refresh the page and it will look good as new.
-        </p>
-    </details>
+    <section>
+        <h3>How to view the HTML of Existing Sites</h3>
+        <div>
+            <p>
+                You can view the HTML of any website by first browsing to it, e.g. the website you're on right now, and then pressing <kbd><kbd>Ctrl</kbd>+<kbd>U</kbd></kbd> (<kbd>Ctrl</kbd> and <kbd>U</kbd> at the same time).
+                This shows the HTML exactly as it was sent by the web server.
+            </p>
+            <p>
+                Another way to view the HTML is to right click and choose "Inspect Element", this opens up the developer tools. Here you can not only view the HTML
+                but you can modify it as well! Try it out! There is no need to worry about messing up the page. You are only editing a copy of the web page that exists
+                on your computer. If you want to see the original web page again, just refresh the page and it will look good as new.
+            </p>
+        </div>
+    </section>
 
-    <details>
-        <summary>Let's begin</summary>
-        <p>The <em>starting</em> HTML of every web page:</p>
+    <section>
+        <h3>How can I create a new HTML document?</h3>
+        <div>
+            <p>
+                HTML is a text file. That means that humans can read it (trust me on this one :)! The alternative would be a binary file, which is a bunch of 1's and 0's (not easily understood by humans).
+                On a Windows computer, you can create a new HTML document by opening up notepad, typing your HTML tags, and then saving it with a .html extension.
+            </p>
+            <p>
+                But wait! There is a much better way to create an HTML document! In this class, we'll use Visual Studio!
+                You can download <a href="http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-web" target="_blank">Visual Studio Express</a> for free by following the link.
+                Click on the link that says, "Install now".
+            </p>
+            <p><img src="~/Images/visualStudioInstall.png" alt="Visual Studio Screenshot" width="880" /></p>
 
-        <pre><code class="brush: html;">@(@"
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset=""utf-8"" />
-            <title>Your title here</title>
-        </head>
-        <body>
-            <!-- Put content here -->
-        </body>
-        </html>
-        ")</code></pre>
+            <p>
+                Visual Studio is what's known as an <dfn>Integrated Development Environment</dfn> (<abbr>IDE</abbr>). An IDE offers many advantages over notepad:
+            </p>
+            <dl>
+                <dt>Syntax Highlighting</dt>
+                <dd>Look at all the pretty colors!</dd>
 
-        <p>
+                <dt>Debugging</dt>
+                <dd>Why doesn't my code work?</dd>
 
-        </p>
-    </details>
+                <dt>Intellisense</dt>
+                <dd>Predict-a-text</dd>
 
-    <details>
-        <summary>Text</summary>
-        <ol>
-            <li>headings</li>
-            <li>paragraphs</li>
-            <li>b, i</li>
-            <li>sup, sub</li>
-            <li>br, hr</li>
-            <li>strong, em</li>
-            <li>blockquote, q</li>
-            <li>abbr, cite, dfn</li>
-            <li>address</li>
-            <li>ins, del, s</li>
-        </ol>
-    </details>
+                <dt>Error Marks</dt>
+                <dd>Squigglies</dd>
 
-    <details>
-        <summary>Lists</summary>
-        <ol>
-            <li>ol</li>
-            <li>ul</li>
-            <li>dl</li>
-        </ol>
-    </details>
+                <dt>Line Numbers</dt>
+                <dd>To turn them on go to Tools -> Options -> Text Editor -> All Languages, then check the checkbox next to Line Numbers</dd>
+            </dl>
+        </div>
+    </section>
 
-    <details>
-        <summary>Links</summary>
-        <ol>
-            <li>attributes</li>
-            <li>link to other site</li>
-            <li>link to same site</li>
-            <li>link to specific part of page</li>
-            <li>link to specific part of another site or page</li>
-            <li>email</li>
-            <li>open in new window</li>
-        </ol>
-    </details>
+    <section>
+        <h3>Let's begin</h3>
+        <div>
+            <p>The <em>starting</em> HTML of every web page:</p>
 
-    <details>
-        <summary>Images</summary>
-        <ol>
-            <li>src, alt, title, width, height</li>
-            <li>png, jpg, gif</li>
-            <li>figure, figcaption</li>
-        </ol>
-    </details>
+            <pre><code class="brush: html;">@(@"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset=""utf-8"" />
+                <title>Your title here</title>
+            </head>
+            <body>
+                <!-- Put content here -->
+            </body>
+            </html>
+            ")</code></pre>
+        </div>
+    </section>
 
-    <details>
-        <summary>Tables</summary>
-        <ol>
-            <li>table</li>
-            <li>tr, td, th</li>
-            <li>spanning cols or rows</li>
-            <li>thead, tbody, tfoot</li>
-        </ol>
-    </details>
+    <section>
+        <h3>Text</h3>
+        <div>
+            <p>
+                HTML defines six levels of headings. &lt;h1&gt; is used for main headings. &lt;h2&gt; is used for sub headings. &lt;h3&gt;, &lt;h4&gt;, etc get progressively smaller and smaller.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <h1>Largest</h1>
+            <h2>Larger</h2>
+            <h3>Large</h3>
+            <h4>Small</h4>
+            <h5>Smaller</h5>
+            <h6>Smallest</h6>
+            ")</code></pre>
+
+            <p>
+                As already mentioned, paragraphs go inside the &lt;p&gt; tag (or element). The browser displays a paragraph with whitespace above and below it. Let's try making two paragraphs.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <p>
+                This is my first paragraph. Notice how there is whitespace above and below it
+                just as you would expect if you were writing it by hand or typing it into word
+                processing software such as Microsoft Word.
+            </p>
+            <p>
+                This is another paragraph so we can see how the two are separated by whitespace.
+                Big gulps, huh? Well, see ya later.
+            </p>
+            ")</code></pre>
+
+            <p>
+                The &lt;b&gt; tag makes text appear as bold. Can you guess what the &lt;i&gt; tag does? If you said make the text look like ice cream, you would be wrong :)
+                It makes the text italicized. Lets try adding these tags somewhere in our exisiting paragraph.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <p>
+                This is my first <i>paragraph</i>. Notice how there is <b>whitespace</b>
+                above and below it just as you would expect if you were writing it by hand
+                or typing it into word processing software such as Microsoft Word.
+            </p>
+            <p>
+                This is <i>another paragraph</i> so we can see how the two are separated by whitespace.
+                <b>Big gulps, huh? Well, see ya later.</b>
+            </p>
+            ")</code></pre>
+
+            <p>
+                Text inside of the &lt;sup&gt; tag is displayed as a superscript and text inside of the &lt;sub&gt; tag is displayed as a subscript.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            E=mc<sup>2</sup>
+
+            H<sub>2</sub>O
+            ")</code></pre>
+
+            <p>
+
+            </p>
+
+            <ol>
+                <li>br, hr</li>
+                <li>strong, em</li>
+                <li>blockquote, q</li>
+                <li>abbr, cite, dfn</li>
+                <li>address</li>
+                <li>ins, del, s</li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <h3>Lists</h3>
+        <div>
+            <ol>
+                <li>ol</li>
+                <li>ul</li>
+                <li>dl</li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <h3>Links</h3>
+        <div>
+            <ol>
+                <li>attributes</li>
+                <li>link to other site</li>
+                <li>link to same site</li>
+                <li>link to specific part of page</li>
+                <li>link to specific part of another site or page</li>
+                <li>email</li>
+                <li>open in new window</li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <h3>Images</h3>
+        <div>
+            <ol>
+                <li>src, alt, title, width, height</li>
+                <li>png, jpg, gif</li>
+                <li>figure, figcaption</li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <h3>Tables</h3>
+        <div>
+            <ol>
+                <li>table</li>
+                <li>tr, td, th</li>
+                <li>spanning cols or rows</li>
+                <li>thead, tbody, tfoot</li>
+            </ol>
+        </div>
+    </section>
 </article>
 
 
@@ -142,7 +248,10 @@
         //    $(this).show();
         //});
 
-        //$("article").accordion();
+        $("article").accordion({
+            header: "h3",
+            heightStyle: "content"
+        });
     });
 </script>
 <script>

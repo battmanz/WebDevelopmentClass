@@ -125,6 +125,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\jquery-ui-1.10.4.css" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\shCore.css" />
     <Content Include="Content\shThemeDefault.css" />
@@ -149,6 +150,7 @@
     <Content Include="Images\noise.jpg" />
     <Content Include="Images\tanAndBrown.png" />
     <Content Include="Images\tanNoise.jpg" />
+    <Content Include="Images\visualStudioInstall.png" />
     <Content Include="Images\whiteOnGray.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

@@ -28,9 +28,10 @@ namespace WebDevelopmentClass
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/normalize.css",
-                      "~/Content/stripes.css",
                       "~/Content/shCore.css",
-                      "~/Content/shThemeDefault.css"));
+                      "~/Content/shThemeDefault.css",
+                      "~/Content/jquery-ui-{version}.css",
+                      "~/Content/stripes.css"));
         }
     }
 }

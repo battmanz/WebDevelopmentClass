@@ -127,12 +127,12 @@ footer {
 }
 
 /* styles for lessons */
-/*article {
-    min-height: 500px;
+/*article > section {
+    margin-bottom: 2em;
 }*/
 
-article > section {
-    margin-bottom: 2em;
+dl {
+    border: dashed 2px #ccc;
 }
 
 /* styles for validation helpers */
