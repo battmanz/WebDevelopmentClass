@@ -117,7 +117,7 @@
     </section>
 
     <section>
-        <h3>Text</h3>
+        <h3>Text Elements</h3>
         <div>
             <p>
                 HTML defines six levels of headings. &lt;h1&gt; is used for main headings. &lt;h2&gt; is used for sub headings. &lt;h3&gt;, &lt;h4&gt;, etc get progressively smaller and smaller.
@@ -149,65 +149,144 @@
             ")</code></pre>
 
             <p>
-                The &lt;b&gt; tag makes text appear as bold. Can you guess what the &lt;i&gt; tag does? If you said make the text look like ice cream, you would be wrong :)
-                It makes the text italicized. Lets try adding these tags somewhere in our exisiting paragraph.
+                Some tags are <dfn>self-closing</dfn>. These tags don't have content. Because they don't have content, there's no need to have
+                both opening and closing tags. Instead, self-closing tags have only a single tag with a slash before the closing angle bracket.
+            </p>
+
+            <p>
+                Here are our first examples of self-closing tags, &lt;br /&gt; and &lt;hr /&gt;. The &lt;br /&gt; represents a line break, that is, it
+                put the text after it on a new line. The &lt;hr /&gt; tag represents what is called a horizontal rule. A horizontal rule is displayed as
+                a horizontal line across the screen.
             </p>
 
             <pre><code class="brush: html;">@(@"
             <p>
-                This is my first <i>paragraph</i>. Notice how there is <b>whitespace</b>
-                above and below it just as you would expect if you were writing it by hand
-                or typing it into word processing software such as Microsoft Word.
+                This paragraph has no line breaks.
+                Both sentencess are on the same line.
             </p>
+            <hr />
             <p>
-                This is <i>another paragraph</i> so we can see how the two are separated by whitespace.
-                <b>Big gulps, huh? Well, see ya later.</b>
+                This is the first line. <br />
+                This is the second line.
             </p>
             ")</code></pre>
 
             <p>
-                Text inside of the &lt;sup&gt; tag is displayed as a superscript and text inside of the &lt;sub&gt; tag is displayed as a subscript.
+                There are lots of other elements used to mark up text. Here are some of them
             </p>
 
-            <pre><code class="brush: html;">@(@"
-            E=mc<sup>2</sup>
-
-            H<sub>2</sub>O
-            ")</code></pre>
+            <ul>
+                <li>The &lt;b&gt; tag makes text appear as bold.</li>
+                <li>The &lt;i&gt; tag makes the text italicized.</li>
+                <li>The &lt;sup&gt; tag displays text as a superscript.</li>
+                <li>The &lt;sub&gt; tag displays text as a subscript.</li>
+                <li>The &lt;strong&gt; tag is used to mark up text that has strong importance.</li>
+                <li>
+                    The &lt;em&gt; tag is used to mark up text that should be emphasized when speaking it. This changes the meaning of the sentence.
+                    For example, "I &lt;em&gt;love&lt;/em&gt; you!" has a different emphasis than, "I love &lt;em&gt;you&lt;/em&gt;!"
+                </li>
+                <li>The &lt;blockquote&gt; is used to display a large quote that is its own paragraph.</li>
+                <li>The &lt;q&gt; tag is for a smaller inline quote.</li>
+                <li>The &lt;abbr&gt; tag is for an abbreviation.</li>
+                <li>The &lt;cite&gt; tag is used to mark up the title of some work such as a book, movie, song, etc.</li>
+                <li>The &lt;dfn&gt; tag is used to denote the definition of some new term.</li>
+                <li>
+                    The &lt;address&gt; tag has a very specific meaning. It's not used for just any old address.
+                    Its sole purpose is to mark up the address of the author of the website.
+                </li>
+                <li>The &lt;ins&gt; tag denotes text that has been inserted into the document.</li>
+                <li>The &lt;del&gt; tag denotes text that has been deleted from the document.</li>
+                <li>
+                    The &lt;s&gt; tag displays text with a strikethrough, that is, a line through it. It is used to display text that is no longer relevant or accurate.
+                    Even though it may have the same visual appearance as the &lt;del&gt; tag, it has a different meaning.
+                </li>
+            </ul>
 
             <p>
-
+                Try adding each of these text elements to your HTML document. How does each one appear?
             </p>
-
-            <ol>
-                <li>br, hr</li>
-                <li>strong, em</li>
-                <li>blockquote, q</li>
-                <li>abbr, cite, dfn</li>
-                <li>address</li>
-                <li>ins, del, s</li>
-            </ol>
         </div>
     </section>
 
     <section>
         <h3>Lists</h3>
         <div>
+            <p>
+                HTML has three basic types of lists. The first one we'll discuss is an ordered list which is denoted by the &lt;ol&gt; tag.
+                Items are added to the list using the &lt;li&gt; tag. "li" stands for list item. Because this is an ordered list, each item in the list has a number next to it.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <p>Things to do today</p>
             <ol>
-                <li>ol</li>
-                <li>ul</li>
-                <li>dl</li>
+                <li>Wake up</li>
+                <li>Exercise</li>
+                <li>Eat breakfast</li>
+                <li>Make a freakin' awesome website!</li>
             </ol>
+            ")</code></pre>
+
+            <p>
+                Another type of list that is very similar to the ordered list is the unordered list. This is denoted with the &lt;ul&gt;.
+                This is a bulleted list. 
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <p>Things I like</p>
+            <ul>
+                <li>Sunny days</li>
+                <li>Chocolate chip cookies</li>
+                <li>A good book</li>
+            </ul>
+            ")</code></pre>
+
+            <p>
+                The third type of list we'll look at is a definition list, denoted by the &lt;dl&gt; tag. This list contains terms and definitions
+                for those terms. Each term is denoted by the &lt;dt&gt; tag and its corresponding definition is denoted by the &lt;dd&gt; tag.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <p>Medical Terms</p>
+            <dl>
+                <dt>Appendectomy</dt>
+                <dd>The surgical removal of the appendix</dd>
+
+                <dt>Poliomyelitis</dt>
+                <dd>A viral disease that can affect nerves and can lead to partial or full paralysis.</dd>
+            </dl>
+            ")</code></pre>
         </div>
     </section>
 
     <section>
         <h3>Links</h3>
         <div>
+            <p>
+                Now we're getting to the fun stuff! Hyperlinks are placed into the document using the &lt;a&gt; tag. "a" stands for anchor. Don't ask me why
+                links are called anchors, I can only guess.
+            </p>
+            <p>
+                In order to talk about links, however, we need to talk about attributes. HTML tags can store additional information that's not shown to the user.
+                This additional information is added to the <em>opening</em> tag using what are called <dfn>attributes</dfn>.
+                Attributes have two parts: a name and a value. The two parts are separated by an equals sign and the value goes inside of double quotes.
+                Here is an example of a link with an attribute:
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <a href=""http://www.google.com"">Google</a>
+            ")</code></pre>
+
+            <p>
+                In this example, the name of the attribute is "href" and the value is "http://www.google.com". This attribute is very important since it tells
+                the browser where the hyperlink should go to. Notice that the content "Google" is what's shown to the user and can be different than the href.
+            </p>
+
+            <p>
+                That last example showed how we can link to some other site on the web. Now lets see how we can create a link to another page in our <em>own</em> site.
+                To do that we can use what is called a <dfn>relative URL</dfn>.
+            </p>
+
             <ol>
-                <li>attributes</li>
-                <li>link to other site</li>
-                <li>link to same site</li>
                 <li>link to specific part of page</li>
                 <li>link to specific part of another site or page</li>
                 <li>email</li>
