@@ -132,12 +132,13 @@ footer {
 }
 
 /* styles for lessons */
-/*article > section {
-    margin-bottom: 2em;
+
+/*dl {
+    border: dashed 2px #ccc;
 }*/
 
-dl {
-    border: dashed 2px #ccc;
+#fatSpiderMan {
+    display: none;
 }
 
 /* styles for validation helpers */

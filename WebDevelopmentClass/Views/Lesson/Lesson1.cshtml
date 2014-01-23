@@ -40,7 +40,7 @@
             ")</code></pre>
             </p>
             <p>
-                The &lt;p&gt; is the opening <dfn>tag</dfn> and the &lt;/p&gt; is the closing tag (notice the slash). The two tags plus the text between them is called an <dfn>element</dfn>.
+                The <code>&lt;p&gt;</code> is the opening <dfn>tag</dfn> and the <code>&lt;/p&gt;</code> is the closing tag (notice the slash). The two tags plus the text between them is called an <dfn>element</dfn>.
             </p>
         </div>
     </section>
@@ -120,7 +120,8 @@
         <h3>Text Elements</h3>
         <div>
             <p>
-                HTML defines six levels of headings. &lt;h1&gt; is used for main headings. &lt;h2&gt; is used for sub headings. &lt;h3&gt;, &lt;h4&gt;, etc get progressively smaller and smaller.
+                HTML defines six levels of headings. <code>&lt;h1&gt;</code> is used for main headings. <code>&lt;h2&gt;</code> is used for sub headings. <code>&lt;h3&gt;</code>,
+                <code>&lt;h4&gt;</code>, etc get progressively smaller and smaller.
             </p>
 
             <pre><code class="brush: html;">@(@"
@@ -133,7 +134,7 @@
             ")</code></pre>
 
             <p>
-                As already mentioned, paragraphs go inside the &lt;p&gt; tag (or element). The browser displays a paragraph with whitespace above and below it. Let's try making two paragraphs.
+                As already mentioned, paragraphs go inside the <code>&lt;p&gt;</code> tag (or element). The browser displays a paragraph with whitespace above and below it. Let's try making two paragraphs.
             </p>
 
             <pre><code class="brush: html;">@(@"
@@ -154,8 +155,8 @@
             </p>
 
             <p>
-                Here are our first examples of self-closing tags, &lt;br /&gt; and &lt;hr /&gt;. The &lt;br /&gt; represents a line break, that is, it
-                put the text after it on a new line. The &lt;hr /&gt; tag represents what is called a horizontal rule. A horizontal rule is displayed as
+                Here are our first examples of self-closing tags, <code>&lt;br /&gt;</code> and <code>&lt;hr /&gt;</code>. The <code>&lt;br /&gt;</code> represents a line break, that is, it
+                put the text after it on a new line. The <code>&lt;hr /&gt;</code> tag represents what is called a horizontal rule. A horizontal rule is displayed as
                 a horizontal line across the screen.
             </p>
 
@@ -176,29 +177,29 @@
             </p>
 
             <ul>
-                <li>The &lt;b&gt; tag makes text appear as bold.</li>
-                <li>The &lt;i&gt; tag makes the text italicized.</li>
-                <li>The &lt;sup&gt; tag displays text as a superscript.</li>
-                <li>The &lt;sub&gt; tag displays text as a subscript.</li>
-                <li>The &lt;strong&gt; tag is used to mark up text that has strong importance.</li>
+                <li>The <code>&lt;b&gt;</code> tag makes text appear as bold.</li>
+                <li>The <code>&lt;i&gt;</code> tag makes the text italicized.</li>
+                <li>The <code>&lt;sup&gt;</code> tag displays text as a superscript.</li>
+                <li>The <code>&lt;sub&gt;</code> tag displays text as a subscript.</li>
+                <li>The <code>&lt;strong&gt;</code> tag is used to mark up text that has strong importance.</li>
                 <li>
-                    The &lt;em&gt; tag is used to mark up text that should be emphasized when speaking it. This changes the meaning of the sentence.
-                    For example, "I &lt;em&gt;love&lt;/em&gt; you!" has a different emphasis than, "I love &lt;em&gt;you&lt;/em&gt;!"
+                    The <code>&lt;em&gt;</code> tag is used to mark up text that should be emphasized when speaking it. This changes the meaning of the sentence.
+                    For example, "I <code>&lt;em&gt;</code>love<code>&lt;/em&gt;</code> you!" has a different emphasis than, "I love <code>&lt;em&gt;</code>you<code>&lt;/em&gt;</code>!"
                 </li>
-                <li>The &lt;blockquote&gt; is used to display a large quote that is its own paragraph.</li>
-                <li>The &lt;q&gt; tag is for a smaller inline quote.</li>
-                <li>The &lt;abbr&gt; tag is for an abbreviation.</li>
-                <li>The &lt;cite&gt; tag is used to mark up the title of some work such as a book, movie, song, etc.</li>
-                <li>The &lt;dfn&gt; tag is used to denote the definition of some new term.</li>
+                <li>The <code>&lt;blockquote&gt;</code> is used to display a large quote that is its own paragraph.</li>
+                <li>The <code>&lt;q&gt;</code> tag is for a smaller inline quote.</li>
+                <li>The <code>&lt;abbr&gt;</code> tag is for an abbreviation.</li>
+                <li>The <code>&lt;cite&gt;</code> tag is used to mark up the title of some work such as a book, movie, song, etc.</li>
+                <li>The <code>&lt;dfn&gt;</code> tag is used to denote the definition of some new term.</li>
                 <li>
-                    The &lt;address&gt; tag has a very specific meaning. It's not used for just any old address.
+                    The <code>&lt;address&gt;</code> tag has a very specific meaning. It's not used for just any old address.
                     Its sole purpose is to mark up the address of the author of the website.
                 </li>
-                <li>The &lt;ins&gt; tag denotes text that has been inserted into the document.</li>
-                <li>The &lt;del&gt; tag denotes text that has been deleted from the document.</li>
+                <li>The <code>&lt;ins&gt;</code> tag denotes text that has been inserted into the document.</li>
+                <li>The <code>&lt;del&gt;</code> tag denotes text that has been deleted from the document.</li>
                 <li>
-                    The &lt;s&gt; tag displays text with a strikethrough, that is, a line through it. It is used to display text that is no longer relevant or accurate.
-                    Even though it may have the same visual appearance as the &lt;del&gt; tag, it has a different meaning.
+                    The <code>&lt;s&gt;</code> tag displays text with a strikethrough, that is, a line through it. It is used to display text that is no longer relevant or accurate.
+                    Even though it may have the same visual appearance as the <code>&lt;del&gt;</code> tag, it has a different meaning.
                 </li>
             </ul>
 
@@ -212,8 +213,8 @@
         <h3>Lists</h3>
         <div>
             <p>
-                HTML has three basic types of lists. The first one we'll discuss is an ordered list which is denoted by the &lt;ol&gt; tag.
-                Items are added to the list using the &lt;li&gt; tag. "li" stands for list item. Because this is an ordered list, each item in the list has a number next to it.
+                HTML has three basic types of lists. The first one we'll discuss is an ordered list which is denoted by the <code>&lt;ol&gt;</code> tag.
+                Items are added to the list using the <code>&lt;li&gt;</code> tag. "li" stands for list item. Because this is an ordered list, each item in the list has a number next to it.
             </p>
 
             <pre><code class="brush: html;">@(@"
@@ -227,7 +228,7 @@
             ")</code></pre>
 
             <p>
-                Another type of list that is very similar to the ordered list is the unordered list. This is denoted with the &lt;ul&gt;.
+                Another type of list that is very similar to the ordered list is the unordered list. This is denoted with the <code>&lt;ul&gt;</code>.
                 This is a bulleted list. 
             </p>
 
@@ -241,8 +242,8 @@
             ")</code></pre>
 
             <p>
-                The third type of list we'll look at is a definition list, denoted by the &lt;dl&gt; tag. This list contains terms and definitions
-                for those terms. Each term is denoted by the &lt;dt&gt; tag and its corresponding definition is denoted by the &lt;dd&gt; tag.
+                The third type of list we'll look at is a definition list, denoted by the <code>&lt;dl&gt;</code> tag. This list contains terms and definitions
+                for those terms. Each term is denoted by the <code>&lt;dt&gt;</code> tag and its corresponding definition is denoted by the <code>&lt;dd&gt;</code> tag.
             </p>
 
             <pre><code class="brush: html;">@(@"
@@ -262,8 +263,8 @@
         <h3>Links</h3>
         <div>
             <p>
-                Now we're getting to the fun stuff! Hyperlinks are placed into the document using the &lt;a&gt; tag. "a" stands for anchor. Don't ask me why
-                links are called anchors, I can only guess.
+                Now we're getting to the fun stuff! Hyperlinks are placed into the document using the <code>&lt;a&gt;</code> tag. "a" stands for anchor. Don't ask me why
+                links are called anchors, I can only guess. :)
             </p>
             <p>
                 In order to talk about links, however, we need to talk about attributes. HTML tags can store additional information that's not shown to the user.
@@ -282,41 +283,469 @@
             </p>
 
             <p>
-                That last example showed how we can link to some other site on the web. Now lets see how we can create a link to another page in our <em>own</em> site.
-                To do that we can use what is called a <dfn>relative URL</dfn>.
+                That last example showed how we can link to another site on the web. Now lets see how we can create a link to another page in our <em>own</em> site.
+                To do that we can use what is called a <dfn>relative URL</dfn>. If the other web page is in the same folder as the current page, then the href only needs
+                to include the name of the other HTML file. Suppose we have another web page called "page2.html" that is in the same folder as "page1.html", then all we need
+                to do on page1 is add a link like so:
             </p>
 
-            <ol>
-                <li>link to specific part of page</li>
-                <li>link to specific part of another site or page</li>
-                <li>email</li>
-                <li>open in new window</li>
-            </ol>
+            <pre><code class="brush: html;">@(@"
+            <a href=""page2.html"">Page2</a>
+            ")</code></pre>
+
+            <p>If page2.html is in a folder called "stuff", then the link would look like this:</p>
+
+            <pre><code class="brush: html;">@(@"
+            <a href=""stuff/page2.html"">Page2</a>
+            ")</code></pre>
+
+            <p>On the other hand, if page2.html is up a level, that is, in a parent folder, then you have to use two dots like so:</p>
+
+            <pre><code class="brush: html;">@(@"
+            <a href=""../page2.html"">Page2</a>
+            ")</code></pre>
+
+            <p>
+                Links don't always have to go to another page. You can link to a another part of the current page. To do this, first you have to set the "id" attribute
+                on some element on the page. The id can be (almost) anything you want, but it has to be unique. In other words, once you give an element a particular id
+                (for example "mainHeader"), then you can't use that id again. id's cannot have spaces in them. You'll notice I said "mainHeader" instead of "main Header".
+            </p>
+
+            <p>
+                Now that you know about the id attribute, you are ready to learn how to link to a specific part of the page. To do so, the href should have a hash tag
+                (<code>#</code>) followed by the id of some other element on the page.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <h1 id=""mainHeader"">Main Header</h1>
+
+            <!-- much farther down on the page -->
+
+            <a href=""#mainHeader"">Top of Page</a>
+            ")</code></pre>
+
+            <p>
+                You can even link to a specific part of another page by adding the hash tag and the id of an element on that page. This link goes a particular section
+                of a wikipedia article.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <a href=""http://en.wikipedia.org/wiki/Computer#Programs"">Programs</a>
+            ")</code></pre>
+
+            <p>
+                If you want to make the link open up in a new window, then add the <code>target="_blank"</code> attribute to your link.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <a href=""http://en.wikipedia.org/wiki/Computer#Programs"" target=""_blank"">Programs</a>
+            ")</code></pre>
+
+            <p>
+                You can even have a link to an email address. This will open up your default email client.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <a href=""mailto:joe@demo.com"">Contact Joe</a>
+            ")</code></pre>
         </div>
     </section>
 
     <section>
         <h3>Images</h3>
         <div>
-            <ol>
-                <li>src, alt, title, width, height</li>
-                <li>png, jpg, gif</li>
-                <li>figure, figcaption</li>
-            </ol>
+            <p>
+                Images are added using the <code>&lt;img /&gt;</code> tag. This tag is a self closing tag; it can't contain content. The <code>src</code> attribute specifies the image
+                to be displayed. It is very similar to the anchor's <code>href</code> attribute. The image could be located somewhere on the web or it could be located in the same folder
+                as the HTML page. Here is Google's logo:
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <img src=""https://www.google.com/images/srpr/logo11w.png"" />
+            ")</code></pre>
+
+            <img src="https://www.google.com/images/srpr/logo11w.png" alt="Google's Logo" title="Google" width="538" height="190" />
+
+            <p>
+                Some other important attributes to specify for an image are <code>alt</code>, <code>title</code>, <code>width</code>, and <code>height</code>. The <code>alt</code> attribute
+                specifies alternate text to display if the image cannot be found or it can be read by a <a href="http://en.wikipedia.org/wiki/Screen_reader" target="_blank">screen reader</a>.
+                The <code>title</code> attribute specifies a tool tip that is displayed when the user hovers over the image. The <code>title</code> attribute is actually an example of a global attribute;
+                it can be applied to any element. The <code>width</code> and <code>height</code> are not required, but they inform the browser as to how much space to reserve for the image as it's downloading.
+                If they're not specified, the page layout may change as the image loads.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <img src=""https://www.google.com/images/srpr/logo11w.png"" alt=""Google's Logo"" title=""Google"" width=""538"" height=""190"" />
+            ")</code></pre>
+
+            <p>
+                There are three main types of images that can be displayed on the web, jpg, png, and gif.
+            </p>
+            <p>    
+                Choose a jpg when you have an images with lots of colors. Photographs are almost always saved as jpg's. If you take a picture with a digital camera, the file type will be jpg.
+            </p>
+            <p>
+                Choose a gif if you have an img an image with few colors and/or large areas of the same color. Gifs can also be animated, meaning that they have several frames
+                that are repeated over and over to make it look like it's moving. Often, animated gifs are just plain annoying. Check out this sweet beauty:
+            </p>
+
+            <button type="button" id="showGif">Show</button>
+            <button type="button" id="hideGif">Hide</button><br />
+            <img src="http://www.nettiapaja.net/uploads/2011/03/fatspidermandance.gif" id="fatSpiderMan" alt="Dancing Fat Spider-Man" width="281" height="269" />
+
+            <p>
+                Choose a png if you want your image to have parts that are transparent (see-through). Oftentimes, when I make an image in Photoshop, I save it as a png.
+            </p>
+
+            <p>
+                Frequently we'd like to show an image with a caption. That is what the <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> elements are for.
+                You still need to use the <code>&lt;img&gt;</code> tag inside of the <code>&lt;figure&gt;</code> element like so:
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <figure>
+                <img src=""http://asimo.honda.com/ASIMO_DCTM/News/images/highres/Meet_ASIMO.jpg"" alt=""Asimo"" width=""340"" />
+                <figcaption>The world's most advanced humanoid robot</figcaption>
+            </figure>
+            ")</code></pre>
+
+            <figure>
+                <img src="http://asimo.honda.com/ASIMO_DCTM/News/images/highres/Meet_ASIMO.jpg" alt="Asimo" width="340" />
+                <figcaption>The world's most advanced humanoid robot</figcaption>
+            </figure>
         </div>
     </section>
 
     <section>
         <h3>Tables</h3>
         <div>
-            <ol>
-                <li>table</li>
-                <li>tr, td, th</li>
-                <li>spanning cols or rows</li>
-                <li>thead, tbody, tfoot</li>
-            </ol>
+            <p>
+                Tables are used to show tabular data, that is, data that fits nicely into rows and columns (think of a spreadsheet like Microsoft Excel).
+                You create a table in HTML by using the <code>&lt;table&gt;</code> tag. You build up the table row-by-row using the <code>&lt;tr&gt;</code> tag.
+                "tr" stands for table row. Each row should contain the same number of columns. You create columns using the <code>&lt;td&gt;</code> tag.
+                "td" stands for table data. Why not "tc" for table column? I don't know.
+            </p>
+
+            <p>
+                Here is a table that has two rows and four columns:
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <table>
+                <tr>
+                    <td>$2050.00</td>
+                    <td>$1998.00</td>
+                    <td>$2136.00</td>
+                    <td>$2201.00</td>
+                </tr>
+                <tr>
+                    <td>$1967.00</td>
+                    <td>$2030.00</td>
+                    <td>$1899.00</td>
+                    <td>$1957.00</td>
+                </tr>
+            </table>
+            ")</code></pre>
+
+            <p>
+                What about the column and/or row headers? You can add them too using the <code>&lt;th&gt;</code> tag. "th" stands for table header.
+                You can optionally specify the <code>scope</code> attribute to say whether it is a column or row header.
+                Let's revamp the previous example to include column and row headers so that we know what the data represents.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <table>
+                <tr>
+                    <th></th>
+                    <th scope=""col"">Quarter 1</th>
+                    <th scope=""col"">Quarter 2</th>
+                    <th scope=""col"">Quarter 3</th>
+                    <th scope=""col"">Quarter 4</th>
+                </tr>
+                <tr>
+                    <th scope=""row"">2013</th>
+                    <td>$2050.00</td>
+                    <td>$1998.00</td>
+                    <td>$2136.00</td>
+                    <td>$2201.00</td>
+                </tr>
+                <tr>
+                    <th scope=""row"">2012</th>
+                    <td>$1967.00</td>
+                    <td>$2030.00</td>
+                    <td>$1899.00</td>
+                    <td>$1957.00</td>
+                </tr>
+            </table>
+            ")</code></pre>
+
+            <p>The result</p>
+
+            <table>
+                <tr>
+                    <th></th>
+                    <th scope="col">Quarter 1</th>
+                    <th scope="col">Quarter 2</th>
+                    <th scope="col">Quarter 3</th>
+                    <th scope="col">Quarter 4</th>
+                </tr>
+                <tr>
+                    <th scope="row">2013</th>
+                    <td>$2050.00</td>
+                    <td>$1998.00</td>
+                    <td>$2136.00</td>
+                    <td>$2201.00</td>
+                </tr>
+                <tr>
+                    <th scope="row">2012</th>
+                    <td>$1967.00</td>
+                    <td>$2030.00</td>
+                    <td>$1899.00</td>
+                    <td>$1957.00</td>
+                </tr>
+            </table>
+
+            <p>
+                An item in the table can be made to stretch accross multiple rows using the <code>rowspan</code> attribute or accross multiple columns
+                using the <code>colspan</code> attribute. Both attributes accept a number that is the number of rows or columns to span, respecively.
+                In the following example we have an item in the table that spans three rows. Notice that the two rows beneath it have one less <code>td</code>
+                because of it.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <table>
+                <tr>
+                    <th></th>
+                    <th scope=""col"">Friday</th>
+                    <th scope=""col"">Saturday</th>
+                </tr>
+                <tr>
+                    <th scope=""row"">6:00 am</th>
+                    <td>Exercise</td>
+                    <td rowspan=""3"">Sleep</td>
+                </tr>
+                <tr>
+                    <th scope=""row"">7:00 am</th>
+                    <td>Shower & Commute to work</td>
+                </tr>
+                <tr>
+                    <th scope=""row"">8:00 am</th>
+                    <td>Meet with clients</td>
+                </tr>
+            </table>
+            ")</code></pre>
+
+            <table>
+                <tr>
+                    <th></th>
+                    <th scope="col">Friday</th>
+                    <th scope="col">Saturday</th>
+                </tr>
+                <tr>
+                    <th scope="row">6:00 am</th>
+                    <td>Exercise</td>
+                    <td rowspan="3">Sleep</td>
+                </tr>
+                <tr>
+                    <th scope="row">7:00 am</th>
+                    <td>Shower/Commute</td>
+                </tr>
+                <tr>
+                    <th scope="row">8:00 am</th>
+                    <td>Meet with clients</td>
+                </tr>
+            </table>
+
+            <p>
+                Tables can contain a caption using the <code>&lt;caption&gt;</code> tag. It must be the first element inside of the <code>&lt;table&gt;</code> tag.
+                For longer tables it is often convenient to use the <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code> tags to break
+                the table up into sections. The <code>&lt;thead&gt;</code> typically contains a row of table header (<code>&lt;th&gt;</code>) items.
+                The <code>&lt;tbody&gt;</code> contains the bulk of the rows, that is, all but the header and footer.
+                The <code>&lt;tfoot&gt;</code> could be used to display a summation of the table columns. Let's re-work our previous example that showed earnings by year and quarter.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <table>
+                <caption>Earnings by year and quarter</caption>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th scope=""col"">Quarter 1</th>
+                        <th scope=""col"">Quarter 2</th>
+                        <th scope=""col"">Quarter 3</th>
+                        <th scope=""col"">Quarter 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope=""row"">2013</th>
+                        <td>$2050.00</td>
+                        <td>$1998.00</td>
+                        <td>$2136.00</td>
+                        <td>$2201.00</td>
+                    </tr>
+                    <tr>
+                        <th scope=""row"">2012</th>
+                        <td>$1967.00</td>
+                        <td>$2030.00</td>
+                        <td>$1899.00</td>
+                        <td>$1957.00</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td>$4017.00</td>
+                        <td>$4028.00</td>
+                        <td>$4035.00</td>
+                        <td>$4158.00</td>
+                    </tr>
+                </tfoot>
+            </table>
+            ")</code></pre>
+
+            <table>
+                <caption>Earnings by year and quarter</caption>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th scope="col">Quarter 1</th>
+                        <th scope="col">Quarter 2</th>
+                        <th scope="col">Quarter 3</th>
+                        <th scope="col">Quarter 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">2013</th>
+                        <td>$2050.00</td>
+                        <td>$1998.00</td>
+                        <td>$2136.00</td>
+                        <td>$2201.00</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2012</th>
+                        <td>$1967.00</td>
+                        <td>$2030.00</td>
+                        <td>$1899.00</td>
+                        <td>$1957.00</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td>$4017.00</td>
+                        <td>$4028.00</td>
+                        <td>$4035.00</td>
+                        <td>$4158.00</td>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
     </section>
+
+    <section>
+        <h3>Audio and Video</h3>
+        <div>
+            <p>
+                New in HTML5 you can put audio and video directly into your webpage without having to rely on a flash plugin.
+                Let's look at the <code>&lt;audio&gt;</code> element first. The important attributes are:
+            </p>
+
+            <dl>
+                <dt><code>src</code></dt>
+                <dd>Specifies the mp3 or other file that should be played</dd>
+
+                <dt><code>controls</code></dt>
+                <dd>
+                    Specifies whether controls should be shown to the user (i.e. play, pause, etc).
+                    This attribute does not need a value. Just the name alone is sufficient to tell the browser to render controls.
+                </dd>
+
+                <dt><code>autoplay</code></dt>
+                <dd>Whether the audio should automatically start playing when the page loads</dd>
+
+                <dt><code>preload</code></dt>
+                <dd>
+                    This attribute can have one of three values: <code>none</code>, <code>auto</code>, or <code>metadata</code>.<br />
+                    <code>none</code> means don't download the video until the play button has been clicked.<br />
+                    <code>auto</code> means to immediately start downloading the audio file when the page loads.<br />
+                    <code>metadata</code> means to only download metadata such as file size, length, etc when the page loads.
+                </dd>
+
+                <dt><code>loop</code></dt>
+                <dd>Whether the audio should automatically start over when it reaches the end.</dd>
+            </dl>
+
+            <p>
+                Here's a Piano Puzzler for you taken from the <a href="http://performancetoday.publicradio.org/" target="_blank">Performance Today</a> homepage.
+                Can you guess the popular tune as well as the composer?
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <audio src=""http://download.publicradio.org/podcast/performance_today/features/2012/04/16/piano_yesterday_20120416_128.mp3?_kip_ipx=1408073901-1390466965"" controls preload=""auto"" />
+            ")</code></pre>
+            
+            <audio src="http://download.publicradio.org/podcast/performance_today/features/2012/04/16/piano_yesterday_20120416_128.mp3?_kip_ipx=1408073901-1390466965" controls preload="auto"></audio>
+
+            <p>
+                Because not every browser supports the same set of audio file types, you can specify multiple sources for the audio element.
+                To do so, instead of using the <code>src</code> attribute, you place one or more <code>&lt;source&gt;</code> elements inside of the <code>&lt;audio&gt;</code> element.
+                To see a chart showing which browser supports which type, see <a href="https://developer.mozilla.org/en-US/docs/HTML/Supported_media_formats#Browser_compatibility" target="_blank">this site</a>.
+            </p>
+
+            <p>
+                Here's an example of what that might look like (the file names are made up):
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <audio controls preload=""auto"">
+                <source src=""http://www.pretend.com/song.mp3"" />
+                <source src=""http://www.pretend.com/song.ogg"" />
+            </audio>
+            ")</code></pre>
+
+            <p>
+                Similar to the <code>&lt;audio&gt;</code> element is the <code>&lt;video&gt;</code> element. Instead of playing audio files, it of course plays video files.
+                It has all of the same attributes as the <code>audio</code> element, and three more. The <code>width</code> and <code>height</code> attributes are self-explanatory.
+                The other is the <code>poster</code> attribute. This attribute specifies an image to be displayed before the user presses play.
+            </p>
+
+            <p>Here's one of my favorite <a href="http://www.ted.com/talks" target="_blank">TED Talks</a>:</p>
+
+            <pre><code class="brush: html;">@(@"
+            <video controls preload=""auto"" poster=""http://ridiculouslyefficient.com/wp-content/uploads/2012/08/10018-600x450.jpg"" width=""512"">
+                <source src=""http://video.ted.com/talk/podcast/2011X/None/LarrySmith_2011X.mp4"" type=""video/mp4"" />
+            </video>
+            ")</code></pre>
+
+            <video controls preload="auto" poster="http://ridiculouslyefficient.com/wp-content/uploads/2012/08/10018-600x450.jpg" width="512">
+                <source src="http://video.ted.com/talk/podcast/2011X/None/LarrySmith_2011X.mp4" type="video/mp4" />
+            </video>
+
+            <p>
+                One additonal thing to note about the <code>&lt;source&gt;</code> element is the <code>type</code> attribute. This tells the browser what type of video format it's in.
+                By telling the browser which type it is, it can avoid having to download some of the video just to find out. For a list of media types see this
+                <a href="http://en.wikipedia.org/wiki/Internet_media_type#List_of_common_media_types" target="_blank">link</a>.
+            </p>
+        </div>
+    </section>
+
+    @*<section>
+        <h3>Forms</h3>
+        <div>
+            <ol>
+                <li>form</li>
+                <li>input</li>
+                <li>label</li>
+                <li>button</li>
+                <li>select</li>
+                <li>textarea</li>
+                <li>fieldset</li>
+                <li>legend</li>
+            </ol>
+        </div>
+    </section>*@
 </article>
 
 
@@ -328,6 +757,14 @@
             heightStyle: "content",
             collapsible: true,
             active: false
+        });
+
+        $("#showGif").click(function () {
+            $("#fatSpiderMan").show();
+        });
+
+        $("#hideGif").click(function () {
+            $("#fatSpiderMan").hide();
         });
     });
 </script>
