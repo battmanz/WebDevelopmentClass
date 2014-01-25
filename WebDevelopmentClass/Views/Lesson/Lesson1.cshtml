@@ -731,21 +731,174 @@
         </div>
     </section>
 
-    @*<section>
+    <section>
         <h3>Forms</h3>
         <div>
-            <ol>
-                <li>form</li>
-                <li>input</li>
-                <li>label</li>
-                <li>button</li>
-                <li>select</li>
-                <li>textarea</li>
-                <li>fieldset</li>
-                <li>legend</li>
-            </ol>
+            <p>
+                When you need to collect data from a visitor to your website, you need to use a form. A form allows you to collect the information from the user and send it back to the server
+                to be processed. We've all seen examples of forms before. Every time your enter a username and password on a website, you've filled out a form. Forms will often contain elements
+                such as textboxes, checkboxes, dropdowns, and buttons (to name a few). Forms are contained within a <code>&lt;form&gt;</code> element.
+            </p>
+
+            <p>
+                Here is a lengthy form that demonstrates many of the inputs that can be used to collect user data. In addition to <code>&lt;input&gt;</code> elements, I'm also demonstrating the
+                <code>&lt;label&gt;</code> element which associates a label or text description to the input. You also notice that I've used the <code>&lt;fieldset&gt;</code> element, which is
+                used to group several inputs together. The <code>&lt;fieldset&gt;</code> can also have a <code>&lt;legend&gt;</code> that describes the entire group of inputs.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <form action="">
+                <fieldset>
+                    <legend>Choose your favorite color</legend>
+                    <label><input type=""radio"" name=""favcolor"" value=""blue"" />Blue</label>
+                    <label><input type=""radio"" name=""favcolor"" value=""green"" />Green</label>
+                    <label><input type=""radio"" name=""favcolor"" value=""red"" />Red</label>
+                    <label><input type=""radio"" name=""favcolor"" value=""orange"" />Orange</label>
+                    <label><input type=""radio"" name=""favcolor"" value=""purple"" />Purple</label>
+                    <label><input type=""radio"" name=""favcolor"" value=""yellow"" />Yellow</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Which sports do you like to play (choose all that apply)</legend>
+                    <label><input type=""checkbox"" name=""sport"" value=""basketball"" />Basketball</label>
+                    <label><input type=""checkbox"" name=""sport"" value=""baseball"" />Baseball</label>
+                    <label><input type=""checkbox"" name=""sport"" value=""football"" />Football</label>
+                    <label><input type=""checkbox"" name=""sport"" value=""soccer"" />Soccer</label>
+                    <label><input type=""checkbox"" name=""sport"" value=""running"" />Running</label>
+                </fieldset>
+
+                <label for=""email"">Email</label>
+                <input type=""email"" id=""email"" name=""email"" /><br />
+
+                <label for=""birthdate"">Birthdate</label>
+                <input type=""date"" id=""birthdate"" name=""birthdate"" /><br />
+
+                <label for=""favAthlete"">Favorite professional athlete</label>
+                <select id=""favAthlete"" name=""favAthlete"">
+                    <optgroup label=""Basketball"">
+                        <option>Michael Jordan</option>
+                        <option>John Stockton</option>
+                        <option>Kobe Bryant></option>
+                        <option>Shaquille O'Neal</option>
+                        <option>LeBron James</option>
+                    </optgroup>
+                    <optgroup label=""Baseball"">
+                        <option>Babe Ruth</option>
+                        <option>Jackie Robinson</option>
+                        <option>Joe DiMaggio</option>
+                        <option>Ted Williams</option>
+                        <option>Nolan Ryan</option>
+                    </optgroup>
+                    <optgroup label=""Football"">
+                        <option>Steve Young</option>
+                        <option>Brett Favre</option>
+                        <option>Dan Marino</option>
+                        <option>Alex Smith</option>
+                    </optgroup>
+                </select><br />
+
+                <label for=""username"">User name</label>
+                <input type=""text"" id=""username"" name=""username"" required /><br />
+
+                <label for=""password"">Password</label>
+                <input type=""password"" id=""password"" name=""password"" required /><br />
+
+                <label for=""picture"">Picture</label>
+                <input type=""file"" id=""picture"" name=""picture"" multiple /><br />
+
+                <label for=""comments"">Suggestions or comments</label>
+                <textarea id=""comments"" name=""comments""></textarea><br />
+
+                <input type=""submit"" value=""Create Account"" />
+            </form>
+            ")</code></pre>
+
+            <p>Here is what the user would see in the browser:</p>
+
+            <form action="">
+                <fieldset>
+                    <legend>Choose your favorite color</legend>
+                    <label><input type="radio" name="favcolor" value="blue" />Blue</label>
+                    <label><input type="radio" name="favcolor" value="green" />Green</label>
+                    <label><input type="radio" name="favcolor" value="red" />Red</label>
+                    <label><input type="radio" name="favcolor" value="orange" />Orange</label>
+                    <label><input type="radio" name="favcolor" value="purple" />Purple</label>
+                    <label><input type="radio" name="favcolor" value="yellow" />Yellow</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Which sports do you like to play (choose all that apply)</legend>
+                    <label><input type="checkbox" name="sport" value="basketball" />Basketball</label>
+                    <label><input type="checkbox" name="sport" value="baseball" />Baseball</label>
+                    <label><input type="checkbox" name="sport" value="football" />Football</label>
+                    <label><input type="checkbox" name="sport" value="soccer" />Soccer</label>
+                    <label><input type="checkbox" name="sport" value="running" />Running</label>
+                </fieldset>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" /><br />
+
+                <label for="birthdate">Birthdate</label>
+                <input type="date" id="birthdate" name="birthdate" /><br />
+
+                <label for="favAthlete">Favorite professional athlete</label>
+                <select id="favAthlete" name="favAthlete">
+                    <optgroup label="Basketball">
+                        <option>Michael Jordan</option>
+                        <option>John Stockton</option>
+                        <option>Kobe Bryant></option>
+                        <option>Shaquille O'Neal</option>
+                        <option>LeBron James</option>
+                    </optgroup>
+                    <optgroup label="Baseball">
+                        <option>Babe Ruth</option>
+                        <option>Jackie Robinson</option>
+                        <option>Joe DiMaggio</option>
+                        <option>Ted Williams</option>
+                        <option>Nolan Ryan</option>
+                    </optgroup>
+                    <optgroup label="Football">
+                        <option>Steve Young</option>
+                        <option>Brett Favre</option>
+                        <option>Dan Marino</option>
+                        <option>Alex Smith</option>
+                    </optgroup>
+                </select><br />
+
+                <label for="username">User name</label>
+                <input type="text" id="username" name="username" required /><br />
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required /><br />
+
+                <label for="picture">Picture</label>
+                <input type="file" id="picture" name="picture" multiple /><br />
+
+                <label for="comments">Suggestions or comments</label>
+                <textarea id="comments" name="comments"></textarea><br />
+
+                <input type="submit" value="Create Account" />
+            </form>
         </div>
-    </section>*@
+    </section>
+
+    <section>
+        <h3>Additional Markup</h3>
+        <div>
+            <p>
+                You can add comments to your HTML. The browser will not display the comment on the screen. The only way to see the comment is to view the source of the webpage. A comment could be used
+                to explain to other developers (or even remind yourself in the future) about why you chose to layout the page like you did.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <!-- This is a comment. In order to see it, view the page source. -->
+            ")</code></pre>
+
+            @*<p>
+                Block vs inline elements ...
+            </p>*@
+        </div>
+    </section>
 </article>
 
 
