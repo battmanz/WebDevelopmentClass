@@ -417,6 +417,93 @@
     </section>
 
     <section>
+        <h3>Audio and Video</h3>
+        <div>
+            <p>
+                New in HTML5 you can put audio and video directly into your webpage without having to rely on a flash plugin.
+                Let's look at the <code>&lt;audio&gt;</code> element first. The important attributes are:
+            </p>
+
+            <dl>
+                <dt><code>src</code></dt>
+                <dd>Specifies the mp3 or other file that should be played</dd>
+
+                <dt><code>controls</code></dt>
+                <dd>
+                    Specifies whether controls should be shown to the user (i.e. play, pause, etc).
+                    This attribute does not need a value. Just the name alone is sufficient to tell the browser to render controls.
+                </dd>
+
+                <dt><code>autoplay</code></dt>
+                <dd>Whether the audio should automatically start playing when the page loads</dd>
+
+                <dt><code>preload</code></dt>
+                <dd>
+                    This attribute can have one of three values: <code>none</code>, <code>auto</code>, or <code>metadata</code>.<br />
+                    <code>none</code> means don't download the video until the play button has been clicked.<br />
+                    <code>auto</code> means to immediately start downloading the audio file when the page loads.<br />
+                    <code>metadata</code> means to only download metadata such as file size, length, etc when the page loads.
+                </dd>
+
+                <dt><code>loop</code></dt>
+                <dd>Whether the audio should automatically start over when it reaches the end.</dd>
+            </dl>
+
+            <p>
+                Here's a Piano Puzzler for you taken from the <a href="http://performancetoday.publicradio.org/" target="_blank">Performance Today</a> homepage.
+                Can you guess the popular tune as well as the composer?
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <audio src=""http://download.publicradio.org/podcast/performance_today/features/2012/04/16/piano_yesterday_20120416_128.mp3?_kip_ipx=1408073901-1390466965"" controls preload=""auto"" />
+            ")</code></pre>
+
+            <audio src="http://download.publicradio.org/podcast/performance_today/features/2012/04/16/piano_yesterday_20120416_128.mp3?_kip_ipx=1408073901-1390466965" controls preload="auto"></audio>
+
+            <p>
+                Because not every browser supports the same set of audio file types, you can specify multiple sources for the audio element.
+                To do so, instead of using the <code>src</code> attribute, you place one or more <code>&lt;source&gt;</code> elements inside of the <code>&lt;audio&gt;</code> element.
+                To see a chart showing which browser supports which type, see <a href="https://developer.mozilla.org/en-US/docs/HTML/Supported_media_formats#Browser_compatibility" target="_blank">this site</a>.
+            </p>
+
+            <p>
+                Here's an example of what that might look like (the file names are made up):
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <audio controls preload=""auto"">
+                <source src=""http://www.pretend.com/song.mp3"" />
+                <source src=""http://www.pretend.com/song.ogg"" />
+            </audio>
+            ")</code></pre>
+
+            <p>
+                Similar to the <code>&lt;audio&gt;</code> element is the <code>&lt;video&gt;</code> element. Instead of playing audio files, it of course plays video files.
+                It has all of the same attributes as the <code>audio</code> element, and three more. The <code>width</code> and <code>height</code> attributes are self-explanatory.
+                The other is the <code>poster</code> attribute. This attribute specifies an image to be displayed before the user presses play.
+            </p>
+
+            <p>Here's one of my favorite <a href="http://www.ted.com/talks" target="_blank">TED Talks</a>:</p>
+
+            <pre><code class="brush: html;">@(@"
+            <video controls preload=""auto"" poster=""http://ridiculouslyefficient.com/wp-content/uploads/2012/08/10018-600x450.jpg"" width=""512"">
+                <source src=""http://video.ted.com/talk/podcast/2011X/None/LarrySmith_2011X.mp4"" type=""video/mp4"" />
+            </video>
+            ")</code></pre>
+
+            <video controls preload="auto" poster="http://ridiculouslyefficient.com/wp-content/uploads/2012/08/10018-600x450.jpg" width="512">
+                <source src="http://video.ted.com/talk/podcast/2011X/None/LarrySmith_2011X.mp4" type="video/mp4" />
+            </video>
+
+            <p>
+                One additonal thing to note about the <code>&lt;source&gt;</code> element is the <code>type</code> attribute. This tells the browser what type of video format it's in.
+                By telling the browser which type it is, it can avoid having to download some of the video just to find out. For a list of media types see this
+                <a href="http://en.wikipedia.org/wiki/Internet_media_type#List_of_common_media_types" target="_blank">link</a>.
+            </p>
+        </div>
+    </section>
+
+    <section>
         <h3>Tables</h3>
         <div>
             <p>
@@ -641,93 +728,6 @@
                     </tr>
                 </tfoot>
             </table>
-        </div>
-    </section>
-
-    <section>
-        <h3>Audio and Video</h3>
-        <div>
-            <p>
-                New in HTML5 you can put audio and video directly into your webpage without having to rely on a flash plugin.
-                Let's look at the <code>&lt;audio&gt;</code> element first. The important attributes are:
-            </p>
-
-            <dl>
-                <dt><code>src</code></dt>
-                <dd>Specifies the mp3 or other file that should be played</dd>
-
-                <dt><code>controls</code></dt>
-                <dd>
-                    Specifies whether controls should be shown to the user (i.e. play, pause, etc).
-                    This attribute does not need a value. Just the name alone is sufficient to tell the browser to render controls.
-                </dd>
-
-                <dt><code>autoplay</code></dt>
-                <dd>Whether the audio should automatically start playing when the page loads</dd>
-
-                <dt><code>preload</code></dt>
-                <dd>
-                    This attribute can have one of three values: <code>none</code>, <code>auto</code>, or <code>metadata</code>.<br />
-                    <code>none</code> means don't download the video until the play button has been clicked.<br />
-                    <code>auto</code> means to immediately start downloading the audio file when the page loads.<br />
-                    <code>metadata</code> means to only download metadata such as file size, length, etc when the page loads.
-                </dd>
-
-                <dt><code>loop</code></dt>
-                <dd>Whether the audio should automatically start over when it reaches the end.</dd>
-            </dl>
-
-            <p>
-                Here's a Piano Puzzler for you taken from the <a href="http://performancetoday.publicradio.org/" target="_blank">Performance Today</a> homepage.
-                Can you guess the popular tune as well as the composer?
-            </p>
-
-            <pre><code class="brush: html;">@(@"
-            <audio src=""http://download.publicradio.org/podcast/performance_today/features/2012/04/16/piano_yesterday_20120416_128.mp3?_kip_ipx=1408073901-1390466965"" controls preload=""auto"" />
-            ")</code></pre>
-            
-            <audio src="http://download.publicradio.org/podcast/performance_today/features/2012/04/16/piano_yesterday_20120416_128.mp3?_kip_ipx=1408073901-1390466965" controls preload="auto"></audio>
-
-            <p>
-                Because not every browser supports the same set of audio file types, you can specify multiple sources for the audio element.
-                To do so, instead of using the <code>src</code> attribute, you place one or more <code>&lt;source&gt;</code> elements inside of the <code>&lt;audio&gt;</code> element.
-                To see a chart showing which browser supports which type, see <a href="https://developer.mozilla.org/en-US/docs/HTML/Supported_media_formats#Browser_compatibility" target="_blank">this site</a>.
-            </p>
-
-            <p>
-                Here's an example of what that might look like (the file names are made up):
-            </p>
-
-            <pre><code class="brush: html;">@(@"
-            <audio controls preload=""auto"">
-                <source src=""http://www.pretend.com/song.mp3"" />
-                <source src=""http://www.pretend.com/song.ogg"" />
-            </audio>
-            ")</code></pre>
-
-            <p>
-                Similar to the <code>&lt;audio&gt;</code> element is the <code>&lt;video&gt;</code> element. Instead of playing audio files, it of course plays video files.
-                It has all of the same attributes as the <code>audio</code> element, and three more. The <code>width</code> and <code>height</code> attributes are self-explanatory.
-                The other is the <code>poster</code> attribute. This attribute specifies an image to be displayed before the user presses play.
-            </p>
-
-            <p>Here's one of my favorite <a href="http://www.ted.com/talks" target="_blank">TED Talks</a>:</p>
-
-            <pre><code class="brush: html;">@(@"
-            <video controls preload=""auto"" poster=""http://ridiculouslyefficient.com/wp-content/uploads/2012/08/10018-600x450.jpg"" width=""512"">
-                <source src=""http://video.ted.com/talk/podcast/2011X/None/LarrySmith_2011X.mp4"" type=""video/mp4"" />
-            </video>
-            ")</code></pre>
-
-            <video controls preload="auto" poster="http://ridiculouslyefficient.com/wp-content/uploads/2012/08/10018-600x450.jpg" width="512">
-                <source src="http://video.ted.com/talk/podcast/2011X/None/LarrySmith_2011X.mp4" type="video/mp4" />
-            </video>
-
-            <p>
-                One additonal thing to note about the <code>&lt;source&gt;</code> element is the <code>type</code> attribute. This tells the browser what type of video format it's in.
-                By telling the browser which type it is, it can avoid having to download some of the video just to find out. For a list of media types see this
-                <a href="http://en.wikipedia.org/wiki/Internet_media_type#List_of_common_media_types" target="_blank">link</a>.
-            </p>
         </div>
     </section>
 
