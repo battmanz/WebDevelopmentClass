@@ -262,10 +262,13 @@
     <section>
         <h3>Links</h3>
         <div>
+            <h4>Anchors Away!</h4>
             <p>
                 Now we're getting to the fun stuff! Hyperlinks are placed into the document using the <code>&lt;a&gt;</code> tag. "a" stands for anchor. Don't ask me why
                 links are called anchors, I can only guess. :)
             </p>
+            
+            <h4>Attributes</h4>
             <p>
                 In order to talk about links, however, we need to talk about attributes. HTML tags can store additional information that's not shown to the user.
                 This additional information is added to the <em>opening</em> tag using what are called <dfn>attributes</dfn>.
@@ -282,6 +285,7 @@
                 the browser where the hyperlink should go to. Notice that the content "Google" is what's shown to the user and can be different than the href.
             </p>
 
+            <h4>Relative URLs</h4>
             <p>
                 That last example showed how we can link to another site on the web. Now lets see how we can create a link to another page in our <em>own</em> site.
                 To do that we can use what is called a <dfn>relative URL</dfn>. If the other web page is in the same folder as the current page, then the href only needs
@@ -305,6 +309,7 @@
             <a href=""../page2.html"">Page2</a>
             ")</code></pre>
 
+            <h4>Linking Within Same Page</h4>
             <p>
                 Links don't always have to go to another page. You can link to a another part of the current page. To do this, first you have to set the "id" attribute
                 on some element on the page. The id can be (almost) anything you want, but it has to be unique. In other words, once you give an element a particular id
@@ -324,6 +329,7 @@
             <a href=""#mainHeader"">Top of Page</a>
             ")</code></pre>
 
+            <h4>Linking to Specific Part of Another Site</h4>
             <p>
                 You can even link to a specific part of another page by adding the hash tag and the id of an element on that page. This link goes a particular section
                 of a wikipedia article.
@@ -333,6 +339,7 @@
             <a href=""http://en.wikipedia.org/wiki/Computer#Programs"">Programs</a>
             ")</code></pre>
 
+            <h4>New Window</h4>
             <p>
                 If you want to make the link open up in a new window, then add the <code>target="_blank"</code> attribute to your link.
             </p>
@@ -341,6 +348,7 @@
             <a href=""http://en.wikipedia.org/wiki/Computer#Programs"" target=""_blank"">Programs</a>
             ")</code></pre>
 
+            <h4>Email</h4>
             <p>
                 You can even have a link to an email address. This will open up your default email client.
             </p>
@@ -354,6 +362,7 @@
     <section>
         <h3>Images</h3>
         <div>
+            <h4>img Tag</h4>
             <p>
                 Images are added using the <code>&lt;img /&gt;</code> tag. This tag is a self closing tag; it can't contain content. The <code>src</code> attribute specifies the image
                 to be displayed. It is very similar to the anchor's <code>href</code> attribute. The image could be located somewhere on the web or it could be located in the same folder
@@ -366,6 +375,7 @@
 
             <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/San_Diego_Reflecting_Pond.jpg/800px-San_Diego_Reflecting_Pond.jpg" alt="San Diego Skyline at night" title="San Diego" width="800" height="357" />
 
+            <h4>Important Attributes</h4>
             <p>
                 Some other important attributes to specify for an image are <code>alt</code>, <code>title</code>, <code>width</code>, and <code>height</code>. The <code>alt</code> attribute
                 specifies alternate text to display if the image cannot be found or it can be read by a <a href="http://en.wikipedia.org/wiki/Screen_reader" target="_blank">screen reader</a>.
@@ -378,6 +388,7 @@
             <img src=""http://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/San_Diego_Reflecting_Pond.jpg/800px-San_Diego_Reflecting_Pond.jpg"" alt=""San Diego Skyline at night"" title=""San Diego"" width=""800"" height=""357"" />
             ")</code></pre>
 
+            <h4>Types of Images</h4>
             <p>
                 There are three main types of images that can be displayed on the web, jpg, png, and gif.
             </p>
@@ -419,6 +430,7 @@
     <section>
         <h3>Audio and Video</h3>
         <div>
+            <h4>Audio</h4>
             <p>
                 New in HTML5 you can put audio and video directly into your webpage without having to rely on a flash plugin.
                 Let's look at the <code>&lt;audio&gt;</code> element first. The important attributes are:
@@ -460,6 +472,7 @@
 
             <audio src="http://download.publicradio.org/podcast/performance_today/features/2012/04/16/piano_yesterday_20120416_128.mp3?_kip_ipx=1408073901-1390466965" controls preload="auto"></audio>
 
+            <h4>Multiple Sources</h4>
             <p>
                 Because not every browser supports the same set of audio file types, you can specify multiple sources for the audio element.
                 To do so, instead of using the <code>src</code> attribute, you place one or more <code>&lt;source&gt;</code> elements inside of the <code>&lt;audio&gt;</code> element.
@@ -477,6 +490,7 @@
             </audio>
             ")</code></pre>
 
+            <h4>Video</h4>
             <p>
                 Similar to the <code>&lt;audio&gt;</code> element is the <code>&lt;video&gt;</code> element. Instead of playing audio files, it of course plays video files.
                 It has all of the same attributes as the <code>audio</code> element, and three more. The <code>width</code> and <code>height</code> attributes are self-explanatory.
@@ -495,6 +509,7 @@
                 <source src="http://video.ted.com/talk/podcast/2011X/None/LarrySmith_2011X.mp4" type="video/mp4" />
             </video>
 
+            <h4>Type Attribute</h4>
             <p>
                 One additonal thing to note about the <code>&lt;source&gt;</code> element is the <code>type</code> attribute. This tells the browser what type of video format it's in.
                 By telling the browser which type it is, it can avoid having to download some of the video just to find out. For a list of media types see this
@@ -506,6 +521,7 @@
     <section>
         <h3>Tables</h3>
         <div>
+            <h4>Tabular Data</h4>
             <p>
                 Tables are used to show tabular data, that is, data that fits nicely into rows and columns (think of a spreadsheet like Microsoft Excel).
                 You create a table in HTML by using the <code>&lt;table&gt;</code> tag. You build up the table row-by-row using the <code>&lt;tr&gt;</code> tag.
@@ -534,6 +550,7 @@
             </table>
             ")</code></pre>
 
+            <h4>Row and Column Headers</h4>
             <p>
                 What about the column and/or row headers? You can add them too using the <code>&lt;th&gt;</code> tag. "th" stands for table header.
                 You can optionally specify the <code>scope</code> attribute to say whether it is a column or row header.
@@ -592,6 +609,7 @@
                 </tr>
             </table>
 
+            <h4>Spanning Rows or Columns</h4>
             <p>
                 An item in the table can be made to stretch accross multiple rows using the <code>rowspan</code> attribute or accross multiple columns
                 using the <code>colspan</code> attribute. Both attributes accept a number that is the number of rows or columns to span, respecively.
@@ -643,6 +661,7 @@
                 </tr>
             </table>
 
+            <h4>Caption, Header, and Footer</h4>
             <p>
                 Tables can contain a caption using the <code>&lt;caption&gt;</code> tag. It must be the first element inside of the <code>&lt;table&gt;</code> tag.
                 For longer tables it is often convenient to use the <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code> tags to break
@@ -813,6 +832,7 @@
             </form>
             ")</code></pre>
 
+            <h4>Result</h4>
             <p>Here is what the user would see in the browser:</p>
 
             <form action="">
@@ -885,18 +905,125 @@
     <section>
         <h3>Additional Markup</h3>
         <div>
+            <h4>Comments</h4>
             <p>
-                You can add comments to your HTML. The browser will not display the comment on the screen. The only way to see the comment is to view the source of the webpage. A comment could be used
-                to explain to other developers (or even remind yourself in the future) about why you chose to layout the page like you did.
+                You can add comments to your HTML. The browser will not display comments on the screen. The only way to see the comment is to view the source of the webpage.
+                A comment can be used to explain to other developers (or even remind yourself in the future) about why you chose to layout the page like you did.
+                Because anyone can see your comment if they view the source, you should not put passwords or usernames in comments.
             </p>
 
             <pre><code class="brush: html;">@(@"
-            <!-- This is a comment. In order to see it, view the page source. -->
+            <!-- I'm a comment -->
             ")</code></pre>
 
-            @*<p>
-                Block vs inline elements ...
-            </p>*@
+            <h4>DOCTYPE</h4>
+            <p>
+                We've already seen the <code>&lt;!DOCTYPE&gt;</code> declaration. It tells the browser which type of HTML document it is.
+                There are actually several versions of HTML, each one with its own rules. The following are several doctypes that you might encounter.
+                Aren't you glad that we can use HTML5? :)
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <!-- HTML 5 -->
+            <!DOCTYPE html>
+
+            <!-- HTML 4 -->
+            <!DOCTYPE HTML PUBLIC ""-//W3C//DTD HTML 4.01 Transitional//EN"" ""http://www.w3.org/TR/html4/loose.dtd"">
+
+            <!-- Transitional XHTML 1.0 -->
+            <!DOCTYPE html PUBLIC ""-//W3C//DTD XHTML 1.0 Transitional//EN"" ""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"">
+
+            <!-- Strict XHTML 1.0 -->
+            <!DOCTYPE html PUBLIC ""-//W3C//DTD XHTML 1.0 Strict//EN"" ""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"">
+            ")</code></pre>
+
+            <h4>Block vs Inline</h4>
+            <p>
+                All HTML elements fall into two categories, either <dfn>block</dfn> or <dfn>inline</dfn>. Block elements don't allow other elements on either side of them.
+                That is, they are displayed with an automatic line break before and after. Examples of block level elements include <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>,
+                <code>&lt;ul&gt;</code>, and <code>&lt;li&gt;</code>.
+            <p>
+            </p>
+                Inline elements, on the other hand, don't have automatic line breaks around them. So multiple inline elements
+                can sit on the same line. Hence the term, "inline". Examples of inline elements include: <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;strong&gt;</code>,
+                and <code>&lt;em&gt;</code>. Try out the following code, to see how block elements differ from inline elements.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <p>Block 1</p><p>Block 2</p>
+
+            <strong>Inline 1</strong><strong>Inline 2</strong>
+            ")</code></pre>
+
+            <h4>div</h4>
+            <p>
+                HTML provides a generic block level element called a <code>&lt;div&gt;</code>. It can be used to group a set of related elements as a block. This will be very useful
+                when we get to CSS later.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <div id=""leftSide"">
+                <form>
+                    <input type=""text"" name=""search"" />
+                    <input type=""submit"" value=""Search"" />
+                </form>
+
+                <ul>
+                    <li><a href=""home.html"">Home</a></li>
+                    <li><a href=""about.html"">About</a></li>
+                    <li><a href=""contanct.html"">Contact</a></li>
+                </ul>
+            </div>
+
+            <div id=""rightSide"">
+                <h1>Home Page</h1>
+                <p>
+                    Nulla vel nunc sed tellus luctus luctus vitae a risus. Ut vel facilisis quam. Integer in diam libero. Fusce odio enim, pellentesque ut ante in, elementum volutpat augue.
+                    Fusce lacinia velit eget arcu euismod, sed porta nisl placerat. Suspendisse sodales quam quis sapien placerat, vitae condimentum quam porttitor. Phasellus pharetra elementum elementum.
+                </p>
+                <p>
+                    Aenean nec posuere quam. Aliquam vel velit eros. Vivamus placerat urna massa, et mollis est lobortis et. Aliquam at arcu tempor dui placerat fringilla imperdiet in nibh.
+                    Sed ullamcorper est velit, vulputate facilisis nisi imperdiet vel. Aliquam orci odio, vestibulum vulputate justo et, consectetur facilisis nibh. Nulla mollis adipiscing hendrerit.
+                </p>
+            </div>
+            ")</code></pre>
+
+            <h4>span</h4>
+            <p>
+                There is also a generic inline element called a <code>&lt;span&gt;</code>. This could be used to group a set of inline elements, but it's
+                more commonly used to apply a style to a particular word or phrase for which there doesn't seem to be a suitable existing tag.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <!-- Source wikipedia -->
+            <p>
+                The <span class=""instrument"">harp</span> is a multi-string musical instrument
+                which has the plane of its strings positioned perpendicularly to the soundboard.
+
+                The <span class=""instrument"">horn</span>, also known as the <span class=""instrument"">corno</span>
+                and <span class=""instrument"">French horn</span>, is a brass instrument made of more
+                than 20 feet (6.1 m) of tubing wrapped into a coil with a flared bell.
+            </p>
+            ")</code></pre>
+
+            <h4>class Attribute</h4>
+            <p>
+                That last example demonstrated another attribute that we haven't seen before, the <dfn>class</dfn> attribute. You can use any value you'd like (using letters, spaces, dashes, and underscores)
+                and multiple elements can all have the same class. In fact an element can have multiple classes separated by spaces. With CSS we can style all elements with the same class give
+                them a unique look. The class attribute differs from the id attribute, because you cannot use the same id more than once.
+            </p>
+
+            <h4>iframe</h4>
+            <p>
+                The <code>&lt;iframe&gt;</code> element allows you to embed another webpage within your webpage. The following code produces the result seen below.
+                Note that a website can block you from showing it in an iframe. So this won't work for every site. I found that marvel.com happens to work.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <iframe src=""http://marvel.com/"" width=""880"" height=""400""></iframe>
+            ")</code></pre>
+
+            <iframe src="http://marvel.com/" width="880" height="400"></iframe>
         </div>
     </section>
 </article>
