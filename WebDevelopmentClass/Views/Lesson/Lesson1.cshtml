@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Lesson 1";
 }
 
@@ -36,8 +35,8 @@
                 For example, you "mark up" a paragraph like so:
 
                 <pre><code class="brush: html;">@(@"
-            <p>This is a paragraph</p>
-            ")</code></pre>
+                <p>This is a paragraph</p>
+                ")</code></pre>
             </p>
             <p>
                 The <code>&lt;p&gt;</code> is the opening <dfn>tag</dfn> and the <code>&lt;/p&gt;</code> is the closing tag (notice the slash). The two tags plus the text between them is called an <dfn>element</dfn>.
@@ -229,7 +228,7 @@
 
             <p>
                 Another type of list that is very similar to the ordered list is the unordered list. This is denoted with the <code>&lt;ul&gt;</code>.
-                This is a bulleted list. 
+                This is a bulleted list.
             </p>
 
             <pre><code class="brush: html;">@(@"
@@ -251,7 +250,6 @@
             <dl>
                 <dt>Appendectomy</dt>
                 <dd>The surgical removal of the appendix</dd>
-
                 <dt>Poliomyelitis</dt>
                 <dd>A viral disease that can affect nerves and can lead to partial or full paralysis.</dd>
             </dl>
@@ -267,7 +265,7 @@
                 Now we're getting to the fun stuff! Hyperlinks are placed into the document using the <code>&lt;a&gt;</code> tag. "a" stands for anchor. Don't ask me why
                 links are called anchors, I can only guess. :)
             </p>
-            
+
             <h4>Attributes</h4>
             <p>
                 In order to talk about links, however, we need to talk about attributes. HTML tags can store additional information that's not shown to the user.
@@ -323,9 +321,7 @@
 
             <pre><code class="brush: html;">@(@"
             <h1 id=""mainHeader"">Main Header</h1>
-
             <!-- much farther down on the page -->
-
             <a href=""#mainHeader"">Top of Page</a>
             ")</code></pre>
 
@@ -392,7 +388,7 @@
             <p>
                 There are three main types of images that can be displayed on the web, jpg, png, and gif.
             </p>
-            <p>    
+            <p>
                 Choose a jpg when you have an images with lots of colors. Photographs are almost always saved as jpg's. If you take a picture with a digital camera, the file type will be jpg.
             </p>
             <p>
@@ -776,7 +772,6 @@
                     <label><input type=""radio"" name=""favcolor"" value=""purple"" />Purple</label>
                     <label><input type=""radio"" name=""favcolor"" value=""yellow"" />Yellow</label>
                 </fieldset>
-
                 <fieldset>
                     <legend>Which sports do you like to play (choose all that apply)</legend>
                     <label><input type=""checkbox"" name=""sport"" value=""basketball"" />Basketball</label>
@@ -785,13 +780,10 @@
                     <label><input type=""checkbox"" name=""sport"" value=""soccer"" />Soccer</label>
                     <label><input type=""checkbox"" name=""sport"" value=""running"" />Running</label>
                 </fieldset>
-
                 <label for=""email"">Email</label>
                 <input type=""email"" id=""email"" name=""email"" /><br />
-
                 <label for=""birthdate"">Birthdate</label>
                 <input type=""date"" id=""birthdate"" name=""birthdate"" /><br />
-
                 <label for=""favAthlete"">Favorite professional athlete</label>
                 <select id=""favAthlete"" name=""favAthlete"">
                     <optgroup label=""Basketball"">
@@ -815,19 +807,14 @@
                         <option>Alex Smith</option>
                     </optgroup>
                 </select><br />
-
                 <label for=""username"">User name</label>
                 <input type=""text"" id=""username"" name=""username"" required /><br />
-
                 <label for=""password"">Password</label>
                 <input type=""password"" id=""password"" name=""password"" required /><br />
-
                 <label for=""picture"">Picture</label>
                 <input type=""file"" id=""picture"" name=""picture"" multiple /><br />
-
                 <label for=""comments"">Suggestions or comments</label>
                 <textarea id=""comments"" name=""comments""></textarea><br />
-
                 <input type=""submit"" value=""Create Account"" />
             </form>
             ")</code></pre>
@@ -926,13 +913,10 @@
             <pre><code class="brush: html;">@(@"
             <!-- HTML 5 -->
             <!DOCTYPE html>
-
             <!-- HTML 4 -->
             <!DOCTYPE HTML PUBLIC ""-//W3C//DTD HTML 4.01 Transitional//EN"" ""http://www.w3.org/TR/html4/loose.dtd"">
-
             <!-- Transitional XHTML 1.0 -->
             <!DOCTYPE html PUBLIC ""-//W3C//DTD XHTML 1.0 Transitional//EN"" ""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"">
-
             <!-- Strict XHTML 1.0 -->
             <!DOCTYPE html PUBLIC ""-//W3C//DTD XHTML 1.0 Strict//EN"" ""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"">
             ")</code></pre>
@@ -944,14 +928,13 @@
                 <code>&lt;ul&gt;</code>, and <code>&lt;li&gt;</code>.
             <p>
             </p>
-                Inline elements, on the other hand, don't have automatic line breaks around them. So multiple inline elements
-                can sit on the same line. Hence the term, "inline". Examples of inline elements include: <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;strong&gt;</code>,
-                and <code>&lt;em&gt;</code>. Try out the following code, to see how block elements differ from inline elements.
+            Inline elements, on the other hand, don't have automatic line breaks around them. So multiple inline elements
+            can sit on the same line. Hence the term, "inline". Examples of inline elements include: <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;strong&gt;</code>,
+            and <code>&lt;em&gt;</code>. Try out the following code, to see how block elements differ from inline elements.
             </p>
 
             <pre><code class="brush: html;">@(@"
             <p>Block 1</p><p>Block 2</p>
-
             <strong>Inline 1</strong><strong>Inline 2</strong>
             ")</code></pre>
 
@@ -967,14 +950,12 @@
                     <input type=""text"" name=""search"" />
                     <input type=""submit"" value=""Search"" />
                 </form>
-
                 <ul>
                     <li><a href=""home.html"">Home</a></li>
                     <li><a href=""about.html"">About</a></li>
                     <li><a href=""contanct.html"">Contact</a></li>
                 </ul>
             </div>
-
             <div id=""rightSide"">
                 <h1>Home Page</h1>
                 <p>
@@ -999,7 +980,6 @@
             <p>
                 The <span class=""instrument"">harp</span> is a multi-string musical instrument
                 which has the plane of its strings positioned perpendicularly to the soundboard.
-
                 The <span class=""instrument"">horn</span>, also known as the <span class=""instrument"">corno</span>
                 and <span class=""instrument"">French horn</span>, is a brass instrument made of more
                 than 20 feet (6.1 m) of tubing wrapped into a coil with a flared bell.
@@ -1024,33 +1004,145 @@
             ")</code></pre>
 
             <iframe src="http://marvel.com/" width="880" height="400"></iframe>
+
+            <h4>New HTML5 Elements</h4>
+            <p>
+                HTML5 has added several new elements that help to create the layout of your page.
+            </p>
+
+            <dl class="niceLayout">
+                <dt><code>&lt;article&gt;</code></dt>
+                <dd>
+                    <blockquote cite="http://www.w3.org/TR/html5/sections.html#the-article-element">
+                        The article element represents a component of a page that consists of a self-contained composition in a document, page, application, or site and that is intended to be
+                        independently distributable or reusable, e.g. in syndication. This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an
+                        interactive widget or gadget, or any other independent item of content.
+                    </blockquote>
+                    - <a href="http://www.w3.org/TR/html5/sections.html#the-article-element" target="specs">W3C <code>article</code> Specs</a>
+                </dd>
+
+                <dt><code>&lt;section&gt;</code></dt>
+                <dd>
+                    <blockquote cite="http://www.w3.org/html/wg/drafts/html/master/sections.html#the-section-element">
+                        The section element represents a generic document or application section…The section element is not a generic container element. When an element is needed only for
+                        styling purposes or as a convenience for scripting, authors are encouraged to use the div element instead. A general rule is that the section element is appropriate
+                        only if the element’s contents would be listed explicitly in the document’s outline.
+                    </blockquote>
+                    - <a href="http://www.w3.org/html/wg/drafts/html/master/sections.html#the-section-element" target="specs">W3C <code>section</code> Specs</a>
+                </dd>
+
+                <dt><code>&lt;header&gt;</code></dt>
+                <dd>
+                    <blockquote cite="http://www.w3.org/TR/html5/sections.html#the-header-element">
+                        The header element represents introductory content for its nearest ancestor sectioning content or sectioning root element.
+                        A header typically contains a group of introductory or navigational aids.
+                    </blockquote>
+                    - <a href="http://www.w3.org/TR/html5/sections.html#the-header-element" target="specs">W3C <code>header</code> Specs</a>
+                </dd>
+
+                <dt><code>&lt;footer&gt;</code></dt>
+                <dd>
+                    <blockquote cite="http://www.w3.org/TR/html5/sections.html#the-footer-element">
+                        The footer element represents a footer for its nearest ancestor sectioning content or sectioning root element. A footer typically contains information about its
+                        section such as who wrote it, links to related documents, copyright data, and the like.
+                    </blockquote>
+                    - <a href="http://www.w3.org/TR/html5/sections.html#the-footer-element" target="specs">W3C <code>footer</code> Specs</a>
+                </dd>
+
+                <dt><code>&lt;aside&gt;</code></dt>
+                <dd>
+                    <blockquote cite="http://www.w3.org/TR/html5/sections.html#the-aside-element">
+                        The aside element represents a section of a page that consists of content that is tangentially related to the content around the aside element, and which could be
+                        considered separate from that content. Such sections are often represented as sidebars in printed typography.
+                    </blockquote>
+                    - <a href="http://www.w3.org/TR/html5/sections.html#the-aside-element" target="specs">W3C <code>aside</code> Specs</a>
+                </dd>
+
+                <dt><code>&lt;nav&gt;</code></dt>
+                <dd>
+                    <blockquote cite="http://www.w3.org/TR/html5/sections.html#the-nav-element">
+                        The nav element represents a section of a page that links to other pages or to parts within the page: a section with navigation links.
+                        Not all groups of links on a page need to be in a nav element — the element is primarily intended for sections that consist of major navigation blocks.
+                    </blockquote>
+                    - <a href="http://www.w3.org/TR/html5/sections.html#the-nav-element" target="specs">W3C <code>nav</code> Specs</a>
+                </dd>
+            </dl>
+
+            <p>
+                Here is an example layout for a website using the new HTML5 elements. Note that prior to HTML5, the <code>div</code> element would
+                have been used in place of the new elements.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset=""utf-8"" />
+                <title>Your title here</title>
+            </head>
+            <body>
+                <header>
+                    <nav>
+                        <ul>
+                            <li><a href=""home.html"">Home</a></li>
+                            <li><a href=""about.html"">About</a></li>
+                            <li><a href=""contact.html"">Contact</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <div id=""content"">
+                    <article>
+                        <header>
+                            <h1>Article 1</h1>
+                            <p>lorem ipsum ...</p>
+                        </header>
+                        <section>
+                            <h2>Section 1</h2>
+                            <p>...</p>
+                        </section>
+                        <section>
+                            <h2>Section 2</h2>
+                            <p>...</p>
+                        </section>
+                    </article>
+                    <article>
+                        <h1>Article 2</h1>
+                    </article>
+                </div>
+                <aside>
+                </aside>
+                <footer>
+                </footer>
+            </body>
+            </html>
+            ")</code></pre>
         </div>
     </section>
 </article>
 
 
 @section scripts {
-<script>
-    $(function () {
-        $("article").accordion({
-            header: "h3",
-            heightStyle: "content",
-            collapsible: true,
-            active: false
-        });
+    <script>
+        $(function () {
+            $("article").accordion({
+                header: "h3",
+                heightStyle: "content",
+                collapsible: true,
+                active: false
+            });
 
-        $("#showGif").click(function () {
-            $("#fatSpiderMan").show();
-        });
+            $("#showGif").click(function () {
+                $("#fatSpiderMan").show();
+            });
 
-        $("#hideGif").click(function () {
-            $("#fatSpiderMan").hide();
+            $("#hideGif").click(function () {
+                $("#fatSpiderMan").hide();
+            });
         });
-    });
-</script>
-<script>
-    SyntaxHighlighter.config.tagName = "code";
-    SyntaxHighlighter.defaults["toolbar"] = false;
-    SyntaxHighlighter.all();
-</script>
+    </script>
+    <script>
+        SyntaxHighlighter.config.tagName = "code";
+        SyntaxHighlighter.defaults["toolbar"] = false;
+        SyntaxHighlighter.all();
+    </script>
 }

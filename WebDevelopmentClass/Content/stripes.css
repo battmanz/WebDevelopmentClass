@@ -132,13 +132,38 @@ footer {
 }
 
 /* styles for lessons */
+dt {
+    margin: 0;
+}
 
-/*dl {
-    border: dashed 2px #ccc;
-}*/
+dd {
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+dd blockquote {
+    margin: 0;
+}
 
 #fatSpiderMan {
     display: none;
+}
+
+#selectorsTable {
+    border-collapse: collapse;
+}
+
+#selectorsTable td {
+    border: solid 1px #ccc;
+}
+
+#selectorsTable tbody tr:nth-child(2n+1) {
+    background-color: #e6e6e6;
+}
+
+#selectorsTable th, #selectorsTable td {
+    min-width: 140px;
+    padding: 2px 5px;
 }
 
 /* styles for validation helpers */

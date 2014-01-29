@@ -3,6 +3,340 @@
     ViewBag.Title = "Lesson 2";
 }
 
-<h2>Lesson 2</h2>
+<article>
+    <h2>Lesson 2</h2>
+    <section>
+        <h3>What is CSS?</h3>
+        <div>
+            <h4>Definition</h4>
+            <p>
+                <dfn>CSS</dfn> stands for Cascading Style Sheets. CSS allows you to modify how your HTML is displayed. The same HTML can be displayed in an infinte number of ways
+                by changing the CSS. It's called a style sheet because it styles your HTML, but why does it use the term "Cascading"? The reason is because styles flow or cascade
+                from more general to more specific. The most specific rule has the highest priority. We'll see what that means later on.
+            </p>
 
-@*<iframe width="800" height="600" seamless src="http://www.lego.com/en-us/"></iframe>*@
+            <h4>How do I add CSS to my HTML?</h4>
+            <p>
+                There are three ways to add CSS to your HTML document. I'll start with the preferred method first.
+            </p>
+            <p>
+                The best way to add CSS to your HTML document
+                is to create a separate text file that has an extension of ".css". Lets suppose you named it "styles.css", you could then add it to your HTML document
+                by simply adding a <code>&lt;link&gt;</code> element inside the <code>&lt;head&gt;</code> element of your HTML page. The <code>link</code> element
+                is self-closing, so it doesn't have any content. You should be sure, however, to set the following attributes: <code>href="styles.css"</code>,
+                <code>type="text/css"</code>, and <code>rel="stylesheet"</code>.
+            </p>
+
+            <p>Here's how it will look:</p>
+
+            <pre><code class="brush: html;">@(@"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset=""utf-8"" />
+                <title>Your title here</title>
+                <link href=""styles.css"" type=""text/css"" rel=""stylesheet"" />
+            </head>
+            <body>
+                <h1>CSS Demo</h1>
+            </body>
+            </html>
+            ")</code></pre>
+
+            <p>
+                The second way is to include a <code>&lt;style&gt;</code> element inside the <code>&lt;head&gt;</code> element of your HTML page. Here again, you would add an attribute
+                of <code>type="text/css"</code>, but the <code>style</code> element does not have the <code>href</code> or <code>rel</code> attributes. Inside of the <code>style</code> element
+                you directly write your styles. This is different from using the <code>link</code> element because using the <code>link</code> element allows you to keep your CSS in a
+                completely different file from your HTML.
+            </p>
+
+            <p>Here's an example using the <code>style</code> element.</p>
+
+            <pre><code class="brush: html;">@(@"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset=""utf-8"" />
+                <title>Your title here</title>
+                <style type=""text/css"">
+                    body {
+                        background-color: pink;
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>CSS Demo</h1>
+            </body>
+            </html>
+            ")</code></pre>
+
+            <p>
+                The third way to include styles in your HTML is to use the <code>style</code> attribute on any element in the document. This is considered a bad practice and should
+                be avoided. You might see this in older pages you visit. In this example, the text color of the first paragraph is set to blue.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset=""utf-8"" />
+                <title>Your title here</title>
+            </head>
+            <body>
+                <h1>CSS Demo</h1>
+                <p style=""color: blue;"">I'm feeling blue</p>
+                <p>I'm not</p>
+            </body>
+            </html>
+            ")</code></pre>
+        </div>
+    </section>
+
+    <section>
+        <h3>Selectors</h3>
+        <div>
+            <h4>We are Family</h4>
+            <p>
+                Relationships exist among elements in an HTML document. You can kind of think of these relationships as a family tree.
+            </p>
+            <ul>
+                <li>An element that contains another is said to be the <dfn>parent</dfn> element (or parent <dfn>node</dfn> - an element can also be referred to as a node).</li>
+                <li>The element that is contained by another element is said to be the <dfn>child</dfn> node.</li>
+                <li>Two nodes that have the same parent are <dfn>siblings</dfn></li>
+                <li>A node whose parent is contained by yet another node is a <dfn>grandchild</dfn> of the parent's parent.</li>
+                <li>Likewise, the parent of a parent node, is a <dfn>grandparent</dfn>.</li>
+                <li>All nodes contained within a node at any level are <dfn>descendants</dfn> of that node.</li>
+                <li>All containing nodes of a node at any level are that nodes <dfn>ancestors</dfn></li>
+            </ul>
+            <p>
+                Let's illustrate with an example. Take, for instance, the HTML document with which we concluded lesson 1:
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset=""utf-8"" />
+                <title>Your title here</title>
+            </head>
+            <body>
+                <header>
+                    <nav>
+                        <ul>
+                            <li><a href=""home.html"">Home</a></li>
+                            <li><a href=""about.html"">About</a></li>
+                            <li><a href=""contact.html"">Contact</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <div id=""content"">
+                    <article>
+                        <header>
+                            <h1>Article 1</h1>
+                            <p>lorem ipsum ...</p>
+                        </header>
+                        <section>
+                            <h2>Section 1</h2>
+                            <p>...</p>
+                        </section>
+                        <section>
+                            <h2>Section 2</h2>
+                            <p>...</p>
+                        </section>
+                    </article>
+                    <article>
+                        <h1>Article 2</h1>
+                    </article>
+                </div>
+                <aside>
+                </aside>
+                <footer>
+                </footer>
+            </body>
+            </html>
+            ")</code></pre>
+
+            <p>
+                In this document the <code>body</code> is the parent of the <code>header</code>, <code>div</code>, <code>aside</code>, and <code>footer</code>.
+                The <code>body</code> is the grandparent of the <code>nav</code> and both <code>article</code> elements. The two <code>article</code> elements
+                are siblings as are the two <code>section</code> elements. The <code>header</code> inside of the first <code>article</code> is also a sibling of the two
+                <code>section</code> elements.
+            </p>
+            <p>
+                The <code>html</code> node is the ancestor of every other node. There is a special name for such a node, it is called the <dfn>root</dfn> node.
+            </p>
+
+            <h4>Using Selectors</h4>
+            <p>
+                A style sheet consists of one or more <dfn>rules</dfn> that tell the browser how to style your HTML. Each rule consists of a <dfn>selector</dfn> and one or more <dfn>declarations</dfn>.
+                The selector tells the browser which elements should have the style applied to them. The declarations are contained within curly braces and give the browser information about how the matches set
+                of elements should be displayed. Each declaration has two parts: a property and a value.
+            </p>
+            <p>
+                The following example has two rules. The first rule selects all <code>body</code> elements (there should be only one). It has two declarations that set the background color and the text color.
+                The second rule selects all <code>p</code> elements. It has a single declaration that sets the font family, that is, which type of font to use.
+            </p>
+
+            <pre><code class="brush: css;">@(@"
+            body {
+                background-color: black;
+                color: white;
+            }
+
+            p {
+                font-family: Arial;
+            }
+            ")</code></pre>
+
+            <h4>Types of Selectors</h4>
+            <p>
+                Now that we know about the relationships among HTML elements and what selectors are used for, let's look at the various types of selectors that exist.
+            </p>
+
+            <table id="selectorsTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Definition</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Universal Selector</td>
+                        <td>Selects all elements (period).</td>
+                        <td>* { }</td>
+                    </tr>
+                    <tr>
+                        <td>Child Selector</td>
+                        <td>Selects immediate children of a parent node. This won't select grandchildren, etc.</td>
+                        <td>div > p { }</td>
+                    </tr>
+                    <tr>
+                        <td>Descendant Selector</td>
+                        <td>Selects all descendants of a node. This includes grandchildren, great-grandchildren, etc.</td>
+                        <td>div p { }</td>
+                    </tr>
+                    <tr>
+                        <td>Adjacent Sibling Selector</td>
+                        <td>Selects only the first sibling that immediately follows an element.</td>
+                        <td>h1 + p { }</td>
+                    </tr>
+                    <tr>
+                        <td>General Sibling Selector</td>
+                        <td>Selects all siblings that follow an element.</td>
+                        <td>h1 ~ p { }</td>
+                    </tr>
+                    <tr>
+                        <td>ID Selector</td>
+                        <td>Selects the element with the given ID.</td>
+                        <td>#myId { }</td>
+                    </tr>
+                    <tr>
+                        <td>Class Selector</td>
+                        <td>Selects all elements with the given class name.</td>
+                        <td>.myClass { }</td>
+                    </tr>
+                    <tr>
+                        <td>First Line Selector</td>
+                        <td>Selects the first line of text within an element.</td>
+                        <td>p:first-line { }</td>
+                    </tr>
+                    <tr>
+                        <td>First Letter Selector</td>
+                        <td>Selects the first letter within an element.</td>
+                        <td>p:first-letter { }</td>
+                    </tr>
+                    <tr>
+                        <td>Unvisited Link Selector</td>
+                        <td>Selects links that have <em>not</em> been visited.</td>
+                        <td>a:link { }</td>
+                    </tr>
+                    <tr>
+                        <td>Visited Link Selector</td>
+                        <td>Selects links that have been visited.</td>
+                        <td>a:visited { }</td>
+                    </tr>
+                    <tr>
+                        <td>Hover Selector</td>
+                        <td>Selects an element when the mouse is hovering over it.</td>
+                        <td>li:hover { }</td>
+                    </tr>
+                    <tr>
+                        <td>Active Selector</td>
+                        <td>Selects an element at the time when the user is interacting with it, such as clicking on it.</td>
+                        <td>button:active { }</td>
+                    </tr>
+                    <tr>
+                        <td>Focus Selector</td>
+                        <td>Selects an element when it has keyboard focus, such as when you use the tab key to move the cursor into a text box.</td>
+                        <td>input:focus { }</td>
+                    </tr>
+                    <tr>
+                        <td>Attribute Existance Selector</td>
+                        <td>Selects elements that have a particular attribute.</td>
+                        <td>p[class]</td>
+                    </tr>
+                    <tr>
+                        <td>Attribute Equality Selector</td>
+                        <td>Selects elements whose attribute value equals the given value.</td>
+                        <td>p[class="foo"]</td>
+                    </tr>
+                    <tr>
+                        <td>Attribute Contains Word Selector</td>
+                        <td>Selects elements whose attribute value is a set of words separated by a space and one of those words matches the given value.</td>
+                        <td>p[class~="foo"]</td>
+                    </tr>
+                    <tr>
+                        <td>Attribute Starts With Selector</td>
+                        <td>Selects elements whose attribute value starts with the given value.</td>
+                        <td>p[class^="foo"]</td>
+                    </tr>
+                    <tr>
+                        <td>Attribute End With Selector</td>
+                        <td>Selects elements whose attribute value ends with the given value.</td>
+                        <td>p[class$="foo"]</td>
+                    </tr>
+                    <tr>
+                        <td>Attribute Contains Selector</td>
+                        <td>Selects elements whose attribute value contains the given text (anywhere - could be in the middle, start, or end).</td>
+                        <td>p[class*="foo"]</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                You can even combine selectors. For example if you want to style all p elements with a class of "foo" that are focused, you would write
+                the selector like so: <code>p.foo:focused { }</code>. You can also combine two or more selectors with a comma. This allows you to apply some rule to
+                two completely different sets of elements. For example, <code>section > h1, p.foo { }</code> would apply to both an <code>h1</code>
+                that is an immediate child of a <code>section</code> element <em>and</em> all <code>p</code> elements with a class of "foo".
+            </p>
+        </div>
+    </section>
+</article>
+
+@section scripts {
+    <script>
+        $(function () {
+            $("article").accordion({
+                header: "h3",
+                heightStyle: "content",
+                collapsible: true,
+                active: false
+            });
+
+            $("#showGif").click(function () {
+                $("#fatSpiderMan").show();
+            });
+
+            $("#hideGif").click(function () {
+                $("#fatSpiderMan").hide();
+            });
+        });
+    </script>
+    <script>
+        SyntaxHighlighter.config.tagName = "code";
+        SyntaxHighlighter.defaults["toolbar"] = false;
+        SyntaxHighlighter.all();
+    </script>
+}

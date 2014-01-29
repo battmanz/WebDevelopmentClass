@@ -24,7 +24,8 @@ namespace WebDevelopmentClass
 
             bundles.Add(new ScriptBundle("~/bundles/syntaxHighlighter").Include(
                 "~/Scripts/shCore.js",
-                "~/Scripts/shBrushXml.js"));
+                "~/Scripts/shBrushXml.js",
+                "~/Scripts/shBrushCss.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/normalize.css",
