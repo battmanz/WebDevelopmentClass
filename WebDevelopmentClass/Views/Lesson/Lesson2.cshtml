@@ -11,8 +11,14 @@
             <h4>Definition</h4>
             <p>
                 <dfn>CSS</dfn> stands for Cascading Style Sheets. CSS allows you to modify how your HTML is displayed. The same HTML can be displayed in an infinte number of ways
-                by changing the CSS. It's called a style sheet because it styles your HTML, but why does it use the term "Cascading"? The reason is because styles flow or cascade
-                from more general to more specific. The most specific rule has the highest priority. We'll see what that means later on.
+                by changing the CSS. The term "Cascading" is used because styles flow or cascade from more general to more specific.
+                The most specific rule has the highest priority. We'll see what that means later on.
+            </p>
+
+            <p>
+                Just like there are different version of HTML, there are different versions of CSS. The latest version of HTML is 5 and the latest version of CSS is 3.
+                At the time that I am writing this, neither HTML5 nor CSS3 are official. They are both works in progress. It is entirely
+                possible that they may still change before the specs are finalized.
             </p>
 
             <h4>How do I add CSS to my HTML?</h4>
@@ -311,6 +317,361 @@
                 two completely different sets of elements. For example, <code>section > h1, p.foo { }</code> would apply to both an <code>h1</code>
                 that is an immediate child of a <code>section</code> element <em>and</em> all <code>p</code> elements with a class of "foo".
             </p>
+        </div>
+    </section>
+
+    <section>
+        <h3>Colors</h3>
+        <div>
+            <h4>How to Represent Colors</h4>
+            <p>
+                You might have heard that the primary colors are red, yellow, and blue, but with light that is not true. The primary colors are actually
+                red, green, and blue. When these three colors are combined, they make white light. This is just a natural property of light.
+                See <a href="http://en.wikipedia.org/wiki/RGB_color_model">http://en.wikipedia.org/wiki/RGB_color_model</a>.
+            </p>
+            <p>
+                In CSS, one way to specify a color is to specify how much red, how much green, and how much blue the pixel(s) should have. This is done by
+                expressing a value like so: <code>rgb(100, 100, 90)</code>, where <code>rgb</code> stands for red, green, blue. The values
+                can range from 0 to 255. That makes 256 (including 0) possible values per color component. This number happens to fit into a computer byte.
+                The number of possible colors that can be specified in this way is 256 * 256 * 256 = 16777216.
+            </p>
+            <p>
+                Another equivalent way to specify a color (and this is perhaps the most common) is to specify the rgb values as a hexidecimal value.
+                An example looks like this <code>#ee3e80</code>. The first two characters, in this case <code>ee</code>, specify the red component.
+                The next two (<code>3e</code>) specify the green and the last two (<code>80</code>) the blue. Hexidecimal is another numbering system
+                often used in computers. If you're interested, you can read more on <a href="http://en.wikipedia.org/wiki/Hexadecimal">wikipedia</a>.
+            </p>
+            <p>
+                Another way to specify a color is to use a color name. This method is limiting, however, because there are only 147 colors with defined names.
+                You can see a visual depiction of all 147 colors <a href="http://www.colors.commutercreative.com/grid/" target="_blank">here</a>.
+            </p>
+
+            <h4>Foreground Color</h4>
+            <p>
+                You set the foreground color using the <code>color</code> property. The following three rules are all equivalent:
+            </p>
+
+            <pre><code class="brush: css;">@(@"
+            p.one {
+                color: rgb(220, 20, 60);
+            }
+            p.two {
+                color: #DC143C;
+            }
+            p.three {
+                color: Crimson;
+            }
+            ")</code></pre>
+
+            <h4>Background Color</h4>
+            <p>
+                You set the background color using the <code>background-color</code> property. Here is an example that sets both the
+                foreground and background colors on several elements:
+            </p>
+
+            <pre><code class="brush: css;">@(@"
+            section {
+                background-color: LightSlateGray;
+            }
+            
+            h1 {
+                color: #FFFAFA;
+                background-color: #BA55D3;
+            }
+
+            p {
+                background-color: Teal;
+                color: #FFFAFA;
+            }
+            ")</code></pre>
+
+            <pre><code class="brush: html;">@(@"
+            <section>
+                <h1>Background Demo</h1>
+                <p>This is a paragraph</p>
+            </section>
+            ")</code></pre>
+
+            <p>Result</p>
+
+            <section id="colorDemo">
+                <h1>Background Demo</h1>
+                <p>This is a paragraph</p>
+            </section>
+
+            <h4>Opacity</h4>
+
+            <p>
+                New in CSS3 is the ability to make elements semi-transparent. This can lead to some very cool designs.
+                There are two ways to make an element transparent, you can use the <code>opacity</code> property or you can use
+                the <code>rgba</code> property.
+            </p>
+
+            <p>
+                The <code>opacity</code> property takes a number anywhere from 0.0 to 1.0. Zero (0.0) means fully transparent. One (1.0) means fully
+                opaque. A value of 0.5 means that the element is 50% transparent. Here's a demo that illustrates the <code>opacity</code> property.
+            </p>
+
+            <pre><code class="brush: css;">@(@"
+            div {
+                background-color: lightblue;
+            }
+
+            p {
+                background-color: pink;
+            }
+
+            p.opaque {
+                opacity: 1;
+            }
+
+            p.opacity75 {
+                opacity: 0.75;
+            }
+
+            p.opacity50 {
+                opacity: 0.5;
+            }
+
+            p.opacity25 {
+                opacity: 0.25;
+            }
+
+            p.transparent {
+                opacity: 0;
+            }
+            ")</code></pre>
+
+            <pre><code class="brush: html;">@(@"
+            <div>
+                <p class=""opaque"">Fully Opaque</p>
+                <p class=""opacity75"">75% Opaque / 25% Transparent</p>
+                <p class=""opacity50"">50% Opaque / 50% Transparent</p>
+                <p class=""opacity25"">25% Opaque / 75% Transparent</p>
+                <p class=""transparent"">Fully Transparent</p>
+            </div>
+            ")</code></pre>
+
+            <div id="opacityDemo">
+                <p class="opaque">Fully Opaque</p>
+                <p class="opacity75">75% Opaque / 25% Transparent</p>
+                <p class="opacity50">50% Opaque / 50% Transparent</p>
+                <p class="opacity25">25% Opaque / 75% Transparent</p>
+                <p class="transparent">Fully Transparent</p>
+            </div>
+
+            <h4>rgba</h4>
+
+            <p>
+                The <code>rgba</code> property is very similar to the <code>rgb</code> property, but in addition to the
+                red, green, and blue components you can also specify an <dfn>alpha</dfn> value. The alpha value is very similar
+                to the <code>opacity</code> property. There is a slight difference, though. If you noticed in that previous example,
+                the text inside of each <code>div</code> also became transparent. With <code>rgba</code>, the content does not become
+                transparent. Compare this with the previous example:
+            </p>
+
+            <pre><code class="brush: css;">@(@"
+            div {
+                background-color: lightblue;
+            }
+
+            p.opaque {
+                background-color: rgba(255, 192, 203, 1);
+            }
+
+            p.opacity75 {
+                background-color: rgba(255, 192, 203, 0.75);
+            }
+
+            p.opacity50 {
+                background-color: rgba(255, 192, 203, 0.50);
+            }
+
+            p.opacity25 {
+                background-color: rgba(255, 192, 203, 0.25);
+            }
+
+            p.transparent {
+                background-color: rgba(255, 192, 203, 0);
+            }
+            ")</code></pre>
+
+            <pre><code class="brush: html;">@(@"
+            <div>
+                <p class=""opaque"">Fully Opaque</p>
+                <p class=""opacity75"">75% Opaque / 25% Transparent</p>
+                <p class=""opacity50"">50% Opaque / 50% Transparent</p>
+                <p class=""opacity25"">25% Opaque / 75% Transparent</p>
+                <p class=""transparent"">Fully Transparent</p>
+            </div>
+            ")</code></pre>
+
+            <div id="rgbaDemo">
+                <p class="opaque">Fully Opaque</p>
+                <p class="opacity75">75% Opaque / 25% Transparent</p>
+                <p class="opacity50">50% Opaque / 50% Transparent</p>
+                <p class="opacity25">25% Opaque / 75% Transparent</p>
+                <p class="transparent">Fully Transparent</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Text</h3>
+        <div>
+            <h4>Font Family</h4>
+            <p>
+                You can set the typeface (type of font) for your site by using the <code>font-family</code> CSS property.
+                It's <em>very</em> important to note that the computer viewing your website must have that font installed in order to use it.
+                The <code>font-family</code> property allows you to specify multiple values. The additional values are like backup plans. If the
+                user's computer doesn't have the first font, then use the next, otherwise the third, etc. Here's an example:
+            </p>
+
+            <pre><code class="brush: css;">@(@"
+            body {
+                font-family: Times, Georgia, serif;
+            }
+            ")</code></pre>
+
+            <p>
+                In that last example, the "Times" font family would be used first. If the computer didn't have it installed, then "Georgia" would be used. The last value
+                "serif" is actually not a specific font, but rather a category of fonts. The term that is used is "generic font family". It's always best to put a generic
+                font family as your last resort. There are five categories that browsers are expected to support:
+            </p>
+            <dl>
+                <dt>serif</dt>
+                <dd>Serif fonts have little hooks or tails, known as serifs, on the ends of letters.</dd>
+
+                <dt>sans-serif</dt>
+                <dd>"Sans" means without, so sans-serif fonts do not have serifs.</dd>
+
+                <dt>monospace</dt>
+                <dd>In a monospace font, each letter has the exact same width. This is not true of other fonts.</dd>
+
+                <dt>cursive</dt>
+                <dd>Cursive fonts generally have connected letters and look, well, cursive.</dd>
+
+                <dt>fantasy</dt>
+                <dd>Fantasy fonts are decorative fonts used for titles. They should not be used for long bodies of text.</dd>
+            </dl>
+
+            <pre><code class="brush: css;">@(@"
+            p.serif {
+                font-family: Georgia, Times, serif;
+            }
+
+            p.sans {
+                font-family: Arial, Verdana, sans-serif;
+            }
+
+            p.mono {
+                font-family: Courier, ""Courier New"", monospace;
+            }
+
+            p.cursive {
+                font-family: ""Comic Sans MS"", ""Monotype Corsiva"", cursive;
+            }
+
+            p.fantasy {
+                font-family: Impact, Haettenschweiler, fantasy;
+            }
+            ")</code></pre>
+
+            <pre><code class="brush: html;">@(@"
+                <p class=""serif"">The quick brown fox jumps over the lazy dog</p>
+                <p class=""sans"">The quick brown fox jumps over the lazy dog</p>
+                <p class=""mono"">The quick brown fox jumps over the lazy dog</p>
+                <p class=""cursive"">The quick brown fox jumps over the lazy dog</p>
+                <p class=""fantasy"">The quick brown fox jumps over the lazy dog</p>
+            ")</code></pre>
+
+            <div id="fontDemo">
+                <p class="serif">The quick brown fox jumps over the lazy dog</p>
+                <p class="sans">The quick brown fox jumps over the lazy dog</p>
+                <p class="mono">The quick brown fox jumps over the lazy dog</p>
+                <p class="cursive">The quick brown fox jumps over the lazy dog</p>
+                <p class="fantasy">The quick brown fox jumps over the lazy dog</p>
+            </div>
+
+            <h4>Font Size</h4>
+            <p>
+                The size of the font is specified in CSS using the <code>font-size-</code> property. There are actually four different types of units
+                with which the font size can be specified. The four types are pixels (<code>px</code>), percentage, ems (<code>em</code>), or points (<code>pt</code>).
+                Points (<code>pt</code>) should only be used when designing styles for print (which you can do with CSS, by the way). That leaves us with three
+                other systems of measurement to talk about.
+            </p>
+            <p>
+                Pixels are the small dots that make up your computer screen. Specifying the font size in pixels is the best way to ensure that your text will look
+                how you designed it. You can make your screen "pixel perfect". However, there is a drawback to this approach. Most browsers allow the user to select
+                how big text should be by default. Using pixels isn't very flexible with different user settings.
+            </p>
+            <p>
+                1 <code>em</code> is equal to the current font size. So an <code>em</code> is a relative measurement, that is, it's relative to the parent elements
+                font size. As the font size increases, so does an em.
+            </p>
+            <p>
+                A percentage is very similar to an em. It is also a relative unit and will increase as the font size increases. There has been much debate and discussion
+                over which to use for the web. It appears that the current accepted philosophy is to specify the font size of the <code>&lt;body&gt;</code> element
+                using a percent and then specify the font size of other elements using the <code>em</code> units.
+                See <a href="http://kyleschaeffer.com/development/css-font-size-em-vs-px-vs-pt-vs/" target="_blank">this blog</a> for example.
+            </p>
+
+            <pre><code class="brush: css;">@(@"
+            body {
+                font-size: 100%;
+            }
+
+            p {
+                font-size: 0.75em;
+            }
+            ")</code></pre>
+
+            <h4>Bold, Italic, Oblique</h4>
+
+            <p>
+                The <code>font-weight</code> property is used to make text bold or, on the other hand, make text <em>not</em> bold. This property has two possible
+                values, <code>normal</code> or <code>bold</code>.
+            </p>
+            <p>
+                The <code>font-style</code> property has three values, <code>normal</code>, <code>italic</code>, or <code>oblique</code>. Though they may look quite
+                similar italic and oblique font are (supposed to be) different. Italicized text is cursive as in calligraphic handwriting. Oblique text is simply text
+                that is on a slant. Though the two are different, many fonts don't have an italic version. In that case the browser just makes the text slanted which
+                ends up making italic and oblique text look the same.
+            </p>
+
+            <h4>Text Transform</h4>
+            <p>
+                The <code>text-transform</code> property can have one of three values: <code>uppercase</code>, <code>lowercase</code>, or <code>capitalize</code>.
+                As you could probably guess, <code>uppercase</code> makes the text appear as all uppercase letters, <code>lowercase</code> makes the text appear
+                as all lowercase letters, and <code>capitalize</code> makes only the first letter of each word uppercase.
+            </p>
+
+            <h4>Text Decoration</h4>
+            <p>
+                The <code>text-decoration</code> property allows you to add or remove a decoration from text. For example, most browsers display links with an underline.
+                You could, however, remove that underline by setting the <code>text-decoration</code> property to <code>none</code>. The four possible values are
+                <code>none</code>, <code>underline</code>, <code>overline</code>, and <code>line-through</code>. <code>line-through</code> is a horizontal line 
+                through the <span class="line-through">center of the text</span>.
+            </p>
+
+            <pre><code class="brush: css;">@(@"
+            a.no-decoration {
+                text-decoration: none;
+            }
+            ")</code></pre>
+            
+            <pre><code class="brush: html;">@(@"
+                <div><a href=""#"">Standard link</a></div>
+                <div><a href=""#"" class=""no-decoration"">Link with no underline</a></div>
+            ")</code></pre>
+
+            <div><a href="#">Standard link</a></div>
+            <div><a href="#" class="no-decoration">Link with no underline</a></div>
+
+            @*<h4>Line Height</h4>
+            <p>
+
+            </p>*@
         </div>
     </section>
 </article>
