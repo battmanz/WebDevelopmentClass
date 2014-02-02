@@ -524,7 +524,7 @@
                 You can set the typeface (type of font) for your site by using the <code>font-family</code> CSS property.
                 It's <em>very</em> important to note that the computer viewing your website must have that font installed in order to use it.
                 The <code>font-family</code> property allows you to specify multiple values. The additional values are like backup plans. If the
-                user's computer doesn't have the first font, then use the next, otherwise the third, etc. Here's an example:
+                user's computer doesn't have the first font, then it will try to use the next, otherwise the third, etc. Here's an example:
             </p>
 
             <pre><code class="brush: css;">@(@"
@@ -641,7 +641,16 @@
 
             <h4>Text Transform</h4>
             <p>
-                The <code>text-transform</code> property can have one of three values: <code>uppercase</code>, <code>lowercase</code>, or <code>capitalize</code>.
+                The <code>text-transform</code> property can have one of three values:
+            </p>
+            
+            <ul>
+                <li><code>uppercase</code></li>
+                <li><code>lowercase</code></li>
+                <li><code>capitalize</code></li>
+            </ul>
+            
+            <p>
                 As you could probably guess, <code>uppercase</code> makes the text appear as all uppercase letters, <code>lowercase</code> makes the text appear
                 as all lowercase letters, and <code>capitalize</code> makes only the first letter of each word uppercase.
             </p>
@@ -675,7 +684,147 @@
                 line hight doesn't change the font size, so it has the effect of putting more space between lines.
             </p>
             
-            /*<h4>Letter Spacing</h4>*/
+            <h4>Letter Spacing and Word Spacing</h4>
+            <p>
+                As the names imply, <code>letter-spacing</code> sets the amount of space between letters and <code>word-spacing</code> set the amount
+                of space between words. It is a good practice to specify the value for either of these properties in terms of <code>ems</code>, because
+                <code>ems</code> are proportional to the font size.
+            </p>
+
+            <h4>Text Align</h4>
+            <p>
+                The <code>text-align</code> property take have one of four values: <code>left</code>, <code>right</code>, <code>center</code>, or <code>justify</code>.
+                Anyone who has used Microsoft Word or other word processing software will be quite familiar with these options.
+                <strong>Text that is left aligned is considered easiest to read.</strong>
+            </p>
+
+            <h4>Vertical Alignment</h4>
+            <p>
+                The <code>vertical-align</code> property has two separate usages. First it can be used to vertically align the content of <strong>inline elements
+                and inline elements only. Don't try to use it on block level elements. It won't work! </strong> I know you're going to forget this, and try to use
+                it, so I'll repeat it again. It does not work on block elements. This property can accept one of the following values:
+            </p>
+
+            <ul>
+                <li><code>baselline</code></li>
+                <li><code>sub</code></li>
+                <li><code>super</code></li>
+                <li><code>top</code></li>
+                <li><code>text-top</code></li>
+                <li><code>middle</code></li>
+                <li><code>bottom</code></li>
+                <li><code>text-bottom</code></li>
+            </ul>
+
+            <p>
+                In addition to the values above, it can also accept a length in <code>px</code>, <code>em</code>, or <code>%</code> of the line height.
+            </p>
+
+            <p>
+                The other use for the <code>vertical-align</code> property is to vertically align content within a table cell (either a <code>&lt;td&gt;</code> or <code>&lt;th&gt;</code>).
+                Note that these are block elements. Table cells are the one exception to the rule that <code>vertical-align</code> does not work on block elements.
+                The only relevant values for table cells are <code>baseline</code>, <code>top</code>, <code>middle</code>, and <code>bottom</code>.
+                See the following example.
+            </p>
+
+            <pre><code class="brush: css;">@(@"
+            .baseline {
+                vertical-align: baseline;
+            }
+
+            .sub {
+                vertical-align: sub;
+            }
+
+            .super {
+                vertical-align: super;
+            }
+
+            .top {
+                vertical-align: top;
+            }
+
+            .text-top {
+                vertical-align: text-top;
+            }
+
+            .middle {
+                vertical-align: middle;
+            }
+
+            .bottom {
+                vertical-align: bottom;
+            }
+
+            .text-bottom {
+                vertical-align: text-bottom;
+            }
+            ")</code></pre>
+
+            <pre><code class="brush: html;">@(@"
+                <p>
+                    <span class=""bottom"">bottom</span>
+                    <span class=""text-top"">text-top</span>
+                    <span class=""sub"">sub</span>
+                    <span class=""middle"">middle</span>
+                    <span class=""baseline"">baseline</span>
+                    <span class=""super"">super</span>
+                    <span class=""text-bottom"">text-bottom</span>
+                    <span class=""top"">top</span>
+                </p>
+
+                <table>
+                    <tr>
+                        <td class=""baseline"">baseline</td>
+                        <td class=""top"">top</td>
+                        <td class=""middle"">middle</td>
+                        <td class=""bottom"">bottom</td>
+                    </tr>
+                </table>
+            ")</code></pre>
+
+            <div id="verticalAlignDemo">
+                <p>
+                    <span class="bottom">bottom</span>
+                    <span class="text-top">text-top</span>
+                    <span class="sub">sub</span>
+                    <span class="middle">middle</span>
+                    <span class="baseline">baseline</span>
+                    <span class="super">super</span>
+                    <span class="text-bottom">text-bottom</span>
+                    <span class="top">top</span>
+                </p>
+
+                <table>
+                    <tr>
+                        <td class="baseline">baseline</td>
+                        <td class="top">top</td>
+                        <td class="middle">middle</td>
+                        <td class="bottom">bottom</td>
+                    </tr>
+                </table>
+            </div>
+
+            <p>A great article that explains the <code>vertical-align</code> property really well is found here: <a href="http://phrogz.net/CSS/vertical-align/">http://phrogz.net/CSS/vertical-align/</a></p>
+
+            <h4>Text Indent</h4>
+            <p>
+                The <code>text-indent</code> property indents the first line of text by the amount you tell it (e.g. <code>text-indent: 1em;</code>).
+                In addition to the obvious use of indenting the first line of paragraphs, the <code>text-indent</code> property has found another surprising use.
+                It is often used to move text off the screen so it can't be seen.
+            </p>
+            <p>
+                Let me explain. It is often desirable to show your company logo at the top of your page, however, the bots used by Google and other search engines
+                can't read images. So if you would like to have your site optimized for search engines (<a href="http://en.wikipedia.org/wiki/Search_engine_optimization">SEO</a>),
+                then you need to have your company name as text on your webpage. So what's often done is that you might have an <code>&lt;h1&gt;</code> on the page with your
+                company name and then you use a large negative text indent (such as <code>-9999px</code>) to push the text far off the screen while at the same time displaying
+                your logo as a background image.
+            </p>
+
+            @*<h4>Text Shadow</h4>
+            <p>
+
+            </p>*@
         </div>
     </section>
 </article>

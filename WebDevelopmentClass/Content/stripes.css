@@ -257,6 +257,11 @@ dd blockquote {
     font-family: Impact, Haettenschweiler, fantasy;
 }
 
+#fontDemo p.serif, #fontDemo p.sans, #fontDemo p.mono, #fontDemo p.cursive, #fontDemo p.fantasy {
+    margin: 0;
+    /*line-height:*/ 
+}
+
 .line-through {
     text-decoration: line-through;
 }
@@ -264,6 +269,53 @@ dd blockquote {
 a.no-decoration {
     text-decoration: none;
 }
+
+#verticalAlignDemo .baseline {
+    vertical-align: baseline;
+}
+
+#verticalAlignDemo .sub {
+    vertical-align: sub;
+}
+
+#verticalAlignDemo .super {
+    vertical-align: super;
+}
+
+#verticalAlignDemo .top {
+    vertical-align: top;
+}
+
+#verticalAlignDemo .text-top {
+    vertical-align: text-top;
+}
+
+#verticalAlignDemo .middle {
+    vertical-align: middle;
+}
+
+#verticalAlignDemo .bottom {
+    vertical-align: bottom;
+}
+
+#verticalAlignDemo .text-bottom {
+    vertical-align: text-bottom;
+}
+
+#verticalAlignDemo p {
+    line-height: 3;
+    border: solid 1px red;
+}
+
+#verticalAlignDemo span {
+    border: solid 1px green;
+}
+
+#verticalAlignDemo td {
+    height: 50px;
+    border: solid 1px #999;
+}
+
 
 /* styles for validation helpers */
 .field-validation-error {
