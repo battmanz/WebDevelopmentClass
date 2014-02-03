@@ -595,8 +595,8 @@
 
             <h4>Font Size</h4>
             <p>
-                The size of the font is specified in CSS using the <code>font-size-</code> property. There are actually four different types of units
-                with which the font size can be specified. The four types are pixels (<code>px</code>), percentage, ems (<code>em</code>), or points (<code>pt</code>).
+                The size of the font is specified in CSS using the <code>font-size-</code> property. There are different types of units
+                with which the font size can be specified. The four commonly-used units are pixels (<code>px</code>), percentage, ems (<code>em</code>), or points (<code>pt</code>).
                 Points (<code>pt</code>) should only be used when designing styles for print (which you can do with CSS, by the way). That leaves us with three
                 other systems of measurement to talk about.
             </p>
@@ -606,14 +606,21 @@
                 how big text should be by default. Using pixels isn't very flexible with different user settings.
             </p>
             <p>
-                1 <code>em</code> is equal to the current font size. So an <code>em</code> is a relative measurement, that is, it's relative to the parent elements
+                1 <code>em</code> is equal to the current font size. So an <code>em</code> is a relative measurement, that is, it's relative to the current
                 font size. As the font size increases, so does an em.
             </p>
             <p>
-                A percentage is very similar to an em. It is also a relative unit and will increase as the font size increases. There has been much debate and discussion
+                A percentage is very similar to an em. It is also a relative unit that will increase as the font size increases. There has been much debate and discussion
                 over which to use for the web. It appears that the current accepted philosophy is to specify the font size of the <code>&lt;body&gt;</code> element
-                using a percent and then specify the font size of other elements using the <code>em</code> units.
-                See <a href="http://kyleschaeffer.com/development/css-font-size-em-vs-px-vs-pt-vs/" target="_blank">this blog</a> for example.
+                using a percent and then specify the font size of other elements using the <code>em</code> units. The reason is that a web page needs to look good on many
+                devices with differing screen sizes and resolutions. Using a relative unit (such as <code>em</code> or <code>%</code>) allows the document to resize in proportion to the screen.
+                See <a href="http://kyleschaeffer.com/development/css-font-size-em-vs-px-vs-pt-vs/" target="_blank">http://kyleschaeffer.com/development/css-font-size-em-vs-px-vs-pt-vs/</a> for example.
+            </p>
+
+            <p>
+                Web designers tend to prefer <code>ems</code> or a % over <code>px</code>. The reason is that a web page needs to look good on many devices with differing
+                screen sizes and resolutions. Using a relative unit (such as <code>em</code> or <code>%</code>) allows the document to resize in proportion to the screen.
+                A great article that explains this in depth can be found here: <a href="http://kyleschaeffer.com/development/css-font-size-em-vs-px-vs-pt-vs/">http://kyleschaeffer.com/development/css-font-size-em-vs-px-vs-pt-vs/</a>.
             </p>
 
             <pre><code class="brush: css;">@(@"
@@ -809,22 +816,77 @@
 
             <h4>Text Indent</h4>
             <p>
-                The <code>text-indent</code> property indents the first line of text by the amount you tell it (e.g. <code>text-indent: 1em;</code>).
+                The <code>text-indent</code> property indents the first line of text by a given amount (e.g. <code>text-indent: 1em;</code>).
                 In addition to the obvious use of indenting the first line of paragraphs, the <code>text-indent</code> property has found another surprising use.
-                It is often used to move text off the screen so it can't be seen.
+                It can be used to move text far off the screen so it can't be seen. Let me explain.
             </p>
             <p>
-                Let me explain. It is often desirable to show your company logo at the top of your page, however, the bots used by Google and other search engines
+                Some websites will add a heading with some text and then, using CSS, will push the text off the screen while at the same time displaying a background image in place of the text.
+                This technique allows the designer to show a more decorative heading than just text alone. So why have the text at all? The reason is that screen readers can't
+                read images, so having the text is good for accessibility. The other reason is that it's good for Search Engine Optimization (<a href="http://en.wikipedia.org/wiki/Search_engine_optimization"><abbr>SEO</abbr></a>).
+
+                @*Let me explain. It is often desirable to show your company logo at the top of your page, however, the bots used by Google and other search engines
                 can't read images. So if you would like to have your site optimized for search engines (<a href="http://en.wikipedia.org/wiki/Search_engine_optimization">SEO</a>),
                 then you need to have your company name as text on your webpage. So what's often done is that you might have an <code>&lt;h1&gt;</code> on the page with your
                 company name and then you use a large negative text indent (such as <code>-9999px</code>) to push the text far off the screen while at the same time displaying
-                your logo as a background image.
+                your logo as a background image.*@
             </p>
 
-            @*<h4>Text Shadow</h4>
+            <pre><code class="brush: css;">@(@"
+            #home {
+                text-indent: -9999px;
+                background-image: url(~/Images/homeReplacement.png);
+            }
+            ")</code></pre>
+
+            <pre><code class="brush: html;">@(@"
+                <h1 id=""home"">Home</h1>
+            ")</code></pre>
+
+            <h1 id="home">Home</h1>
+
+            <h4>Text Shadow</h4>
+            <p>
+                A new feature added in CSS3 is the ability to add a shadow to text. This is done using the <code>text-shadow</code> property. The <code>text-shadow</code> property
+                accepts four values:
+            </p>
+
+            <dl>
+                <dt>horizontal offset</dt>
+                <dd>
+                    specifies how far to the left or right the shadow should be displayed. A negative value will cause the shadow to be displayed to the left and a positive value
+                    will cause the shadow to be diplayed to the right of the text.
+                </dd>
+
+                <dt>vertical offset</dt>
+                <dd>
+                    specifies how far above or below the shadow should be displayed. Negative values cause the shadow to be displayed above and positive values cause the shadow to be
+                    displayed below the text.
+                </dd>
+
+                <dt>blur radius</dt>
+                <dd>
+                    specifies how wide the shadow should be. The higher the number, the wider and lighter the shadow will be (i.e. it will be more spread out).
+                </dd>
+
+                <dt>color</dt>
+                <dd>Any CSS color is allowed (i.e. it doesn't have to be black or gray)</dd>
+            </dl>
+
+            <p>
+                A neat example of using the <code>text-shadow</code> property can be found on the <a href="http://browsehappy.com/">Browse Happy</a> website. Notice how the word "Browse" seems to sink into the page
+                and the word "Happy" seems to pop out. That website also demonstrates the fact that you can place multiple shadows on the text. Just separate each shadow by a comma.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h3>Boxes</h3>
+        <div>
+            <h4>Width and Height</h4>
             <p>
 
-            </p>*@
+            </p>
         </div>
     </section>
 </article>

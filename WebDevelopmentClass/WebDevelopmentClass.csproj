@@ -146,6 +146,7 @@
     <Content Include="Images\darkBlueNoise.jpg" />
     <Content Include="Images\header.png" />
     <Content Include="Images\header2.png" />
+    <Content Include="Images\homeReplacement.png" />
     <Content Include="Images\lightStripe.png" />
     <Content Include="Images\Meet_ASIMO.jpg" />
     <Content Include="Images\noise.jpg" />

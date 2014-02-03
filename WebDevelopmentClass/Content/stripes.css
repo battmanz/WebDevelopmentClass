@@ -316,6 +316,12 @@ a.no-decoration {
     border: solid 1px #999;
 }
 
+#home {
+    text-indent: -9999px;
+    background-image: url(/Images/homeReplacement.png);
+    background-repeat: no-repeat;
+    min-height: 70px;
+}
 
 /* styles for validation helpers */
 .field-validation-error {
