@@ -883,7 +883,78 @@
     <section>
         <h3>Boxes</h3>
         <div>
+            <h4>Elements as Boxes</h4>
+            <p>
+                Each HTML element gets rendered on the screen as a box. In this section we will look at the ways in which CSS allows you to control how that box is displayed.
+                One way to see the box is to set a background color or a border on the element. We've already seen the <code>background-color</code> property and we will look at
+                the <code>border</code> property shortly.
+            </p>
+
             <h4>Width and Height</h4>
+            <p>
+                CSS allows you to specify the width and height of an element using the <code>width</code> and <code>height</code> properties, respectively.
+                Like other properties, the value can be specified in <code>px</code>, <code>em</code>, or <code>%</code>.
+            </p>
+
+            <pre><code class="brush: css;">@(@"
+            div {
+                width: 500px;
+                height: 300px;
+                background-color: #FF7F50;
+            }
+
+            p {
+                width: 50%;
+                height: 66%;
+                background-color: #008B8B;
+            }
+            ")</code></pre>
+
+            <pre><code class="brush: html;">@(@"
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ullamcorper odio. Integer interdum lectus mi, sagittis facilisis tortor facilisis quis.
+                </div>
+            ")</code></pre>
+
+            <div id="widthDemo">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ullamcorper odio. Integer interdum lectus mi, sagittis facilisis tortor facilisis quis.
+            </div>
+
+            <h4>Max and Min</h4>
+            <p>
+                Instead of (or in addition to) specifying the exact width and/or height of an element, CSS allows you to set bounds by using the <code>max-width</code>, <code>min-width</code>, 
+                <code>max-height</code>, and <code>min-height</code> properties. This is a useful technique when creating a layout that scales nicely for both mobile devices and desktop monitors.
+            </p>
+
+            <pre><code class="brush: css;">@(@"
+            #exactWidth {
+                width: 1000px;
+                background-color: #FF7F50;
+            }
+
+            #minMaxWidth {
+                min-width: 200px;
+                max-width: 1000px;
+                background-color: #FF7F50;
+            }
+            ")</code></pre>
+
+            <pre><code class="brush: html;">@(@"
+                <div id=""exactWidth"">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ullamcorper odio. Integer interdum lectus mi, sagittis facilisis tortor facilisis quis.
+                </div>
+
+                <div id=""minMaxWidth"">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ullamcorper odio. Integer interdum lectus mi, sagittis facilisis tortor facilisis quis.
+                </div>
+            ")</code></pre>
+
+            <p>
+                To see the demo of the previous code follow this link @Html.ActionLink("Min Max Demo", "MinMaxDemo", "Lesson"). Try resizing the browser window. Notice how the <code>div</code>
+                with min and max set resizes as the window does. Whereas the <code>div</code> with an exact width does not.
+            </p>
+
+            <h4>Overflow</h4>
             <p>
 
             </p>

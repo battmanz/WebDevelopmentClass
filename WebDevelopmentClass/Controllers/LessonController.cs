@@ -14,5 +14,10 @@ namespace WebDevelopmentClass.Controllers
         {
             return View("Lesson" + id);
         }
+
+        public ActionResult MinMaxDemo()
+        {
+            return View();
+        }
 	}
 }

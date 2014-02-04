@@ -323,6 +323,18 @@ a.no-decoration {
     min-height: 70px;
 }
 
+#widthDemo {
+    width: 500px;
+    height: 300px;
+    background-color: #FF7F50;
+}
+
+#widthDemo p {
+    width: 50%;
+    height: 66%;
+    background-color: #008B8B;
+}
+
 /* styles for validation helpers */
 .field-validation-error {
     color: #b94a48;

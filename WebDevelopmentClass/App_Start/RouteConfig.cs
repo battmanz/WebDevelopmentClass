@@ -14,8 +14,20 @@ namespace WebDevelopmentClass
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "MinMaxDemo",
+                url: "Lesson/MinMaxDemo",
+                defaults: new { controller = "Lesson", action = "MinMaxDemo" }
+            );
+            
+            routes.MapRoute(
+                name: "Lessons",
+                url: "Lesson/{id}",
+                defaults: new { controller = "Lesson", action = "Index" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{id}",
+                url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
