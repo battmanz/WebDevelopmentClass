@@ -883,17 +883,26 @@
     <section>
         <h3>Boxes</h3>
         <div>
-            <h4>Elements as Boxes</h4>
+            <h4>The Box Model</h4>
             <p>
-                Each HTML element gets rendered on the screen as a box. In this section we will look at the ways in which CSS allows you to control how that box is displayed.
-                One way to see the box is to set a background color or a border on the element. We've already seen the <code>background-color</code> property and we will look at
-                the <code>border</code> property shortly.
+                Each HTML element gets rendered on the screen as a box. Actually as several concentric boxes. The innermost box is the content of the element.
+                The next layer is called the padding. After the padding is the border. Finally, outside of the border is the margin. In this section we will look at
+                the ways in which CSS allows us to style these boxes.
+            </p>
+
+            <img src="~/Images/boxes.png" alt="box model" />
+
+            <p>
+                By the way, that image above is taken from a screenshot of the developer tools in Google Chrome. To see a similar box for any element, simply right click
+                on it and choose "Inspect element". On the right hand side of the developer tools scroll to the bottom and you'll see the box model for that element.
+                The developer tools in other browsers also allow you to see the box model for the currently selected element.
             </p>
 
             <h4>Width and Height</h4>
             <p>
                 CSS allows you to specify the width and height of an element using the <code>width</code> and <code>height</code> properties, respectively.
-                Like other properties, the value can be specified in <code>px</code>, <code>em</code>, or <code>%</code>.
+                These properties only affect the width and height of the content (the innermost box). The padding, border, and margin are added to the specified
+                width and height. Like other properties, the value can be specified in <code>px</code>, <code>em</code>, or <code>%</code>.
             </p>
 
             <pre><code class="brush: css;">@(@"
@@ -912,18 +921,18 @@
 
             <pre><code class="brush: html;">@(@"
                 <div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ullamcorper odio. Integer interdum lectus mi, sagittis facilisis tortor facilisis quis.
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ullamcorper odio. Integer interdum lectus mi, sagittis facilisis tortor facilisis quis.</p>
                 </div>
             ")</code></pre>
 
             <div id="widthDemo">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ullamcorper odio. Integer interdum lectus mi, sagittis facilisis tortor facilisis quis.
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ullamcorper odio. Integer interdum lectus mi, sagittis facilisis tortor facilisis quis.</p>
             </div>
 
             <h4>Max and Min</h4>
             <p>
                 Instead of (or in addition to) specifying the exact width and/or height of an element, CSS allows you to set bounds by using the <code>max-width</code>, <code>min-width</code>, 
-                <code>max-height</code>, and <code>min-height</code> properties. This is a useful technique when creating a layout that scales nicely for both mobile devices and desktop monitors.
+                <code>max-height</code>, and <code>min-height</code> properties. This is a useful technique when creating a layout that scales nicely for both mobile devices as well as desktop monitors.
             </p>
 
             <pre><code class="brush: css;">@(@"
@@ -941,22 +950,68 @@
 
             <pre><code class="brush: html;">@(@"
                 <div id=""exactWidth"">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ullamcorper odio. Integer interdum lectus mi, sagittis facilisis tortor facilisis quis.
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ullamcorper odio. Integer interdum lectus mi, sagittis facilisis tortor facilisis quis.</p>
                 </div>
 
                 <div id=""minMaxWidth"">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ullamcorper odio. Integer interdum lectus mi, sagittis facilisis tortor facilisis quis.
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ullamcorper odio. Integer interdum lectus mi, sagittis facilisis tortor facilisis quis.</p>
                 </div>
             ")</code></pre>
 
             <p>
                 To see the demo of the previous code follow this link @Html.ActionLink("Min Max Demo", "MinMaxDemo", "Lesson"). Try resizing the browser window. Notice how the <code>div</code>
-                with min and max set resizes as the window does. Whereas the <code>div</code> with an exact width does not.
+                with min and max values resizes as the window does. Whereas the <code>div</code> with an exact width does not.
             </p>
 
             <h4>Overflow</h4>
             <p>
+                What happens when the content of an element is too large to fit in the space allotted for that element? Well, it depends on the <code>overflow</code> property.
+                By default, the content that doesn't fit is shown anyways. This may not look good because the content might be on top of some other element's content.
+                These are the possible values for the <code>overflow</code> property:
+            </p>
 
+            <dl>
+                <dt><code>visible</code></dt>
+                <dd>This is the default value. Content outside of the box is shown.</dd>
+
+                <dt><code>hidden</code></dt>
+                <dd>Content outside of the box is not displayed.</dd>
+
+                <dt><code>scroll</code></dt>
+                <dd>Scrollbars are <em>always</em> shown regardless of whether the content fits or not.</dd>
+
+                <dt><code>auto</code></dt>
+                <dd>Scrollbars are shown only if the content does not fit.</dd>
+            </dl>
+
+            <p>
+                The following demo has a <code>&lt;div&gt;</code> whose content does not fit within it's boundaries. You can change the value of the overflow property to see
+                the effect it has on the div and its content. 
+            </p>
+
+            <select id="overflowChanger">
+                <option value="visible">visible</option>
+                <option value="hidden">hidden</option>
+                <option value="scroll">scroll</option>
+                <option value="auto">auto</option>
+            </select>
+
+            <div id="overflower">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu orci sit amet dolor molestie suscipit ac in enim. Cras varius varius justo.
+                Sed ultricies risus laoreet vehicula pellentesque. Aliquam posuere a libero in molestie. Sed vehicula nisl at arcu mollis, iaculis vulputate lectus sodales.
+                Sed mauris risus, interdum sed aliquet et, viverra varius orci. Fusce porttitor quis massa at iaculis. Mauris fringilla neque risus.
+                Vivamus porta consectetur sem, ut malesuada tortor pretium ut. Cras mollis, est vel mollis ornare, magna neque lobortis lorem, eget tincidunt nibh felis et neque.
+                Mauris sagittis convallis turpis, in ultrices dui imperdiet quis. Aliquam tortor tortor, vehicula non purus eget, condimentum interdum dolor.
+                Etiam laoreet blandit pharetra. Cras varius, mauris non convallis consectetur, mi turpis tincidunt metus, eu dignissim odio nibh ac nisi.
+                Suspendisse nec lectus eu metus semper vehicula et sit amet justo. Donec sed risus convallis lectus eleifend bibendum non sed diam.
+            </div>
+
+            <h4>Border Width</h4>
+            <p>
+                There are several interesting properties of borders that can be set with CSS. The first we'll talk about is <code>border-width</code>.
+                This property sets the thickness of the border in <code>px</code> or <code>em</code>, for example. Note that using a percentage (%) is not allowed.
+                You can also use one of these three values: <code>thin</code>, <code>medium</code>, or <code>thick</code>. It's up to the browser to determine
+                exactly how thin or thick the border will be with each of those values. So it's probably a good idea to specify the border in <code>px</code> or <code>em</code>.
             </p>
         </div>
     </section>
@@ -978,6 +1033,11 @@
 
             $("#hideGif").click(function () {
                 $("#fatSpiderMan").hide();
+            });
+
+            $("#overflowChanger").change(function () {
+                var newOverflow = $(this).val();
+                $("#overflower").css("overflow", newOverflow);
             });
         });
     </script>

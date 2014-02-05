@@ -142,6 +142,7 @@
     <Content Include="Images\arrowRightMedium.png" />
     <Content Include="Images\arrowRightThin.png" />
     <Content Include="Images\blueNoise.jpg" />
+    <Content Include="Images\boxes.png" />
     <Content Include="Images\brownStripe.png" />
     <Content Include="Images\darkBlueNoise.jpg" />
     <Content Include="Images\header.png" />

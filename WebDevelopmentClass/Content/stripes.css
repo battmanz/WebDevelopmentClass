@@ -335,6 +335,13 @@ a.no-decoration {
     background-color: #008B8B;
 }
 
+#overflower {
+    width: 650px;
+    height: 200px;
+    border: solid 2px violet;
+    margin: 10px 0 130px 0;
+}
+
 /* styles for validation helpers */
 .field-validation-error {
     color: #b94a48;
