@@ -187,6 +187,7 @@
     <Content Include="Views\Lesson\Lesson1.cshtml" />
     <Content Include="Views\Lesson\Lesson2.cshtml" />
     <Content Include="Views\Lesson\MinMaxDemo.cshtml" />
+    <Content Include="Views\Lesson\CenteredContentDemo.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

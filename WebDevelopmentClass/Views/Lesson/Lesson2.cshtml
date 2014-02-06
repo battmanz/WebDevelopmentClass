@@ -244,6 +244,25 @@
                         <td>.myClass { }</td>
                     </tr>
                     <tr>
+                        <td>First Child Selector</td>
+                        <td>Selects an element only if it is the first child of its parent.</td>
+                        <td>p:first-child { }</td>
+                    </tr>
+                    <tr>
+                        <td>Last Child Selector</td>
+                        <td>Selects an element only if it is the last child of its parent.</td>
+                        <td>p:last-child { }</td>
+                    </tr>
+                    <tr>
+                        <td>n<sup>th</sup> Child Selector</td>
+                        <td>
+                            Selects an element only if it is the n<sup>th</sup> child of its parent.
+                            In order to use this selector, you need to pass in either a number (e.g. 5) or a formula (e.g. 2n).
+                            See the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child">MDN</a> website for more info.
+                        </td>
+                        <td>p:nth-child(5) { }</td>
+                    </tr>
+                    <tr>
                         <td>First Line Selector</td>
                         <td>Selects the first line of text within an element.</td>
                         <td>p:first-line { }</td>
@@ -824,12 +843,6 @@
                 Some websites will add a heading with some text and then, using CSS, will push the text off the screen while at the same time displaying a background image in place of the text.
                 This technique allows the designer to show a more decorative heading than just text alone. So why have the text at all? The reason is that screen readers can't
                 read images, so having the text is good for accessibility. The other reason is that it's good for Search Engine Optimization (<a href="http://en.wikipedia.org/wiki/Search_engine_optimization"><abbr>SEO</abbr></a>).
-
-                @*Let me explain. It is often desirable to show your company logo at the top of your page, however, the bots used by Google and other search engines
-                can't read images. So if you would like to have your site optimized for search engines (<a href="http://en.wikipedia.org/wiki/Search_engine_optimization">SEO</a>),
-                then you need to have your company name as text on your webpage. So what's often done is that you might have an <code>&lt;h1&gt;</code> on the page with your
-                company name and then you use a large negative text indent (such as <code>-9999px</code>) to push the text far off the screen while at the same time displaying
-                your logo as a background image.*@
             </p>
 
             <pre><code class="brush: css;">@(@"
@@ -890,11 +903,11 @@
                 the ways in which CSS allows us to style these boxes.
             </p>
 
-            <img src="~/Images/boxes.png" alt="box model" />
+            <img id="boxModel" src="~/Images/boxes.png" alt="box model" />
 
             <p>
                 By the way, that image above is taken from a screenshot of the developer tools in Google Chrome. To see a similar box for any element, simply right click
-                on it and choose "Inspect element". On the right hand side of the developer tools scroll to the bottom and you'll see the box model for that element.
+                on it and choose "Inspect element". On the right hand side of the developer tools panel, scroll to the bottom and you'll see the box model for that element.
                 The developer tools in other browsers also allow you to see the box model for the currently selected element.
             </p>
 
@@ -1009,10 +1022,473 @@
             <h4>Border Width</h4>
             <p>
                 There are several interesting properties of borders that can be set with CSS. The first we'll talk about is <code>border-width</code>.
-                This property sets the thickness of the border in <code>px</code> or <code>em</code>, for example. Note that using a percentage (%) is not allowed.
-                You can also use one of these three values: <code>thin</code>, <code>medium</code>, or <code>thick</code>. It's up to the browser to determine
-                exactly how thin or thick the border will be with each of those values. So it's probably a good idea to specify the border in <code>px</code> or <code>em</code>.
+                This property sets the thickness of the border in <code>px</code> or <code>em</code>. Note that using a percentage (%) is not allowed.
+                You can also use one of these three values:
             </p>
+
+            <ul>
+                <li><code>thin</code></li>
+                <li><code>medium</code></li>
+                <li><code>thick</code></li>
+            </ul>
+
+            <p>
+                It's up to the browser to determine exactly how thin or thick the border will be with each of those values. So it can vary from browser to browser.
+                Therefore, it's recommended to specify the border in <code>px</code> or <code>em</code>.<br />
+                There are three common ways in which you can specify different values for all four sides:
+            </p>
+
+            <ol>
+                <li>
+                    By using the four individual properties:
+                    <ol>
+                        <li><code>border-top-width</code></li>
+                        <li><code>border-right-width</code></li>
+                        <li><code>border-bottom-width</code></li>
+                        <li><code>border-left-width</code></li>
+                    </ol>
+                </li>
+                <li>
+                    By specifying four values like so: <code>border-width: 20px 10px 5px 10px;</code><br />
+                    The four values are applied to the top, right, bottom, and left, respectively.
+                </li>
+                <li>
+                    By specifying two values like so: <code>border-width: 20px 10px;</code><br />
+                    The first value applies to the top and bottom borders. The second value applies to the left and right borders.
+                </li>
+            </ol>
+
+            <h4>Border Style</h4>
+
+            <p>
+                There are 10 different values that the <code>border-style</code> property can accept:
+            </p>
+
+            <dl>
+                <dt><code>solid</code></dt>
+                <dd>A single solid line.</dd>
+
+                <dt><code>dotted</code></dt>
+                <dd>A dotted line</dd>
+
+                <dt><code>dashed</code></dt>
+                <dd>A dashed line (dashes are longer than dots)</dd>
+
+                <dt><code>double</code></dt>
+                <dd>Two parallel solid lines</dd>
+
+                <dt><code>groove</code></dt>
+                <dd>The border appears to be carved into the page (opposite of ridge)</dd>
+
+                <dt><code>ridge</code></dt>
+                <dd>The border appears to be coming out of the page (opposite of groove)</dd>
+
+                <dt><code>inset</code></dt>
+                <dd>The entire element appears to sink into the page (opposite of outset)</dd>
+
+                <dt><code>outset</code></dt>
+                <dd>The entire element appears to come out of the page (opposite of inset)</dd>
+
+                <dt><code>hidden</code></dt>
+                <dd>No border is displayed</dd>
+
+                <dt><code>none</code></dt>
+                <dd>No border is displayed</dd>
+            </dl>
+
+            <p>An example</p>
+
+            <div id="borderStyleDemo">
+                <div class="solid">solid</div>
+                <div class="dotted">dotted</div>
+                <div class="dashed">dashed</div>
+                <div class="double">double</div>
+                <div class="groove">groove</div>
+                <div class="ridge">ridge</div>
+                <div class="inset">inset</div>
+                <div class="outset">outset</div>
+                <div class="hidden">hidden</div>
+                <div class="none">none</div>
+            </div>
+
+            <p>Again you can specify different border styles for the four sides similar to how you could specify different border widths:</p>
+
+            <ol>
+                <li>
+                    By using the four individual properties:
+                    <ol>
+                        <li><code>border-top-style</code></li>
+                        <li><code>border-right-style</code></li>
+                        <li><code>border-bottom-style</code></li>
+                        <li><code>border-left-style</code></li>
+                    </ol>
+                </li>
+                <li>
+                    By specifying four values like so: <code>border-style: solid dashed dotted outset;</code><br />
+                    The four values are applied to the top, right, bottom, and left, respectively.
+                </li>
+                <li>
+                    By specifying two values like so: <code>border-style: solid dashed;</code><br />
+                    The first value applies to the top and bottom borders. The second value applies to the left and right borders.
+                </li>
+            </ol>
+
+            <h4>Border Color</h4>
+
+            <p>
+                The <code>border-color</code> property sets the color of the border just as you would expect. Once again you can specify different
+                colors for the four sides:
+            </p>
+
+            <ol>
+                <li>
+                    By using the four individual properties:
+                    <ol>
+                        <li><code>border-top-color</code></li>
+                        <li><code>border-right-color</code></li>
+                        <li><code>border-bottom-color</code></li>
+                        <li><code>border-left-color</code></li>
+                    </ol>
+                </li>
+                <li>
+                    By specifying four values like so: <code>border-color: #e6e6e6 blue #FF0000 #ee3e80;</code><br />
+                    The four values are applied to the top, right, bottom, and left, respectively.
+                </li>
+                <li>
+                    By specifying two values like so: <code>border-color: #e6e6e6 blue;</code><br />
+                    The first value applies to the top and bottom borders. The second value applies to the left and right borders.
+                </li>
+            </ol>
+
+            <h4>Border Shorthand</h4>
+
+            <p>
+                CSS provides a shorthand property to set the width, style, and color of the border for all four sides in one declaration.
+                The property is simply called the <code>border</code> property. To use this property you specify the width, style, and color separated by spaces.<br />
+                For example, to set the border to a purple dotted border that is 5 pixels wide, you would write the following:
+            </p>
+
+            <pre><code class="brush: css;">@(@"
+            div {
+                border: 5px dotted purple;
+            }
+            ")</code></pre>
+
+            <pre><code class="brush: html;">@(@"
+                <div>Hello World</div>
+            ")</code></pre>
+
+            <p>Which gives the following results:</p>
+
+            <div id="borderShorthandDemo">Hello World</div>
+
+            <h4>Padding</h4>
+
+            <p>
+                The padding is the space that is between the border and the content of the element. Adding padding can make your webpage more readable and feel less cluttered.
+                In the <a href="#boxModel">image shown earlier</a>, it is represented as the green box.<br />
+                Consider the difference a little padding can make between the following two paragraphs:
+            </p>
+
+            <pre><code class="brush: css;">@(@"
+            p {
+                border: 2px solid #999;
+                width: 300px;
+                height: 100px;
+            }
+
+            .breathing-room {
+                padding: 10px;
+            }
+            ")</code></pre>
+
+            <pre><code class="brush: html;">@(@"
+                <p>
+                    A neutrino is an electrically neutral, weakly interacting elementary subatomic particle with half-integer spin.
+                </p>
+
+                <p class=""breathing-room"">
+                    A neutrino is an electrically neutral, weakly interacting elementary subatomic particle with half-integer spin.
+                </p>
+            ")</code></pre>
+
+            <div id="paddingDemo">
+                <p>
+                    A neutrino is an electrically neutral, weakly interacting elementary subatomic particle with half-integer spin.
+                </p>
+
+                <p class="breathing-room">
+                    A neutrino is an electrically neutral, weakly interacting elementary subatomic particle with half-integer spin.
+                </p>
+            </div>
+
+            <p>
+                Notice how the padding makes the content inside of the paragraph feel less cluttered. Also note that the second paragraph
+                is larger than the first. That is because padding is added to the width of the element, and here we have specified a width
+                and height.
+            </p>
+
+            <p>
+                You can set the padding independently on each of the four sides of the box using any one of these three methods:
+            </p>
+
+            <ol>
+                <li>
+                    By using the four individual properties:
+                    <ol>
+                        <li><code>padding-top</code></li>
+                        <li><code>padding-right</code></li>
+                        <li><code>padding-bottom</code></li>
+                        <li><code>padding-left</code></li>
+                    </ol>
+                </li>
+                <li>
+                    By specifying four values like so: <code>padding: 20px 5px 10px 15px;</code><br />
+                    The four values are applied to the top, right, bottom, and left, respectively.
+                </li>
+                <li>
+                    By specifying two values like so: <code>padding: 20px 5px;</code><br />
+                    The first value applies to the top and bottom. The second value applies to the left and right.
+                </li>
+            </ol>
+
+            <h4>Margin</h4>
+
+            <p>
+                The margin is the space outside of the border. It is shown as the orange box in the <a href="#boxModel">image above</a>.
+                The margin helps to separate elements from one another. By design, vertical margins can <dfn>collapse</dfn>. What that means
+                is that if one element is above another element on the page, then only the larger of the two margins will be display rather than
+                of the sum of the two margins. With horizontal margins it's different. The sum of the two margins is used. The reason for this behavior
+                is that, by design, the content on a webpage is meant to be displayed as high on the page as possible. So vertical margins collapse.
+            </p>
+
+            <pre><code class="brush: css;">@(@"
+            p, span {
+                margin: 0;
+                background-color: #00CC99;
+                border: 2px solid #FF6633;
+            }
+
+            p.margin {
+                margin: 20px 0;
+            }
+
+            span.margin {
+                margin: 0 20px;
+            }
+            ")</code></pre>
+
+            <pre><code class="brush: html;">@(@"
+                <!-- Vertical Margin -->
+                <p class=""margin"">Paragraph 1</p>
+                <p class=""margin"">Paragraph 2</p>
+
+                <!-- Horizontal Margin -->
+                <span class=""margin"">Span 1</span>
+                <span class=""margin"">Span 2</span>
+
+                <!-- Without a Margin -->
+                <p>Paragraph 1</p>
+                <p>Paragraph 2</p>
+                
+                <span>Span 1</span>
+                <span>Span 2</span>
+            ")</code></pre>
+
+            <section class="marginDemo" id="verticalMarginDemo">
+                <h5>Vertical Margin</h5>
+                <p class="margin">Paragraph 1</p>
+                <p class="margin">Paragraph 2</p>
+            </section>
+            
+            <section class="marginDemo" id="horizontalMarginDemo">
+                <h5>Horizontal Margin</h5>
+                <span class="margin">Span 1</span><!--
+                --><span class="margin">Span 2</span>
+            </section>
+
+            <section class="marginDemo" id="noMarginDemo">
+                <h5>Without a Margin</h5>
+                <p>Paragraph 1</p>
+                <p>Paragraph 2</p>
+                
+                <span>Span 1</span><!--
+                --><span>Span 2</span>
+            </section>
+
+            <p>
+                If you look carefully (perhaps open the developer tools and inspect), you'll see that the two vertical margins for the top two paragraphs
+                overlap. In other words the distance between the paragraphs is only 20px instead of 40px. The horizontal distance between the two spans
+                is 40px because the horizontal margins don't collapse.
+            </p>
+
+            <p class="notice">
+                It's also important to note that the top and bottom margin have no effect on inline elements such as a <code>&lt;span&gt;</code>.
+                The same is also true for padding - the top and bottom padding have no effect on inline elements.
+            </p>
+
+            <p>
+                You can set the margin independently on each of the four sides of the box using one of these three methods:
+            </p>
+
+            <ol>
+                <li>
+                    By using the four individual properties:
+                    <ol>
+                        <li><code>margin-top</code></li>
+                        <li><code>margin-right</code></li>
+                        <li><code>margin-bottom</code></li>
+                        <li><code>margin-left</code></li>
+                    </ol>
+                </li>
+                <li>
+                    By specifying four values like so: <code>margin: 20px 5px 10px 15px;</code><br />
+                    The four values are applied to the top, right, bottom, and left, respectively.
+                </li>
+                <li>
+                    By specifying two values like so: <code>margin: 20px 5px;</code><br />
+                    The first value applies to the top and bottom. The second value applies to the left and right.
+                </li>
+            </ol>
+
+            <h4>Centering Content</h4>
+
+            <p>Suppose you have some HTML that looks like this:</p>
+
+            <pre><code class="brush: html;">@(@"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset=""utf-8"" />
+                <title>Centered Content Demo</title>
+            </head>
+            <body>
+                <div id=""contentWrapper"">
+                    <h1>Finland</h1>
+                    <p>
+                        Finland, officially the Republic of Finland, is a Nordic country situated in the Fennoscandian region of Northern Europe.
+                        It is bordered by Sweden to the west, Norway to the north, Russia to the east, and Estonia to the south across the Gulf of Finland.</p>
+                    <p>
+                        As of 2012, Finland's population was around 5.4 million, with the majority concentrated in its southern regions.
+                        In terms of area, it is the eighth largest country in Europe and the most sparsely populated country in the European Union.
+                        Finland is a parliamentary republic with a central government based in the capital of Helsinki, local governments in 336 municipalities
+                        and an autonomous region, the Åland Islands. About one million residents live in the Greater Helsinki area (consisting of Helsinki, Espoo,
+                        Kauniainen, and Vantaa), which also produces a third of the country's GDP. Other large cities include Tampere, Turku, Oulu, Jyväskylä, Lahti, and Kuopio.
+                    </p>
+                </div>
+            </body>
+            </html>
+            ")</code></pre>
+
+            <p>
+                Now suppose that you want the <code>div</code> with an id of <code>contentWrapper</code> to be <code>800px</code> wide and centered on the page.
+                Well, the way to do it is to use a value of <code>auto</code> for the left and right margins. Here's what the CSS would look like. (I've also gone ahead
+                and added a grayish background color to the <code>body</code> and a white background to the <code>div</code>).
+            </p>
+
+            <pre><code class="brush: css;">@(@"
+            body {
+                background-color: #e6e6e6;
+            }
+
+            #contentWrapper {
+                width: 800px;
+                background-color: white;
+                margin: 0 auto;
+            }
+            ")</code></pre>
+
+            <p>Here's a @Html.ActionLink("demo", "CenteredContentDemo", "Lesson") of what that would look like.</p>
+
+            <h4>Display</h4>
+
+            <p>
+                You can change how an element is displayed by using the <code>display</code> property. For example, you can make a block element be displayed as an inine element
+                or vice versa. You can even display an element as a hybrid of the two called an <code>inline-block</code>. Here are the common values used for the <code>display</code>
+                property:
+            </p>
+
+            <dl>
+                <dt><code>block</code></dt>
+                <dd>
+                    The element is displayed as a block level element. It is displayed as if there were a line break before and after it.
+                    It takes up the full width of the screen by default.
+                </dd>
+
+                <dt><code>inline</code></dt>
+                <dd>
+                    The element allows other elements to the right or left of it. <code>width</code>, <code>height</code>, and top and bottom <code>margin</code>
+                    and <code>padding</code> have no effect on it.
+                </dd>
+
+                <dt><code>inline-block</code></dt>
+                <dd>
+                    The element allows other elements to the right and left of it. <code>width</code>, <code>height</code>, and top and bottom <code>margin</code>
+                    and <code>padding</code> <em>do</em> have an effect on it.
+                </dd>
+
+                <dt><code>none</code></dt>
+                <dd>The element is not displayed and no space is allotted for it on the screen.</dd>
+            </dl>
+
+            <p>
+                One important use of <code>display: inline;</code> is to have a horizontal navigation list, since an <code>&lt;li&gt;</code>
+                is displayed as a block by default.
+            </p>
+
+            <pre><code class="brush: css;">@(@"
+            nav li {
+                display: inline;
+                list-style-type: none;
+                margin-right: 20px;
+            }
+            ")</code></pre>
+
+            <pre><code class="brush: html;">@(@"
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href=""#"">Home</a></li>
+                        <li><a href=""#"">Products</a></li>
+                        <li><a href=""#"">About</a></li>
+                        <li><a href=""#"">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            ")</code></pre>
+
+            <ul id="navDemo">
+                <li><a href="#navDemo">Home</a></li>
+                <li><a href="#navDemo">Products</a></li>
+                <li><a href="#navDemo">About</a></li>
+                <li><a href="#navDemo">Contact</a></li>
+            </ul>
+
+            <h4>Visibility</h4>
+
+            <p>
+                The <code>visibility</code> property can have one of two values:
+            </p>
+
+            <dl>
+                <dt><code>visible</code></dt>
+                <dd>The element is displayed. This is the default value.</dd>
+
+                <dt><code>hidden</code></dt>
+                <dd>
+                    The element is not shown, <em>but there will be a blank space left in its place</em>.
+                    That is the difference between <code>display: none;</code> and <code>visibility: hidden;</code>,
+                    <code>display: none;</code> does not leave space where the element would have appeared.
+                </dd>
+            </dl>
+
+            <h4>Border Image</h4>
+
+
+            <h4>Box Shadow</h4>
+
+
+            <h4>Border Radius</h4>
         </div>
     </section>
 </article>

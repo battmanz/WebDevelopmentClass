@@ -18,6 +18,12 @@ namespace WebDevelopmentClass
                 url: "Lesson/MinMaxDemo",
                 defaults: new { controller = "Lesson", action = "MinMaxDemo" }
             );
+
+            routes.MapRoute(
+                name: "CenteredContentDemo",
+                url: "Lesson/CenteredContentDemo",
+                defaults: new { controller = "Lesson", action = "CenteredContentDemo" }
+            );
             
             routes.MapRoute(
                 name: "Lessons",

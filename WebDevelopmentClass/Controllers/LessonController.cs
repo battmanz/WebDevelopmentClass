@@ -19,5 +19,10 @@ namespace WebDevelopmentClass.Controllers
         {
             return View();
         }
+
+        public ActionResult CenteredContentDemo()
+        {
+            return View();
+        }
 	}
 }
