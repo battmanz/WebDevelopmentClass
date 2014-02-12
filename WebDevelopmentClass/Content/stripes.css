@@ -468,6 +468,95 @@ ol li li {
     margin: 0 10px;
 }
 
+#borderImageDemo .stretch {
+    border-image: url(/Images/border.png) 27 stretch;
+}
+
+#borderImageDemo .repeat {
+    border-image: url(/Images/border.png) 27 repeat;
+}
+
+#borderImageDemo .round {
+    border-image: url(/Images/border.png) 27 round;
+}
+
+#borderImageDemo p {
+    height: 40px;
+    border-width: 27px;
+}
+
+#boxShadowDemo {
+    overflow: hidden;
+}
+
+#boxShadowDemo div {
+    border: solid 1px #aaaacc;
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 30px;
+}
+
+#boxShadowDemo .insetShadow {
+    box-shadow: inset 2px 2px 8px black;
+}
+
+#boxShadowDemo .thinShadow {
+    box-shadow: 2px 2px 1px black;
+}
+
+#boxShadowDemo .wideShadow {
+    box-shadow: 2px 2px 20px black;
+}
+
+#boxShadowDemo .topLeftShadow {
+    box-shadow: -2px -2px 8px black;
+}
+
+#boxShadowDemo .multipleShadows {
+    /* Borrowed from http://markusstange.wordpress.com/2009/02/15/fun-with-box-shadows */
+    box-shadow:
+  0 0 20px black,
+  20px 15px 30px yellow,
+  -20px 15px 30px lime,
+  -20px -15px 30px blue,
+  20px -15px 30px red;
+}
+
+#borderRadiusDemo, #ellipticalCornersDemo {
+    overflow: hidden;
+}
+
+#borderRadiusDemo p, #ellipticalCornersDemo p {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 20px;
+    background-color: #2F4F4F;
+}
+
+#borderRadiusDemo .smallCorners {
+    border-radius: 5px;
+}
+
+#borderRadiusDemo .largeCorners {
+    border-radius: 20px;
+}
+
+#borderRadiusDemo .circle {
+    border-radius: 100px;
+}
+
+#ellipticalCornersDemo .shape1 {
+    border-top-left-radius: 40px 25px;
+    border-top-right-radius: 10px 25px;
+    border-bottom-left-radius: 7px;
+}
+
+#ellipticalCornersDemo .shape2 {
+    border-radius: 40px / 20px;
+}
+
 /* styles for validation helpers */
 .field-validation-error {
     color: #b94a48;
