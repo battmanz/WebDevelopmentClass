@@ -557,6 +557,123 @@ ol li li {
     border-radius: 40px / 20px;
 }
 
+#relativeDemo div {
+    border: solid 1px blue;
+    padding: 20px;
+}
+
+#relativeDemo .relative {
+    position: relative;
+    top: 35px;
+}
+
+#absoluteDemo {
+    border: solid 1px blue;
+    height: 120px;
+    position: relative;
+}
+
+#absoluteDemo .absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border: 1px solid orange;
+    margin: 0;
+    padding: 0;
+}
+
+.zIndexDemo {
+    border: solid 1px blue;
+    height: 120px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.zIndexDemo div {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+.one {
+    top: 15px;
+    left: 15px;
+    background-color: blue;
+}
+
+.two {
+    top: 30px;
+    left: 30px;
+    background-color: orange;
+}
+
+.three {
+    top: 45px;
+    left: 45px;
+    background-color: green;
+}
+
+.onTop {
+    z-index: 1000;
+}
+
+#imgFloatDemo figure {
+    float: left;
+    margin-top: 5px;
+    margin-right: 15px;
+    border: dashed 1px #999;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#imgFloatDemo figcaption {
+    font-size: 0.6em;
+}
+
+.columnContainer {
+    overflow: hidden;
+}
+
+.columnContainer .left {
+    float: left;
+    margin-right: 20px;
+    width: 200px;
+    background-color: #2F4F4F;
+    border-radius: 10px;
+    padding: 10px;
+    color: #ddd;
+}
+
+#backgroundImageDemo {
+    background-image: url(/Images/1024x768-serafina-linen-large.jpg);
+    background-repeat: repeat;
+    font-size: 1.7em;
+    padding: 20px;
+}
+
+#gradientDemo {
+    background-repeat: repeat;
+    padding: 20px;
+    background: #b3dced;
+    background: -moz-linear-gradient(top,  #b3dced 0%, #29b8e5 50%, #bce0ee 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b3dced), color-stop(50%,#29b8e5), color-stop(100%,#bce0ee));
+    background: -webkit-linear-gradient(top,  #b3dced 0%,#29b8e5 50%,#bce0ee 100%);
+    background: -o-linear-gradient(top,  #b3dced 0%,#29b8e5 50%,#bce0ee 100%);
+    background: -ms-linear-gradient(top,  #b3dced 0%,#29b8e5 50%,#bce0ee 100%);
+    background: linear-gradient(to bottom,  #b3dced 0%,#29b8e5 50%,#bce0ee 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#bce0ee',GradientType=0 );
+}
+
+#homePageMockup {
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
 /* styles for validation helpers */
 .field-validation-error {
     color: #b94a48;

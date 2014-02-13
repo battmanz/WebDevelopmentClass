@@ -24,5 +24,10 @@ namespace WebDevelopmentClass.Controllers
         {
             return View();
         }
+
+        public ActionResult FixedPositioningDemo()
+        {
+            return View();
+        }
 	}
 }

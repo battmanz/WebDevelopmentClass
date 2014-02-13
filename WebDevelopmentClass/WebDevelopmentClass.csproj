@@ -134,6 +134,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\1024x768-serafina-linen-large.jpg" />
     <Content Include="Images\468px-Client-server-model.svg.png" />
     <Content Include="Images\arrowLeft.png" />
     <Content Include="Images\arrowLeftMedium.png" />
@@ -146,7 +147,13 @@
     <Content Include="Images\borderWithLines.png" />
     <Content Include="Images\boxes.png" />
     <Content Include="Images\brownStripe.png" />
+    <Content Include="Images\carbon4.jpg" />
+    <Content Include="Images\Carbon_Fiber_Tile.jpg" />
+    <Content Include="Images\Carbon_Fiber_Tile100.jpg" />
     <Content Include="Images\darkBlueNoise.jpg" />
+    <Content Include="Images\DRA-042010-LeatheryTexture-MBFT.jpg" />
+    <Content Include="Images\dreamstimefree_223552.jpg" />
+    <Content Include="Images\ficticiousBookstoreMockUp.jpg" />
     <Content Include="Images\header.png" />
     <Content Include="Images\header2.png" />
     <Content Include="Images\homeReplacement.png" />
@@ -190,6 +197,8 @@
     <Content Include="Views\Lesson\Lesson2.cshtml" />
     <Content Include="Views\Lesson\MinMaxDemo.cshtml" />
     <Content Include="Views\Lesson\CenteredContentDemo.cshtml" />
+    <Content Include="Views\Lesson\FixedPositioningDemo.cshtml" />
+    <Content Include="Views\Lesson\Lesson3.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
