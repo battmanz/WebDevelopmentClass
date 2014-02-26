@@ -153,10 +153,14 @@
     <Content Include="Images\darkBlueNoise.jpg" />
     <Content Include="Images\DRA-042010-LeatheryTexture-MBFT.jpg" />
     <Content Include="Images\dreamstimefree_223552.jpg" />
+    <Content Include="Images\ficticiousAboutMockUp.jpg" />
     <Content Include="Images\ficticiousBookstoreMockUp.jpg" />
+    <Content Include="Images\ficticiousContactMockUp.jpg" />
+    <Content Include="Images\githubClientCommitChanges.png" />
     <Content Include="Images\githubClientCreateRepo.png" />
     <Content Include="Images\githubClientDownloadButton.png" />
     <Content Include="Images\githubClientExe.png" />
+    <Content Include="Images\githubClientSync.png" />
     <Content Include="Images\githubNewRepo.png" />
     <Content Include="Images\header.png" />
     <Content Include="Images\header2.png" />
