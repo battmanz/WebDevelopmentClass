@@ -5,11 +5,89 @@
 
 <article>
     <h2>Lesson 3</h2>
-    <p>
-        It's time to get started on our class project. We are going to build a website for a fictional bookstore.
-        Well start with the home page. Here is a mock-up, designed in photoshop, of what it should look like.
-        Keep in mind that this is only a picture. We actually need to build it now.
-    </p>
+    <section>
+        <h3>Source Control</h3>
+        <div>
+            <h4>Defined</h4>
+            <p>
+                <dfn>Source control</dfn> (also known as <a href="http://en.wikipedia.org/wiki/Revision_control">revision control</a>) is a system that manages the changes
+                made to your source code. Each <dfn>revision</dfn> (an independent set of files checked in at once) gets assigned a number for tracking purposes. By tracking
+                the revisions, a source control system allows you to revert (or go back) to a previous revision.
+            </p>
+            <p>
+                When multiple developers are working on the same project, it is crucial to have a source control system in place. This ensures that if two developers work
+                on the same file, that possible conflicts are detected and merged correctly.
+            </p>
 
-    <img id="homePageMockup" src="~/Images/ficticiousBookstoreMockUp.jpg" alt="Ficticious Bookstore mockup" width="958" />
+            <h4>Git</h4>
+            <p>
+                <dfn><a href="http://en.wikipedia.org/wiki/Git_(software)">Git</a></dfn> is a popular distributed revision control system. <dfn>Distributed</dfn> means
+                that all developers working on a project don't have to have a connection to a common network.
+            </p>
+
+            <h4>Github</h4>
+            <p>
+                <q cite="http://en.wikipedia.org/wiki/GitHub"><a href="http://en.wikipedia.org/wiki/GitHub">GitHub</a> is a web-based hosting service for software development projects that use the Git revision control system.</q>
+                What that means is that you can upload your code to the Github website and then access it from any computer connected to the internet. And the best part is that it's free!
+                Free, provided that your code is public, meaning anyone can view it. If your code is private, then you must pay.
+            </p>
+            <p>
+                To register, go to <a href="https://github.com/">https://github.com/</a>, choose a user name, enter your email, and then choose a password.
+                Once you're logged in, you can create a new repository by clicking on the green button on the right hand side of the screen.
+            </p>
+
+            <img src="~/Images/githubNewRepo.png" alt="Github new repository" />
+
+            <p>
+                In addition to the web interface, you can also use the github client, which is a program that is installed on your computer.
+                To download it, follow this link: <a href="http://windows.github.com/">Github client</a> and then click the big green button.
+            </p>
+
+            <img src="~/Images/githubClientDownloadButton.png" alt="Github Client Download Button" />
+
+            <p>
+                Make sure to click on the executable that shows up at the bottom of the screen (at least in Chrome).
+            </p>
+
+            <img src="~/Images/githubClientExe.png" alt="Github Client executable" />
+
+            <p>
+                Once you have it installed, log in and then you can create a repository from within the Github client application.
+            </p>
+
+            <img src="~/Images/githubClientCreateRepo.png" alt="Github Client Create Repo" />
+        </div>
+    </section>
+
+    <section>
+        <h3>Website Mock-up</h3>
+        <div>
+            <p>
+                It's time to get started on our class project. We are going to build a website for a fictional bookstore.
+                Well start with the home page. Here is a mock-up, designed in photoshop, of what it should look like.
+                Keep in mind that this is only a picture. We actually need to build it now.
+            </p>
+
+            <img id="homePageMockup" src="~/Images/ficticiousBookstoreMockUp.jpg" alt="Ficticious Bookstore mockup" width="958" />
+        </div>
+    </section>
 </article>
+
+@section scripts {
+<script>
+    $(function () {
+        $("article").accordion({
+            header: "h3",
+            heightStyle: "content",
+            collapsible: true,
+            active: false
+        });
+    });
+</script>
+<script>
+    SyntaxHighlighter.config.tagName = "code";
+    SyntaxHighlighter.defaults["toolbar"] = false;
+    SyntaxHighlighter.all();
+</script>
+
+}

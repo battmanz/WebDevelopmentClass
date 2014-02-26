@@ -154,6 +154,10 @@
     <Content Include="Images\DRA-042010-LeatheryTexture-MBFT.jpg" />
     <Content Include="Images\dreamstimefree_223552.jpg" />
     <Content Include="Images\ficticiousBookstoreMockUp.jpg" />
+    <Content Include="Images\githubClientCreateRepo.png" />
+    <Content Include="Images\githubClientDownloadButton.png" />
+    <Content Include="Images\githubClientExe.png" />
+    <Content Include="Images\githubNewRepo.png" />
     <Content Include="Images\header.png" />
     <Content Include="Images\header2.png" />
     <Content Include="Images\homeReplacement.png" />
