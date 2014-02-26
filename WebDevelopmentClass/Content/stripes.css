@@ -36,6 +36,12 @@ header {
     border-bottom: 5px solid #e2842c;
 }
 
+.announcement {
+    background-color: yellow;
+    padding: 20px;
+    font-size: 2.5em;
+}
+
 #main {
     background-image: none;
     background-color: white;
