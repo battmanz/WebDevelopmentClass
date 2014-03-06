@@ -27,7 +27,7 @@
 
             <h4>Github</h4>
             <p>
-                <q cite="http://en.wikipedia.org/wiki/GitHub"><a href="http://en.wikipedia.org/wiki/GitHub">GitHub</a> is a web-based hosting service for software development projects that use the Git revision control system.</q>
+                <q cite="http://en.wikipedia.org/wiki/GitHub"><a href="http://en.wikipedia.org/wiki/GitHub">GitHub</a> is a web-based hosting service for software development projects that uses the Git revision control system.</q>
                 What that means is that you can upload your code to the Github website and then access it from any computer connected to the internet. And the best part is that it's free!
                 Free, provided that your code is public, meaning anyone can view it. If your code is private, then you must pay.
             </p>
@@ -92,6 +92,332 @@
 
             <h4>Contact Page</h4>
             <img src="~/Images/ficticiousContactMockUp.jpg" alt="Ficticious Bookstore Contact Page Mockup" width="880" />
+        </div>
+    </section>
+
+    <section>
+        <h3>Object Oriented Programming</h3>
+        <div>
+            <h4>Built-in Types</h4>
+            <p>
+                C# has the following built-in data types:
+            </p>
+            <dl>
+                <dt><code>bool</code></dt>
+                <dd>
+                    It can have only one of two values: <code>true</code> or <code>false</code>
+
+                    <pre><code class="brush: csharp;">@(@"
+                    bool x = true;
+                    ")</code></pre>
+                </dd>
+
+                <dt><code>byte</code></dt>
+                <dd>
+                    It can store an integer between 0 and 255.
+                
+                    <pre><code class="brush: csharp;">@(@"
+                    byte x = 255;
+                    ")</code></pre>
+                </dd>
+
+                <dt><code>sbyte</code></dt>
+                <dd>
+                    The <code>s</code> stands for "signed". Signed means that it can be negative or positive.
+                    It can store an integer between -128 and 127.
+
+                    <pre><code class="brush: csharp;">@(@"
+                    sbyte x = -5;
+                    ")</code></pre>
+                </dd>
+
+                <dt><code>char</code></dt>
+                <dd>
+                    This can store a single character such as 'a', 'b', '1', '2', etc.
+
+                    <pre><code class="brush: csharp;">@(@"
+                    char x = 'A';
+                    ")</code></pre>
+                </dd>
+
+                <dt><code>decimal</code></dt>
+                <dd>
+                    This stores a base 10 number. Use this for monetary values.
+                    You must add <code>M</code> to the end of the number to signify that it's a decimal.
+
+                    <pre><code class="brush: csharp;">@(@"
+                    decimal x = 100.50M;
+                    ")</code></pre>
+                </dd>
+
+                <dt><code>double</code></dt>
+                <dd>
+                    This stores a floating point number with "double" precision.
+                    It's approximate range is from ±5.0 × 10<sup>−324</sup> to ±1.7 × 10<sup>308</sup>.
+
+                    <pre><code class="brush: csharp;">@(@"
+                    double x = 100.50;
+                    ")</code></pre>
+                </dd>
+
+                <dt><code>float</code></dt>
+                <dd>
+                    This stores a floating point number with "single" precision.
+                    It's approximate range is from -3.4 × 10<sup>38</sup> to +3.4 × 10<sup>38</sup>.
+                    You must add <code>F</code> to the end of the number to signify that it's a float.
+
+                    <pre><code class="brush: csharp;">@(@"
+                    float x = 100.50F;
+                    ")</code></pre>
+                </dd>
+
+                <dt><code>int</code></dt>
+                <dd>
+                    This stores an integer value (e.g. -1, -2, 0, 1, 2).
+
+                    <pre><code class="brush: csharp;">@(@"
+                    int x = -3;
+                    ")</code></pre>
+                </dd>
+
+                <dt><code>uint</code></dt>
+                <dd>
+                    This stores an "unsigned" integer value, that is, not negative (e.g. 0, 1, 2, etc).
+                    
+                    <pre><code class="brush: csharp;">@(@"
+                    uint x = 10;
+                    ")</code></pre>
+                </dd>
+
+                <dt><code>long</code></dt>
+                <dd>
+                    This stores an integer with a larger range than an int.
+                    
+                    <pre><code class="brush: csharp;">@(@"
+                    long x = 4294967296;
+                    ")</code></pre>
+                </dd>
+
+                <dt><code>ulong</code></dt>
+                <dd>
+                    This stores an "unsigned" integer with a large range.
+                
+                    <pre><code class="brush: csharp;">@(@"
+                    ulong x = 4294967296;
+                    ")</code></pre>
+                </dd>
+
+                <dt><code>object</code></dt>
+                <dd>
+                    This is the most general type. Any other type can be assigned to a variable of type object.
+                
+                    <pre><code class="brush: csharp;">@(@"
+                    object x1 = 123;
+                    object x2 = 'B';
+                    object x3 = 123.45;
+                    object x4 = ""hello world"";
+                    object x5 = false;
+                    ")</code></pre>
+                </dd>
+
+                <dt><code>short</code></dt>
+                <dd>
+                    A signed integer with a smaller range than an int.
+                
+                    <pre><code class="brush: csharp;">@(@"
+                    short x = -100;
+                    ")</code></pre>
+                </dd>
+
+                <dt><code>ushort</code></dt>
+                <dd>
+                    An unsigned integer with a range smaller than a uint.
+                
+                    <pre><code class="brush: csharp;">@(@"
+                    ushort x = 100;
+                    ")</code></pre>
+                </dd>
+
+                <dt><code>string</code></dt>
+                <dd>
+                    This can store many characters (i.e. a string of characters).
+                
+                    <pre><code class="brush: csharp;">@(@"
+                    string x = ""I'm a string"";
+                    ")</code></pre>
+                </dd>
+            </dl>
+
+            <h4>Classes</h4>
+            <p>
+                As a programmer you can create your own custom types. You do this by creating a class. A class is built using the built-in
+                types as the building blocks. For example if you wanted to have a Person type, you could it like so:
+            </p>
+
+            <pre><code class="brush: csharp;">@(@"
+            public class Person
+            {
+
+                public Person(string firstName, string lastName, boolean isMale, decimal accountBalance, int age)
+                {
+                    FirstName = firstName;
+                    LastName = lastName;
+                    IsMale = isMale;
+                    AccountBalance = accountBalance;
+                    Age = age;                
+                }
+
+                public string FirstName { get; set; }
+                public string LastName { get; set; }
+                public boolean IsMale { get; set; }
+                public decimal AccountBalance { get; set;}
+                public int Age { get; set; }
+            }
+            ")</code></pre>
+
+            <p>
+                The <code>{ get; set; }</code> is C#'s way of saying that you can write to and read from this property.
+                It is possible to have a property that you can only read (and not write) or only write (and not read).
+                I won't give examples of those here, because it is beyond the scope of this class.
+            </p>
+
+            <p>
+                The code that looks like this:
+            </p>
+
+            <pre><code class="brush: csharp;">@(@"
+            public Person(string firstName, string lastName, boolean isMale, decimal accountBalance, int age)
+            {
+                FirstName = firstName;
+                LastName = lastName;
+                IsMale = isMale;
+                AccountBalance = accountBalance;
+                Age = age;                
+            }
+            ")</code></pre>
+
+            <p>
+                is called a constructor. A <dfn>constructor</dfn> is a function that creates a new Person object using the data given to it.
+                You can create different Persons by passing in different data to the constructor.
+                In order to create a new Person you use the <code>new</code> operator like so:
+            </p>
+
+            <pre><code class="brush: csharp;">@(@"
+            Person joe = new Person(""Joe"", ""Cool"", true, ""1.09"", ""22"");
+
+            Person mary = new Person(""Mary"", ""Smith"", false, ""300000.99"", ""35"");
+            ")</code></pre>
+
+            <h4>ViewModels</h4>
+            <p>
+                We model the real world using classes. Sometimes we will create a model that is specific to a particular view. In that case
+                we refer to that model as a viewmodel (i.e. a model for the view or the view's model).
+            </p>
+
+            <p>
+                Let's create a viewmodel for the contact page as follows. Create a new class inside of the "Models" folder.
+            </p>
+
+            <pre><code class="brush: csharp;">@(@"
+            public class ContactViewModel
+            {
+                [Required]
+                [Display(Name = ""First Name"")]
+                public string FirstName { get; set; }
+        
+                [Required]
+                [Display(Name = ""Last Name"")]
+                public string LastName { get; set; }
+
+                [Required]
+                [EmailAddress]
+                public string Email { get; set; }
+
+                [Required]
+                [StringLength(100)]
+                public string Subject { get; set; }
+
+                [Required]
+                [StringLength(800)]
+                [DataType(DataType.MultilineText)]
+                public string Message { get; set; }
+            }
+            ")</code></pre>
+
+            <p>
+                You'll notice that the properties of this viewmodel are "decorated" with attributes (for example <code>[Required]</code>).
+                These attribute give additional information to ASP.NET about the property such as if it is mandatory to fill it in,
+                the maxinum number of characters allowed, or if it's an email, etc.
+            </p>
+
+            <p>
+                Now add this code to the "HomeController":
+            </p>
+
+            <pre><code class="brush: csharp;">@(@"
+            [HttpPost]
+            [ValidateAntiForgeryToken]
+            public ActionResult Contact(ContactViewModel model)
+            {
+                if (ModelState.IsValid)
+                {
+                    var fromAddress = ""ficticiousbooksellers@gmail.com"";
+
+                    using (var smtp = new SmtpClient
+                    {
+                        Host = ""smtp.gmail.com"",
+                        Port = 587,
+                        EnableSsl = true,
+                        DeliveryMethod = SmtpDeliveryMethod.Network,
+                        UseDefaultCredentials = false,
+                        Credentials = new NetworkCredential(fromAddress, ""fiction1234"")
+                    })
+                    {
+                        using (var message = new MailMessage(fromAddress, fromAddress)
+                            {
+                                Subject = model.Subject,
+                                Body = model.Email + "" sent you the following message:\n\n"" + model.Message
+                            })
+                        {
+                            smtp.Send(message);
+                        }
+                    }
+                    return RedirectToAction(""Index"");
+                }
+                return View(model);
+            }
+            ")</code></pre>
+
+            <p>
+                You'll probably want to use a different email address and password. I just went to gmail.com and created a new account to use
+                for demonstration purposes. You could do the same. Normally you would not type the password into your code as I have done.
+                Instead you would encrypt it.
+            </p>
+
+            <p>
+                What this code does is programmatically send an email using gmail as your smtp server. If you sign up for a paid hosting account
+                normally this would include an email account. You can configure this code to use the smtp server of your hosting provider.
+            </p>
+
+            <h4>Adding a View</h4>
+            <p>
+                Visual Studio can help you create a view for your model. To do so, right click on the code we just added above inside the HomeController.
+                This will display a context menu. Click on the item that says "Add View...".
+            </p>
+
+            <img src="~/Images/addView.png" alt="Add View" width="712" />
+
+            <p>
+                In the dialog that pops up choose "Create" as the template and "ContactViewModel" as the model class.
+            </p>
+
+            <img src="~/Images/addViewDialog.png" alt="Add View" width="597" />
+
+            <p>
+                When you click "Add", Visual Studio will generate the HTML for you for the Contact page. This is NOT a dynamic web page, however.
+                This is simply a one-time setup step that Visual Studio is helping you out with. This feature is called "scaffolding". 
+                The term "scaffolding" is used to denote that you are free to change or remove anything you'd like. This code is just to get you started.
+            </p>
         </div>
     </section>
 </article>
