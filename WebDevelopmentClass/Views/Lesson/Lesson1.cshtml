@@ -67,14 +67,14 @@
                 On a Windows computer, you can create a new HTML document by opening up notepad, typing your HTML tags, and then saving it with a .html extension.
             </p>
             <p>
-                But wait! There is a much better way to create an HTML document! In this class, we'll use Visual Studio!
-                You can download <a href="http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-web" target="_blank">Visual Studio Express</a> for free by following the link.
-                Click on the link that says, "Install now".
+                But wait! There is a much better way to create an HTML document! In this class, we'll use Aptana Studio!
+                You can download <a href="http://www.aptana.com/" target="_blank">Aptana Studio</a> for free by following the link.
+                Click on the large blue button that says, "Download Aptana Studio 3".
             </p>
-            <p><img src="~/Images/visualStudioInstall.png" alt="Visual Studio Screenshot" width="880" /></p>
+            <p><img src="~/Images/aptanaDownload.png" alt="Aptana Studio Home Page" width="880" /></p>
 
             <p>
-                Visual Studio is what's known as an <dfn>Integrated Development Environment</dfn> (<abbr>IDE</abbr>). An IDE offers many advantages over notepad:
+                Aptana Studio is what's known as an <dfn>Integrated Development Environment</dfn> (<abbr>IDE</abbr>). An IDE offers many advantages over notepad:
             </p>
             <dl>
                 <dt>Syntax Highlighting</dt>
@@ -83,14 +83,14 @@
                 <dt>Debugging</dt>
                 <dd>Why doesn't my code work?</dd>
 
-                <dt>Intellisense</dt>
+                <dt>Code Completion</dt>
                 <dd>Predict-a-text</dd>
 
                 <dt>Error Marks</dt>
                 <dd>Squigglies</dd>
 
                 <dt>Line Numbers</dt>
-                <dd>To turn them on go to Tools -> Options -> Text Editor -> All Languages, then check the checkbox next to Line Numbers</dd>
+                <dd>Self-explanatory</dd>
             </dl>
         </div>
     </section>
@@ -205,55 +205,6 @@
             <p>
                 Try adding each of these text elements to your HTML document. How does each one appear?
             </p>
-        </div>
-    </section>
-
-    <section>
-        <h3>Lists</h3>
-        <div>
-            <p>
-                HTML has three basic types of lists. The first one we'll discuss is an ordered list which is denoted by the <code>&lt;ol&gt;</code> tag.
-                Items are added to the list using the <code>&lt;li&gt;</code> tag. "li" stands for list item. Because this is an ordered list, each item in the list has a number next to it.
-            </p>
-
-            <pre><code class="brush: html;">@(@"
-            <p>Things to do today</p>
-            <ol>
-                <li>Wake up</li>
-                <li>Exercise</li>
-                <li>Eat breakfast</li>
-                <li>Make a freakin' awesome website!</li>
-            </ol>
-            ")</code></pre>
-
-            <p>
-                Another type of list that is very similar to the ordered list is the unordered list. This is denoted with the <code>&lt;ul&gt;</code>.
-                This is a bulleted list.
-            </p>
-
-            <pre><code class="brush: html;">@(@"
-            <p>Things I like</p>
-            <ul>
-                <li>Sunny days</li>
-                <li>Chocolate chip cookies</li>
-                <li>A good book</li>
-            </ul>
-            ")</code></pre>
-
-            <p>
-                The third type of list we'll look at is a definition list, denoted by the <code>&lt;dl&gt;</code> tag. This list contains terms and definitions
-                for those terms. Each term is denoted by the <code>&lt;dt&gt;</code> tag and its corresponding definition is denoted by the <code>&lt;dd&gt;</code> tag.
-            </p>
-
-            <pre><code class="brush: html;">@(@"
-            <p>Medical Terms</p>
-            <dl>
-                <dt>Appendectomy</dt>
-                <dd>The surgical removal of the appendix</dd>
-                <dt>Poliomyelitis</dt>
-                <dd>A viral disease that can affect nerves and can lead to partial or full paralysis.</dd>
-            </dl>
-            ")</code></pre>
         </div>
     </section>
 
@@ -423,7 +374,7 @@
         </div>
     </section>
 
-    <section>
+    @*<section>
         <h3>Audio and Video</h3>
         <div>
             <h4>Audio</h4>
@@ -511,6 +462,55 @@
                 By telling the browser which type it is, it can avoid having to download some of the video just to find out. For a list of media types see this
                 <a href="http://en.wikipedia.org/wiki/Internet_media_type#List_of_common_media_types" target="_blank">link</a>.
             </p>
+        </div>
+    </section>
+
+    <section>
+        <h3>Lists</h3>
+        <div>
+            <p>
+                HTML has three basic types of lists. The first one we'll discuss is an ordered list which is denoted by the <code>&lt;ol&gt;</code> tag.
+                Items are added to the list using the <code>&lt;li&gt;</code> tag. "li" stands for list item. Because this is an ordered list, each item in the list has a number next to it.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <p>Things to do today</p>
+            <ol>
+                <li>Wake up</li>
+                <li>Exercise</li>
+                <li>Eat breakfast</li>
+                <li>Make a freakin' awesome website!</li>
+            </ol>
+            ")</code></pre>
+
+            <p>
+                Another type of list that is very similar to the ordered list is the unordered list. This is denoted with the <code>&lt;ul&gt;</code>.
+                This is a bulleted list.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <p>Things I like</p>
+            <ul>
+                <li>Sunny days</li>
+                <li>Chocolate chip cookies</li>
+                <li>A good book</li>
+            </ul>
+            ")</code></pre>
+
+            <p>
+                The third type of list we'll look at is a definition list, denoted by the <code>&lt;dl&gt;</code> tag. This list contains terms and definitions
+                for those terms. Each term is denoted by the <code>&lt;dt&gt;</code> tag and its corresponding definition is denoted by the <code>&lt;dd&gt;</code> tag.
+            </p>
+
+            <pre><code class="brush: html;">@(@"
+            <p>Medical Terms</p>
+            <dl>
+                <dt>Appendectomy</dt>
+                <dd>The surgical removal of the appendix</dd>
+                <dt>Poliomyelitis</dt>
+                <dd>A viral disease that can affect nerves and can lead to partial or full paralysis.</dd>
+            </dl>
+            ")</code></pre>
         </div>
     </section>
 
@@ -1117,7 +1117,7 @@
             </html>
             ")</code></pre>
         </div>
-    </section>
+    </section>*@
 </article>
 
 
