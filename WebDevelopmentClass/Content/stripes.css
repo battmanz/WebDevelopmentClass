@@ -6,6 +6,9 @@
 
 header {
     text-align: center;
+    background: url(/Images/lightStripe.png) repeat top left;
+    padding: 40px 0;
+    border-bottom: 5px solid #e2842c;
 }
 
 header h1 {
@@ -30,11 +33,11 @@ ul {
     padding: 0;
 }
 
-header {
+/*header {
     background: url(/Images/lightStripe.png) repeat top left;
     padding: 40px 0;
     border-bottom: 5px solid #e2842c;
-}
+}*/
 
 .announcement {
     background-color: yellow;
@@ -56,6 +59,15 @@ footer {
     width: 960px;
     margin: 0 auto;
     overflow: hidden;
+}
+
+.table-bordered {
+    border: 1px solid #ccc;
+    background-color: whitesmoke;
+}
+
+.table-bordered td {
+    border: 1px solid #ccc;
 }
 
 #slider {
